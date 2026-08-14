@@ -1,0 +1,5315 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww34000\viewh18960\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+  <meta charset="UTF-8" />\
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\
+  <meta name="theme-color" content="#080d1b" />\
+\
+  <title>Pixelorbits \'97 UI/UX, App, Web & Software Development Agency</title>\
+  <meta\
+    name="description"\
+    content="Pixelorbits designs and develops mobile apps, websites and custom software for startups and growing businesses."\
+  />\
+\
+  <link rel="preconnect" href="https://fonts.googleapis.com">\
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">\
+\
+  <script src="https://unpkg.com/lucide@latest"></script>\
+\
+  <style>\
+    /* =========================================================\
+       PIXELORBITS\
+       Complete single-file website\
+       HTML + CSS + JS\
+       ========================================================= */\
+\
+    :root \{\
+      --bg: #080d1b;\
+      --bg-2: #0b1120;\
+      --bg-3: #111827;\
+      --bg-4: #161d29;\
+      --card: #141b28;\
+      --card-2: #1a212e;\
+      --card-3: #0c1220;\
+\
+      --text: #f5f7fb;\
+      --muted: #9198a9;\
+      --muted-2: #6f7687;\
+\
+      --lime: #a8ff2a;\
+      --lime-2: #88e900;\
+      --lime-soft: rgba(168, 255, 42, 0.11);\
+\
+      --purple: #7856ff;\
+      --purple-2: #b758ef;\
+      --blue: #54c8ff;\
+      --pink: #ff69b5;\
+\
+      --border: rgba(255, 255, 255, 0.08);\
+      --border-strong: rgba(255, 255, 255, 0.13);\
+\
+      --container: 1160px;\
+\
+      --radius-sm: 12px;\
+      --radius: 18px;\
+      --radius-lg: 28px;\
+      --radius-xl: 36px;\
+\
+      --shadow-lime:\
+        0 0 0 1px rgba(168,255,42,.05),\
+        0 0 20px rgba(168,255,42,.20),\
+        0 0 42px rgba(168,255,42,.16);\
+\
+      --transition: 220ms ease;\
+    \}\
+\
+    * \{\
+      box-sizing: border-box;\
+      margin: 0;\
+      padding: 0;\
+    \}\
+\
+    html \{\
+      scroll-behavior: smooth;\
+    \}\
+\
+    body \{\
+      font-family: "Inter", sans-serif;\
+      color: var(--text);\
+      background: var(--bg);\
+      line-height: 1.5;\
+      -webkit-font-smoothing: antialiased;\
+      overflow-x: hidden;\
+    \}\
+\
+    body.menu-open \{\
+      overflow: hidden;\
+    \}\
+\
+    a \{\
+      color: inherit;\
+      text-decoration: none;\
+    \}\
+\
+    button,\
+    input,\
+    select,\
+    textarea \{\
+      font-family: inherit;\
+    \}\
+\
+    button \{\
+      cursor: pointer;\
+    \}\
+\
+    img \{\
+      max-width: 100%;\
+      display: block;\
+    \}\
+\
+    .container \{\
+      width: min(var(--container), calc(100% - 44px));\
+      margin-inline: auto;\
+    \}\
+\
+    .page \{\
+      display: none;\
+      min-height: 100vh;\
+      animation: pageIn 0.45s ease both;\
+    \}\
+\
+    .page.active \{\
+      display: block;\
+    \}\
+\
+    @keyframes pageIn \{\
+      from \{\
+        opacity: 0;\
+        transform: translateY(5px);\
+      \}\
+      to \{\
+        opacity: 1;\
+        transform: translateY(0);\
+      \}\
+    \}\
+\
+    /* =========================================================\
+       TYPOGRAPHY\
+       ========================================================= */\
+\
+    h1,\
+    h2,\
+    h3,\
+    h4 \{\
+      line-height: 1.08;\
+      letter-spacing: -0.045em;\
+    \}\
+\
+    .hero-title \{\
+      font-size: clamp(42px, 5.5vw, 78px);\
+      font-weight: 700;\
+      max-width: 790px;\
+    \}\
+\
+    .page-title \{\
+      font-size: clamp(42px, 5vw, 68px);\
+      font-weight: 700;\
+      max-width: 830px;\
+    \}\
+\
+    .section-title \{\
+      font-size: clamp(30px, 3.8vw, 48px);\
+      font-weight: 650;\
+      max-width: 760px;\
+    \}\
+\
+    .sub-title \{\
+      font-size: clamp(24px, 3vw, 34px);\
+      font-weight: 650;\
+    \}\
+\
+    .body-lg \{\
+      color: var(--muted);\
+      font-size: 17px;\
+      line-height: 1.65;\
+      max-width: 670px;\
+    \}\
+\
+    .eyebrow \{\
+      color: var(--lime);\
+      text-transform: uppercase;\
+      font-weight: 700;\
+      font-size: 11px;\
+      letter-spacing: 0.15em;\
+      display: flex;\
+      align-items: center;\
+      gap: 8px;\
+      margin-bottom: 18px;\
+    \}\
+\
+    .eyebrow::before \{\
+      content: "";\
+      width: 6px;\
+      height: 6px;\
+      background: var(--lime);\
+      border-radius: 50%;\
+    \}\
+\
+    .muted \{\
+      color: var(--muted);\
+    \}\
+\
+    .lime \{\
+      color: var(--lime);\
+    \}\
+\
+    .purple \{\
+      color: #9a78ff;\
+    \}\
+\
+    /* =========================================================\
+       GLOBAL HEADER\
+       ========================================================= */\
+\
+    .site-header \{\
+      height: 78px;\
+      position: sticky;\
+      top: 0;\
+      z-index: 1000;\
+      background: rgba(8, 13, 27, 0.88);\
+      backdrop-filter: blur(18px);\
+      -webkit-backdrop-filter: blur(18px);\
+      border-bottom: 1px solid var(--border);\
+    \}\
+\
+    .nav-wrap \{\
+      height: 100%;\
+      display: flex;\
+      align-items: center;\
+      justify-content: space-between;\
+      gap: 30px;\
+    \}\
+\
+    .brand \{\
+      display: inline-flex;\
+      align-items: center;\
+      gap: 11px;\
+      flex-shrink: 0;\
+    \}\
+\
+    .logo-box \{\
+      width: 34px;\
+      height: 34px;\
+      border-radius: 9px;\
+      background: #f7f7f7;\
+      position: relative;\
+      display: grid;\
+      place-items: center;\
+      overflow: hidden;\
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);\
+    \}\
+\
+    .logo-pixel \{\
+      width: 18px;\
+      height: 18px;\
+      position: relative;\
+      transform: rotate(-8deg);\
+    \}\
+\
+    .logo-pixel span \{\
+      position: absolute;\
+      width: 6px;\
+      height: 6px;\
+      border-radius: 2px;\
+    \}\
+\
+    .logo-pixel span:nth-child(1) \{\
+      background: #7e4bff;\
+      top: 0;\
+      left: 0;\
+    \}\
+\
+    .logo-pixel span:nth-child(2) \{\
+      background: #ff53b3;\
+      top: 0;\
+      right: 0;\
+    \}\
+\
+    .logo-pixel span:nth-child(3) \{\
+      background: #39c9ff;\
+      left: 2px;\
+      bottom: 0;\
+    \}\
+\
+    .logo-pixel span:nth-child(4) \{\
+      background: #b0ff2a;\
+      right: 1px;\
+      bottom: 1px;\
+    \}\
+\
+    .logo-orbit \{\
+      position: absolute;\
+      width: 22px;\
+      height: 9px;\
+      border: 1px solid #ff9e2a;\
+      border-radius: 50%;\
+      transform: rotate(-32deg);\
+    \}\
+\
+    .brand-name \{\
+      font-size: 17px;\
+      font-weight: 700;\
+      letter-spacing: 0.03em;\
+    \}\
+\
+    .nav-links \{\
+      list-style: none;\
+      display: flex;\
+      align-items: center;\
+      gap: 30px;\
+    \}\
+\
+    .nav-link,\
+    .nav-dropdown-btn \{\
+      appearance: none;\
+      border: 0;\
+      background: transparent;\
+      color: #9fa5b2;\
+      font-size: 14px;\
+      font-weight: 500;\
+      transition: color var(--transition);\
+      padding: 12px 0;\
+      display: inline-flex;\
+      align-items: center;\
+      gap: 5px;\
+    \}\
+\
+    .nav-link:hover,\
+    .nav-link.active,\
+    .nav-dropdown-btn:hover \{\
+      color: #fff;\
+    \}\
+\
+    .nav-dropdown \{\
+      position: relative;\
+    \}\
+\
+    .dropdown-menu \{\
+      position: absolute;\
+      left: -22px;\
+      top: 44px;\
+      min-width: 250px;\
+      background: #121927;\
+      border: 1px solid var(--border-strong);\
+      border-radius: 16px;\
+      padding: 9px;\
+      box-shadow: 0 22px 60px rgba(0,0,0,.4);\
+      opacity: 0;\
+      visibility: hidden;\
+      transform: translateY(8px);\
+      transition: .2s ease;\
+    \}\
+\
+    .nav-dropdown:hover .dropdown-menu,\
+    .nav-dropdown:focus-within .dropdown-menu \{\
+      opacity: 1;\
+      visibility: visible;\
+      transform: translateY(0);\
+    \}\
+\
+    .dropdown-link \{\
+      display: flex;\
+      gap: 12px;\
+      align-items: center;\
+      color: #a9afbb;\
+      font-size: 13px;\
+      padding: 12px;\
+      border-radius: 10px;\
+      transition: var(--transition);\
+    \}\
+\
+    .dropdown-link:hover \{\
+      color: #fff;\
+      background: rgba(255,255,255,.05);\
+    \}\
+\
+    .dropdown-icon \{\
+      width: 28px;\
+      height: 28px;\
+      background: rgba(168,255,42,.08);\
+      border: 1px solid rgba(168,255,42,.12);\
+      color: var(--lime);\
+      border-radius: 8px;\
+      display: grid;\
+      place-items: center;\
+      flex-shrink: 0;\
+    \}\
+\
+    .mobile-menu-btn \{\
+      display: none;\
+      width: 44px;\
+      height: 44px;\
+      border: 1px solid var(--border);\
+      border-radius: 12px;\
+      color: #fff;\
+      background: var(--card);\
+    \}\
+\
+    .mobile-menu \{\
+      display: none;\
+    \}\
+\
+    /* =========================================================\
+       BUTTONS\
+       ========================================================= */\
+\
+    .btn \{\
+      border: 0;\
+      border-radius: 999px;\
+      min-height: 46px;\
+      padding: 0 22px;\
+      display: inline-flex;\
+      align-items: center;\
+      justify-content: center;\
+      gap: 9px;\
+      font-size: 13px;\
+      font-weight: 700;\
+      transition: all var(--transition);\
+    \}\
+\
+    .btn-primary \{\
+      background: var(--lime);\
+      color: #081006;\
+      box-shadow: var(--shadow-lime);\
+    \}\
+\
+    .btn-primary:hover \{\
+      background: #b7ff46;\
+      transform: translateY(-2px);\
+      box-shadow:\
+        0 0 0 1px rgba(168,255,42,.1),\
+        0 0 26px rgba(168,255,42,.32),\
+        0 0 50px rgba(168,255,42,.18);\
+    \}\
+\
+    .btn-secondary \{\
+      color: #fff;\
+      background: rgba(255,255,255,.03);\
+      border: 1px solid var(--border-strong);\
+    \}\
+\
+    .btn-secondary:hover \{\
+      background: rgba(255,255,255,.07);\
+      transform: translateY(-2px);\
+    \}\
+\
+    .btn-sm \{\
+      min-height: 40px;\
+      padding-inline: 18px;\
+      font-size: 12px;\
+    \}\
+\
+    /* =========================================================\
+       GLOBAL SECTION STYLES\
+       ========================================================= */\
+\
+    .section \{\
+      padding: 105px 0;\
+    \}\
+\
+    .section-alt \{\
+      background: var(--bg-4);\
+    \}\
+\
+    .section-soft \{\
+      background: #0d1321;\
+    \}\
+\
+    .section-divider \{\
+      border-top: 1px solid var(--border);\
+    \}\
+\
+    .hero-grid \{\
+      position: relative;\
+      overflow: hidden;\
+    \}\
+\
+    .hero-grid::before \{\
+      content: "";\
+      position: absolute;\
+      inset: 0;\
+      background-image:\
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),\
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);\
+      background-size: 74px 74px;\
+      mask-image: linear-gradient(to bottom, black, transparent 88%);\
+      opacity: .58;\
+      pointer-events: none;\
+    \}\
+\
+    .hero-grid::after \{\
+      content: "";\
+      position: absolute;\
+      width: 660px;\
+      height: 660px;\
+      background: radial-gradient(\
+        circle,\
+        rgba(106, 73, 255, .22),\
+        rgba(106,73,255,.04) 48%,\
+        transparent 70%\
+      );\
+      right: -240px;\
+      top: -300px;\
+      pointer-events: none;\
+    \}\
+\
+    .page-hero \{\
+      min-height: 550px;\
+      display: flex;\
+      align-items: center;\
+      position: relative;\
+      z-index: 2;\
+    \}\
+\
+    .page-hero .body-lg \{\
+      margin-top: 22px;\
+    \}\
+\
+    /* =========================================================\
+       HOMEPAGE HERO\
+       ========================================================= */\
+\
+    .home-hero \{\
+      min-height: 735px;\
+      display: flex;\
+      align-items: center;\
+      position: relative;\
+      overflow: hidden;\
+      background:\
+        radial-gradient(circle at 83% 18%, rgba(80,67,226,.23), transparent 32%),\
+        var(--bg);\
+    \}\
+\
+    .home-hero .container \{\
+      position: relative;\
+      z-index: 2;\
+    \}\
+\
+    .home-hero-grid \{\
+      display: grid;\
+      grid-template-columns: 1.05fr .95fr;\
+      gap: 70px;\
+      align-items: center;\
+    \}\
+\
+    .hero-copy .body-lg \{\
+      margin-top: 24px;\
+    \}\
+\
+    .hero-actions \{\
+      display: flex;\
+      align-items: center;\
+      flex-wrap: wrap;\
+      gap: 13px;\
+      margin-top: 31px;\
+    \}\
+\
+    .hero-note \{\
+      margin-top: 16px;\
+      color: #6f7788;\
+      font-size: 11px;\
+    \}\
+\
+    .hero-highlight \{\
+      color: #9d73ff;\
+    \}\
+\
+    /* homepage illustration */\
+\
+    .hero-art \{\
+      height: 460px;\
+      position: relative;\
+    \}\
+\
+    .orbit \{\
+      position: absolute;\
+      border: 1px solid rgba(126,95,255,.14);\
+      border-radius: 50%;\
+      inset: 20px;\
+      animation: spinOrbit 36s linear infinite;\
+    \}\
+\
+    .orbit:nth-child(2) \{\
+      inset: 68px;\
+      animation-duration: 26s;\
+      animation-direction: reverse;\
+    \}\
+\
+    .orbit:nth-child(3) \{\
+      inset: 118px;\
+      animation-duration: 18s;\
+    \}\
+\
+    @keyframes spinOrbit \{\
+      to \{\
+        transform: rotate(360deg);\
+      \}\
+    \}\
+\
+    .mock-dashboard \{\
+      width: 330px;\
+      height: 230px;\
+      border-radius: 22px;\
+      background:\
+        linear-gradient(145deg, rgba(22,29,52,.98), rgba(9,13,26,.98));\
+      border: 1px solid rgba(255,255,255,.1);\
+      box-shadow: 0 25px 60px rgba(0,0,0,.42);\
+      position: absolute;\
+      left: 50%;\
+      top: 50%;\
+      transform: translate(-45%, -45%);\
+      padding: 18px;\
+    \}\
+\
+    .mock-topbar \{\
+      display: flex;\
+      justify-content: space-between;\
+      align-items: center;\
+      margin-bottom: 16px;\
+    \}\
+\
+    .mock-dots \{\
+      display: flex;\
+      gap: 5px;\
+    \}\
+\
+    .mock-dots span \{\
+      width: 5px;\
+      height: 5px;\
+      background: #394153;\
+      border-radius: 50%;\
+    \}\
+\
+    .mock-chip \{\
+      width: 54px;\
+      height: 7px;\
+      border-radius: 99px;\
+      background: #262f43;\
+    \}\
+\
+    .mock-content \{\
+      display: grid;\
+      grid-template-columns: 1fr 1.7fr;\
+      gap: 10px;\
+      height: 170px;\
+    \}\
+\
+    .mock-side,\
+    .mock-main \{\
+      border-radius: 12px;\
+      border: 1px solid rgba(255,255,255,.06);\
+      background: rgba(255,255,255,.025);\
+    \}\
+\
+    .mock-side \{\
+      padding: 12px;\
+    \}\
+\
+    .mock-line \{\
+      height: 6px;\
+      border-radius: 10px;\
+      background: #343c50;\
+      margin-bottom: 9px;\
+    \}\
+\
+    .mock-line.short \{\
+      width: 65%;\
+    \}\
+\
+    .mock-main \{\
+      padding: 13px;\
+      display: flex;\
+      flex-direction: column;\
+      justify-content: space-between;\
+    \}\
+\
+    .mock-chart \{\
+      height: 96px;\
+      display: flex;\
+      align-items: end;\
+      gap: 7px;\
+    \}\
+\
+    .mock-chart span \{\
+      flex: 1;\
+      background: linear-gradient(to top, #7d55ff, var(--lime));\
+      border-radius: 5px 5px 2px 2px;\
+      opacity: .9;\
+    \}\
+\
+    .mock-chart span:nth-child(1) \{ height: 31%; \}\
+    .mock-chart span:nth-child(2) \{ height: 48%; \}\
+    .mock-chart span:nth-child(3) \{ height: 67%; \}\
+    .mock-chart span:nth-child(4) \{ height: 52%; \}\
+    .mock-chart span:nth-child(5) \{ height: 86%; \}\
+    .mock-chart span:nth-child(6) \{ height: 71%; \}\
+\
+    .float-card \{\
+      position: absolute;\
+      border: 1px solid rgba(255,255,255,.12);\
+      background: rgba(22,27,47,.96);\
+      box-shadow: 0 16px 30px rgba(0,0,0,.28);\
+      backdrop-filter: blur(8px);\
+    \}\
+\
+    .float-purple \{\
+      left: 12px;\
+      top: 120px;\
+      width: 105px;\
+      height: 68px;\
+      border-radius: 14px;\
+      background: linear-gradient(135deg, #7652fa, #ad57e5);\
+      padding: 12px;\
+    \}\
+\
+    .float-lime \{\
+      right: 5px;\
+      bottom: 76px;\
+      width: 103px;\
+      height: 82px;\
+      border-radius: 14px;\
+      padding: 12px;\
+    \}\
+\
+    .float-small \{\
+      width: 78px;\
+      height: 33px;\
+      border-radius: 999px;\
+      background: #fff;\
+      color: #151722;\
+      font-size: 8px;\
+      display: grid;\
+      place-items: center;\
+      font-weight: 700;\
+      left: 0;\
+      bottom: 94px;\
+    \}\
+\
+    .float-badge \{\
+      position: absolute;\
+      padding: 7px 10px;\
+      background: var(--lime);\
+      color: #071006;\
+      font-size: 8px;\
+      border-radius: 99px;\
+      font-weight: 800;\
+      right: 25px;\
+      top: 80px;\
+      box-shadow: 0 0 22px rgba(168,255,42,.28);\
+    \}\
+\
+    .float-label \{\
+      height: 7px;\
+      width: 58px;\
+      background: rgba(255,255,255,.62);\
+      border-radius: 99px;\
+      margin-bottom: 7px;\
+    \}\
+\
+    .mini-chart \{\
+      display: flex;\
+      gap: 5px;\
+      align-items: end;\
+      height: 45px;\
+    \}\
+\
+    .mini-chart span \{\
+      width: 17px;\
+      background: var(--lime);\
+      border-radius: 4px;\
+    \}\
+\
+    .mini-chart span:nth-child(1) \{ height: 20px; \}\
+    .mini-chart span:nth-child(2) \{ height: 30px; \}\
+    .mini-chart span:nth-child(3) \{ height: 42px; \}\
+\
+    /* =========================================================\
+       TRUST / STATS\
+       ========================================================= */\
+\
+    .trust-strip \{\
+      padding: 48px 0 58px;\
+      background: #0b101d;\
+      border-top: 1px solid var(--border);\
+      border-bottom: 1px solid var(--border);\
+    \}\
+\
+    .client-logos \{\
+      display: flex;\
+      align-items: center;\
+      justify-content: center;\
+      gap: clamp(24px, 5vw, 60px);\
+      flex-wrap: wrap;\
+      color: #6f7685;\
+      font-size: 13px;\
+      font-weight: 600;\
+      margin-bottom: 34px;\
+    \}\
+\
+    .stats-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(4, 1fr);\
+      gap: 14px;\
+    \}\
+\
+    .stat-card \{\
+      background: rgba(255,255,255,.025);\
+      border: 1px solid var(--border);\
+      border-radius: 14px;\
+      min-height: 90px;\
+      padding: 18px 20px;\
+    \}\
+\
+    .stat-number \{\
+      color: var(--lime);\
+      font-size: 26px;\
+      font-weight: 700;\
+      margin-bottom: 5px;\
+    \}\
+\
+    .stat-label \{\
+      color: #8f96a5;\
+      font-size: 12px;\
+    \}\
+\
+    /* =========================================================\
+       SERVICE CARDS\
+       ========================================================= */\
+\
+    .section-heading \{\
+      margin-bottom: 52px;\
+    \}\
+\
+    .section-heading .body-lg \{\
+      margin-top: 15px;\
+    \}\
+\
+    .service-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(2, 1fr);\
+      gap: 18px;\
+    \}\
+\
+    .service-card \{\
+      min-height: 250px;\
+      background: #0d1320;\
+      border: 1px solid var(--border);\
+      border-radius: 18px;\
+      padding: 26px;\
+      position: relative;\
+      overflow: hidden;\
+      transition: transform var(--transition), border-color var(--transition);\
+    \}\
+\
+    .service-card:hover \{\
+      transform: translateY(-4px);\
+      border-color: rgba(168,255,42,.22);\
+    \}\
+\
+    .service-card::after \{\
+      content: "";\
+      position: absolute;\
+      width: 160px;\
+      height: 160px;\
+      right: -80px;\
+      bottom: -90px;\
+      background: radial-gradient(circle, rgba(168,255,42,.07), transparent 70%);\
+    \}\
+\
+    .service-icon \{\
+      width: 42px;\
+      height: 42px;\
+      border-radius: 11px;\
+      background: var(--lime);\
+      color: #0c1410;\
+      display: grid;\
+      place-items: center;\
+      margin-bottom: 34px;\
+    \}\
+\
+    .service-card h3 \{\
+      font-size: 23px;\
+      margin-bottom: 12px;\
+    \}\
+\
+    .service-card p \{\
+      color: var(--muted);\
+      font-size: 14px;\
+      line-height: 1.6;\
+      max-width: 430px;\
+    \}\
+\
+    .service-features \{\
+      display: grid;\
+      grid-template-columns: repeat(2, 1fr);\
+      color: #858c9b;\
+      font-size: 11px;\
+      margin-top: 19px;\
+      gap: 7px 22px;\
+    \}\
+\
+    .learn-link \{\
+      color: var(--lime);\
+      display: inline-flex;\
+      gap: 7px;\
+      align-items: center;\
+      font-size: 12px;\
+      font-weight: 700;\
+      margin-top: 20px;\
+    \}\
+\
+    /* =========================================================\
+       HOME FEATURED WORK\
+       ========================================================= */\
+\
+    .featured-row \{\
+      display: grid;\
+      grid-template-columns: 1fr 1fr;\
+      gap: 60px;\
+      align-items: center;\
+      margin-top: 65px;\
+    \}\
+\
+    .featured-row:nth-child(even) .project-visual \{\
+      order: 2;\
+    \}\
+\
+    .project-visual \{\
+      min-height: 310px;\
+      border-radius: 20px;\
+      position: relative;\
+      overflow: hidden;\
+      display: grid;\
+      place-items: center;\
+      border: 1px solid rgba(255,255,255,.08);\
+    \}\
+\
+    .visual-purple \{\
+      background: linear-gradient(135deg, #6b47ff, #a450e8 62%, #fb68aa);\
+    \}\
+\
+    .visual-dark \{\
+      background:\
+        radial-gradient(circle at 70% 80%, #5f46d5, transparent 45%),\
+        linear-gradient(135deg, #14172a, #0e1220);\
+    \}\
+\
+    .visual-light \{\
+      background: linear-gradient(135deg, #6fddff, #eef0ff 52%, #ff89bb);\
+    \}\
+\
+    .phone-set \{\
+      display: flex;\
+      gap: 22px;\
+      align-items: center;\
+    \}\
+\
+    .phone \{\
+      width: 84px;\
+      height: 178px;\
+      border-radius: 16px;\
+      background: #171f2d;\
+      border: 5px solid #242d3b;\
+      position: relative;\
+      overflow: hidden;\
+      box-shadow: 0 14px 28px rgba(0,0,0,.2);\
+    \}\
+\
+    .phone::before \{\
+      content: "";\
+      position: absolute;\
+      width: 35px;\
+      height: 5px;\
+      background: #090d15;\
+      border-radius: 0 0 8px 8px;\
+      left: 50%;\
+      transform: translateX(-50%);\
+    \}\
+\
+    .phone-screen \{\
+      position: absolute;\
+      inset: 9px 5px 5px;\
+      border-radius: 9px;\
+      background: linear-gradient(160deg, #6954e9, #aaff2b);\
+    \}\
+\
+    .phone:nth-child(2) \{\
+      transform: translateY(-14px);\
+    \}\
+\
+    .phone:nth-child(2) .phone-screen \{\
+      background: linear-gradient(160deg, var(--lime), #66d85c);\
+    \}\
+\
+    .phone:nth-child(3) .phone-screen \{\
+      background: linear-gradient(160deg, #d864ec, #7657f0);\
+    \}\
+\
+    .dash-preview \{\
+      width: 280px;\
+      height: 178px;\
+      background: #131927;\
+      border: 8px solid #1e2533;\
+      border-radius: 16px;\
+      padding: 20px 18px;\
+      box-shadow: 0 18px 40px rgba(0,0,0,.3);\
+    \}\
+\
+    .dash-bars \{\
+      height: 110px;\
+      display: flex;\
+      align-items: end;\
+      gap: 9px;\
+    \}\
+\
+    .dash-bars span \{\
+      flex: 1;\
+      background: linear-gradient(to top, #6b51ef, var(--lime));\
+      border-radius: 4px 4px 1px 1px;\
+    \}\
+\
+    .dash-bars span:nth-child(1)\{height:24%\}\
+    .dash-bars span:nth-child(2)\{height:42%\}\
+    .dash-bars span:nth-child(3)\{height:53%\}\
+    .dash-bars span:nth-child(4)\{height:78%\}\
+    .dash-bars span:nth-child(5)\{height:69%\}\
+    .dash-bars span:nth-child(6)\{height:91%\}\
+    .dash-bars span:nth-child(7)\{height:74%\}\
+\
+    .ecom-ui \{\
+      width: 285px;\
+      height: 184px;\
+      display: flex;\
+      gap: 12px;\
+      align-items: end;\
+    \}\
+\
+    .desktop-mock \{\
+      width: 210px;\
+      height: 145px;\
+      border-radius: 13px;\
+      background: white;\
+      padding: 15px;\
+      box-shadow: 0 15px 35px rgba(0,0,0,.2);\
+    \}\
+\
+    .desktop-head \{\
+      width: 55%;\
+      height: 8px;\
+      background: #c8d4df;\
+      border-radius: 10px;\
+      margin-bottom: 14px;\
+    \}\
+\
+    .desktop-hero \{\
+      width: 100%;\
+      height: 70px;\
+      border-radius: 9px;\
+      background: linear-gradient(135deg, #bfeaff, #eee6ff 55%, #ff89b8);\
+    \}\
+\
+    .mobile-mock \{\
+      width: 64px;\
+      height: 130px;\
+      border-radius: 11px;\
+      background: #1d2533;\
+      padding: 6px;\
+    \}\
+\
+    .mobile-mock div \{\
+      height: 100%;\
+      border-radius: 7px;\
+      background: linear-gradient(#885efa, #ec74c5);\
+    \}\
+\
+    .project-copy .eyebrow \{\
+      margin-bottom: 12px;\
+    \}\
+\
+    .project-copy h3 \{\
+      font-size: 31px;\
+      margin-bottom: 13px;\
+    \}\
+\
+    .project-copy p \{\
+      color: var(--muted);\
+      line-height: 1.7;\
+      font-size: 14px;\
+    \}\
+\
+    /* =========================================================\
+       DESIGN + DEVELOPMENT VISUAL\
+       ========================================================= */\
+\
+    .split-showcase \{\
+      display: grid;\
+      grid-template-columns: .85fr 1.15fr;\
+      gap: 80px;\
+      align-items: center;\
+    \}\
+\
+    .tech-art \{\
+      height: 390px;\
+      position: relative;\
+    \}\
+\
+    .center-orbit \{\
+      position: absolute;\
+      width: 270px;\
+      height: 270px;\
+      border: 1px solid rgba(120,80,255,.17);\
+      border-radius: 50%;\
+      right: 40px;\
+      top: 50%;\
+      transform: translateY(-50%);\
+    \}\
+\
+    .center-orbit::before,\
+    .center-orbit::after \{\
+      content: "";\
+      position: absolute;\
+      border: 1px solid rgba(120,80,255,.12);\
+      border-radius: 50%;\
+    \}\
+\
+    .center-orbit::before \{\
+      inset: 30px;\
+    \}\
+\
+    .center-orbit::after \{\
+      inset: 64px;\
+    \}\
+\
+    .code-card \{\
+      position: absolute;\
+      width: 172px;\
+      height: 105px;\
+      padding: 14px;\
+      background: #121a29;\
+      border: 1px solid var(--border);\
+      border-radius: 14px;\
+      top: 50%;\
+      right: 85px;\
+      transform: translateY(-50%);\
+      z-index: 4;\
+    \}\
+\
+    .code-line \{\
+      height: 5px;\
+      border-radius: 99px;\
+      background: #354056;\
+      margin-bottom: 8px;\
+    \}\
+\
+    .code-line:nth-child(2) \{\
+      width: 68%;\
+      background: #7462ec;\
+    \}\
+\
+    .code-line:nth-child(3) \{\
+      width: 85%;\
+    \}\
+\
+    .code-line:nth-child(4) \{\
+      width: 52%;\
+      background: var(--lime);\
+    \}\
+\
+    .tech-float \{\
+      position: absolute;\
+      padding: 9px 12px;\
+      border: 1px solid var(--border);\
+      background: #151d2c;\
+      border-radius: 10px;\
+      font-size: 10px;\
+      color: #c8cbd3;\
+    \}\
+\
+    .tech-float.one \{\
+      right: 10px;\
+      top: 80px;\
+    \}\
+\
+    .tech-float.two \{\
+      left: 50px;\
+      bottom: 92px;\
+    \}\
+\
+    .tech-float.three \{\
+      right: 0;\
+      bottom: 52px;\
+      color: var(--lime);\
+    \}\
+\
+    /* =========================================================\
+       PROCESS PREVIEW\
+       ========================================================= */\
+\
+    .steps-inline \{\
+      display: grid;\
+      grid-template-columns: repeat(6, 1fr);\
+      gap: 12px;\
+      margin-top: 46px;\
+    \}\
+\
+    .step-mini \{\
+      border: 1px solid var(--border);\
+      background: #171e2a;\
+      border-radius: 14px;\
+      padding: 20px 16px;\
+      min-height: 155px;\
+      position: relative;\
+    \}\
+\
+    .step-mini .num \{\
+      width: 28px;\
+      height: 28px;\
+      border-radius: 8px;\
+      background: var(--lime);\
+      color: #0c1308;\
+      display: grid;\
+      place-items: center;\
+      font-size: 11px;\
+      font-weight: 800;\
+      margin-bottom: 25px;\
+    \}\
+\
+    .step-mini h4 \{\
+      font-size: 13px;\
+      letter-spacing: -0.02em;\
+      margin-bottom: 8px;\
+    \}\
+\
+    .step-mini p \{\
+      color: #818899;\
+      font-size: 10px;\
+      line-height: 1.55;\
+    \}\
+\
+    /* =========================================================\
+       TECHNOLOGY\
+       ========================================================= */\
+\
+    .tech-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(5, 1fr);\
+      gap: 14px;\
+      margin-top: 42px;\
+    \}\
+\
+    .tech-group \{\
+      background: #0c1220;\
+      border: 1px solid var(--border);\
+      border-radius: 15px;\
+      padding: 20px;\
+    \}\
+\
+    .tech-group h4 \{\
+      font-size: 12px;\
+      margin-bottom: 15px;\
+    \}\
+\
+    .pill-wrap \{\
+      display: flex;\
+      flex-wrap: wrap;\
+      gap: 7px;\
+    \}\
+\
+    .tech-pill \{\
+      color: #9198a7;\
+      border: 1px solid var(--border);\
+      border-radius: 99px;\
+      padding: 6px 9px;\
+      font-size: 9px;\
+      background: rgba(255,255,255,.02);\
+    \}\
+\
+    /* =========================================================\
+       WHY US\
+       ========================================================= */\
+\
+    .benefit-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(3, 1fr);\
+      gap: 14px;\
+      margin-top: 44px;\
+    \}\
+\
+    .benefit-card \{\
+      border: 1px solid var(--border);\
+      background: #151c28;\
+      border-radius: 14px;\
+      padding: 22px;\
+      min-height: 140px;\
+    \}\
+\
+    .benefit-icon \{\
+      width: 30px;\
+      height: 30px;\
+      border-radius: 8px;\
+      background: var(--lime);\
+      color: #0c1308;\
+      display: grid;\
+      place-items: center;\
+      margin-bottom: 18px;\
+    \}\
+\
+    .benefit-card h4 \{\
+      font-size: 14px;\
+      margin-bottom: 7px;\
+    \}\
+\
+    .benefit-card p \{\
+      font-size: 11px;\
+      color: var(--muted);\
+      line-height: 1.55;\
+    \}\
+\
+    /* =========================================================\
+       TESTIMONIALS\
+       ========================================================= */\
+\
+    .testimonial-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(3, 1fr);\
+      gap: 15px;\
+      margin-top: 40px;\
+    \}\
+\
+    .testimonial \{\
+      background: #171e2b;\
+      border: 1px solid var(--border);\
+      border-radius: 15px;\
+      padding: 22px;\
+    \}\
+\
+    .stars \{\
+      color: var(--lime);\
+      letter-spacing: 2px;\
+      font-size: 12px;\
+      margin-bottom: 18px;\
+    \}\
+\
+    .testimonial blockquote \{\
+      color: #c8ccd5;\
+      font-size: 12px;\
+      line-height: 1.7;\
+      min-height: 105px;\
+    \}\
+\
+    .person \{\
+      display: flex;\
+      align-items: center;\
+      gap: 10px;\
+      margin-top: 18px;\
+    \}\
+\
+    .avatar \{\
+      width: 30px;\
+      height: 30px;\
+      border-radius: 50%;\
+      background: linear-gradient(135deg, #7350ec, #a65ef0);\
+    \}\
+\
+    .person strong \{\
+      display: block;\
+      font-size: 10px;\
+    \}\
+\
+    .person span \{\
+      font-size: 9px;\
+      color: #71798a;\
+    \}\
+\
+    /* =========================================================\
+       FAQ\
+       ========================================================= */\
+\
+    .faq-layout \{\
+      display: grid;\
+      grid-template-columns: .7fr 1.3fr;\
+      gap: 80px;\
+      align-items: start;\
+    \}\
+\
+    .faq-list \{\
+      border-top: 1px solid var(--border);\
+    \}\
+\
+    .faq-item \{\
+      border-bottom: 1px solid var(--border);\
+    \}\
+\
+    .faq-question \{\
+      width: 100%;\
+      min-height: 58px;\
+      border: 0;\
+      background: transparent;\
+      color: #e7e9ef;\
+      display: flex;\
+      align-items: center;\
+      justify-content: space-between;\
+      text-align: left;\
+      font-size: 12px;\
+      gap: 14px;\
+    \}\
+\
+    .faq-icon \{\
+      width: 20px;\
+      height: 20px;\
+      border-radius: 50%;\
+      background: #f4f5f7;\
+      color: #101522;\
+      display: grid;\
+      place-items: center;\
+      flex-shrink: 0;\
+      transition: transform .25s ease;\
+    \}\
+\
+    .faq-item.open .faq-icon \{\
+      transform: rotate(45deg);\
+    \}\
+\
+    .faq-answer \{\
+      max-height: 0;\
+      overflow: hidden;\
+      color: #8c93a2;\
+      font-size: 11px;\
+      line-height: 1.7;\
+      transition: max-height .32s ease, padding .32s ease;\
+    \}\
+\
+    .faq-item.open .faq-answer \{\
+      max-height: 140px;\
+      padding-bottom: 17px;\
+    \}\
+\
+    /* =========================================================\
+       CTA\
+       ========================================================= */\
+\
+    .cta-panel \{\
+      padding: 65px 50px;\
+      border: 1px solid var(--border);\
+      background:\
+        radial-gradient(circle at 80% 20%, rgba(95,72,221,.12), transparent 30%),\
+        #171e2a;\
+      border-radius: 23px;\
+      text-align: center;\
+      position: relative;\
+      overflow: hidden;\
+    \}\
+\
+    .cta-panel h2 \{\
+      font-size: clamp(28px, 4vw, 44px);\
+      margin-bottom: 13px;\
+    \}\
+\
+    .cta-panel p \{\
+      color: var(--muted);\
+      font-size: 12px;\
+      margin-bottom: 24px;\
+    \}\
+\
+    .cta-actions \{\
+      display: flex;\
+      justify-content: center;\
+      gap: 10px;\
+      flex-wrap: wrap;\
+    \}\
+\
+    /* =========================================================\
+       SERVICES OVERVIEW PAGE\
+       ========================================================= */\
+\
+    .overview-service-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(2, 1fr);\
+      gap: 18px;\
+    \}\
+\
+    .overview-service \{\
+      background: #171e2a;\
+      border: 1px solid var(--border);\
+      border-radius: 18px;\
+      padding: 28px;\
+      min-height: 220px;\
+      transition: .22s ease;\
+    \}\
+\
+    .overview-service:hover \{\
+      border-color: rgba(168,255,42,.22);\
+      transform: translateY(-4px);\
+    \}\
+\
+    .overview-icon \{\
+      width: 45px;\
+      height: 45px;\
+      border-radius: 12px;\
+      background: #202838;\
+      display: grid;\
+      place-items: center;\
+      color: #e9ebef;\
+      margin-bottom: 30px;\
+    \}\
+\
+    .overview-service h3 \{\
+      font-size: 23px;\
+      margin-bottom: 10px;\
+    \}\
+\
+    .overview-service p \{\
+      color: var(--muted);\
+      font-size: 14px;\
+      line-height: 1.6;\
+    \}\
+\
+    .engagement-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(3, 1fr);\
+      gap: 12px;\
+      margin-top: 42px;\
+    \}\
+\
+    .check-card \{\
+      min-height: 72px;\
+      border: 1px solid var(--border-strong);\
+      border-radius: 14px;\
+      display: flex;\
+      align-items: center;\
+      gap: 14px;\
+      padding: 16px;\
+      background: rgba(0,0,0,.05);\
+      font-size: 12px;\
+    \}\
+\
+    .check \{\
+      width: 28px;\
+      height: 28px;\
+      border-radius: 50%;\
+      background: var(--lime);\
+      color: #071006;\
+      display: grid;\
+      place-items: center;\
+      flex-shrink: 0;\
+    \}\
+\
+    /* =========================================================\
+       SERVICE DETAIL PAGE\
+       ========================================================= */\
+\
+    .capability-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(3, 1fr);\
+      gap: 12px;\
+      margin-top: 42px;\
+    \}\
+\
+    .capability-item \{\
+      min-height: 64px;\
+      display: flex;\
+      align-items: center;\
+      gap: 13px;\
+      border: 1px solid var(--border);\
+      background: #0d1422;\
+      border-radius: 13px;\
+      padding: 13px 16px;\
+      color: #c0c5ce;\
+      font-size: 12px;\
+    \}\
+\
+    .capability-icon \{\
+      width: 31px;\
+      height: 31px;\
+      border-radius: 8px;\
+      background: #222a3a;\
+      color: var(--lime);\
+      display: grid;\
+      place-items: center;\
+      flex-shrink: 0;\
+    \}\
+\
+    .capability-icon.purple-icon \{\
+      background: #7955ee;\
+      color: #fff;\
+    \}\
+\
+    .service-process \{\
+      display: flex;\
+      align-items: center;\
+      gap: 12px;\
+      margin-top: 42px;\
+      overflow-x: auto;\
+      padding-bottom: 5px;\
+      scrollbar-width: none;\
+    \}\
+\
+    .service-process::-webkit-scrollbar \{\
+      display: none;\
+    \}\
+\
+    .process-pill \{\
+      min-width: 126px;\
+      height: 43px;\
+      border-radius: 99px;\
+      border: 1px solid var(--border-strong);\
+      background: #1a212d;\
+      display: grid;\
+      place-items: center;\
+      font-size: 11px;\
+      color: #d3d6dd;\
+      white-space: nowrap;\
+    \}\
+\
+    .process-arrow \{\
+      color: var(--lime);\
+      font-size: 18px;\
+      flex-shrink: 0;\
+    \}\
+\
+    .deliverable-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(2, 1fr);\
+      gap: 12px;\
+      margin-top: 42px;\
+    \}\
+\
+    .service-cta \{\
+      text-align: center;\
+      padding: 70px 0;\
+    \}\
+\
+    .service-cta h3 \{\
+      font-size: 28px;\
+      margin-bottom: 24px;\
+    \}\
+\
+    /* =========================================================\
+       WORK / PORTFOLIO PAGE\
+       ========================================================= */\
+\
+    .work-filters \{\
+      display: flex;\
+      gap: 8px;\
+      flex-wrap: wrap;\
+      margin-top: 28px;\
+    \}\
+\
+    .filter-btn \{\
+      min-height: 34px;\
+      padding: 0 15px;\
+      border-radius: 99px;\
+      border: 1px solid var(--border);\
+      color: #697183;\
+      background: transparent;\
+      font-size: 10px;\
+      transition: .2s ease;\
+    \}\
+\
+    .filter-btn:hover,\
+    .filter-btn.active \{\
+      background: var(--lime);\
+      border-color: var(--lime);\
+      color: #071006;\
+      font-weight: 700;\
+    \}\
+\
+    .portfolio-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(2, 1fr);\
+      gap: 46px 24px;\
+    \}\
+\
+    .portfolio-item \{\
+      transition: opacity .24s ease, transform .24s ease;\
+    \}\
+\
+    .portfolio-item.hidden \{\
+      opacity: 0;\
+      transform: scale(.98);\
+      display: none;\
+    \}\
+\
+    .portfolio-thumb \{\
+      height: 355px;\
+      border-radius: 20px;\
+      overflow: hidden;\
+      position: relative;\
+      border: 1px solid rgba(255,255,255,.07);\
+      display: grid;\
+      place-items: center;\
+    \}\
+\
+    .thumb-tags \{\
+      display: flex;\
+      gap: 6px;\
+      position: absolute;\
+      left: 17px;\
+      top: 17px;\
+      z-index: 4;\
+    \}\
+\
+    .thumb-tag \{\
+      padding: 7px 10px;\
+      border-radius: 99px;\
+      background: #fff;\
+      color: #171b25;\
+      font-size: 9px;\
+      font-weight: 700;\
+    \}\
+\
+    .portfolio-info \{\
+      padding-top: 14px;\
+    \}\
+\
+    .portfolio-type \{\
+      color: #687083;\
+      text-transform: uppercase;\
+      letter-spacing: .15em;\
+      font-size: 9px;\
+      font-weight: 700;\
+      margin-bottom: 7px;\
+    \}\
+\
+    .portfolio-info h3 \{\
+      font-size: 18px;\
+      margin-bottom: 8px;\
+    \}\
+\
+    .portfolio-info p \{\
+      font-size: 11px;\
+      color: #7f8797;\
+      line-height: 1.6;\
+    \}\
+\
+    .abstract-square \{\
+      width: 110px;\
+      height: 110px;\
+      border-radius: 15px;\
+      background: rgba(255,255,255,.16);\
+      border: 1px solid rgba(255,255,255,.22);\
+      box-shadow: inset 0 0 35px rgba(255,255,255,.05);\
+    \}\
+\
+    .portfolio-purple \{\
+      background: linear-gradient(140deg,#7952f7 0%,#9f54df 58%,#f16ea8 100%);\
+    \}\
+\
+    .portfolio-dark \{\
+      background:\
+        radial-gradient(circle at 82% 84%, rgba(100,75,255,.82), transparent 45%),\
+        linear-gradient(135deg,#17192c,#0b1020);\
+    \}\
+\
+    .portfolio-pink \{\
+      background: linear-gradient(140deg,#78dcff,#e9edff 55%,#ff84b9);\
+    \}\
+\
+    .portfolio-green \{\
+      background: linear-gradient(135deg,#a9ff41 0%,#9a79f8 46%,#1d2340 100%);\
+    \}\
+\
+    .portfolio-magenta \{\
+      background: linear-gradient(135deg,#ee6ba5,#9b55e7 52%,#1a1735);\
+    \}\
+\
+    .portfolio-blue \{\
+      background: linear-gradient(135deg,#b0f5ff,#67ceff 45%,#7967ee);\
+    \}\
+\
+    /* =========================================================\
+       PROCESS PAGE\
+       ========================================================= */\
+\
+    .process-list \{\
+      display: flex;\
+      flex-direction: column;\
+      gap: 1px;\
+    \}\
+\
+    .process-row \{\
+      min-height: 96px;\
+      display: grid;\
+      grid-template-columns: 200px 1fr;\
+      align-items: center;\
+      border: 1px solid var(--border);\
+      background: #0c1220;\
+      border-radius: 14px;\
+      padding: 18px 22px;\
+      margin-bottom: 8px;\
+    \}\
+\
+    .process-left \{\
+      display: flex;\
+      align-items: center;\
+      gap: 18px;\
+    \}\
+\
+    .process-number \{\
+      color: var(--lime);\
+      font-size: 28px;\
+      font-weight: 650;\
+      letter-spacing: -.04em;\
+    \}\
+\
+    .process-icon \{\
+      width: 38px;\
+      height: 38px;\
+      display: grid;\
+      place-items: center;\
+      border-radius: 9px;\
+      color: var(--lime);\
+      background: #1c2432;\
+    \}\
+\
+    .process-row h3 \{\
+      font-size: 15px;\
+      margin-bottom: 6px;\
+      letter-spacing: -.02em;\
+    \}\
+\
+    .process-row p \{\
+      color: #7e8696;\
+      font-size: 11px;\
+      line-height: 1.6;\
+    \}\
+\
+    .sync-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(3, 1fr);\
+      gap: 12px;\
+      margin-top: 40px;\
+    \}\
+\
+    /* =========================================================\
+       ABOUT PAGE\
+       ========================================================= */\
+\
+    .about-grid \{\
+      display: grid;\
+      grid-template-columns: 1fr 1fr;\
+      gap: 80px;\
+      align-items: start;\
+    \}\
+\
+    .about-copy p \{\
+      color: var(--muted);\
+      line-height: 1.75;\
+      margin-bottom: 18px;\
+      font-size: 15px;\
+    \}\
+\
+    .about-panel \{\
+      background: #161d2a;\
+      border: 1px solid var(--border);\
+      border-radius: 20px;\
+      padding: 28px;\
+    \}\
+\
+    .about-panel h3 \{\
+      font-size: 20px;\
+      margin-bottom: 20px;\
+    \}\
+\
+    .value-list \{\
+      display: grid;\
+      gap: 12px;\
+    \}\
+\
+    .value-item \{\
+      display: flex;\
+      gap: 13px;\
+      align-items: flex-start;\
+      padding: 15px;\
+      border: 1px solid var(--border);\
+      border-radius: 12px;\
+      background: rgba(0,0,0,.07);\
+    \}\
+\
+    .value-item .check \{\
+      width: 24px;\
+      height: 24px;\
+    \}\
+\
+    .value-item strong \{\
+      display: block;\
+      font-size: 12px;\
+      margin-bottom: 4px;\
+    \}\
+\
+    .value-item span \{\
+      color: var(--muted);\
+      font-size: 10px;\
+      line-height: 1.5;\
+    \}\
+\
+    /* =========================================================\
+       CONTACT PAGE\
+       ========================================================= */\
+\
+    .contact-layout \{\
+      display: grid;\
+      grid-template-columns: .75fr 1.25fr;\
+      gap: 32px;\
+      margin-top: 48px;\
+      align-items: start;\
+    \}\
+\
+    .contact-cards \{\
+      display: flex;\
+      flex-direction: column;\
+      gap: 13px;\
+    \}\
+\
+    .contact-card \{\
+      background: #1c2330;\
+      border: 1px solid var(--border);\
+      border-radius: 17px;\
+      padding: 22px;\
+      min-height: 105px;\
+    \}\
+\
+    .contact-card label \{\
+      display: block;\
+      color: var(--lime);\
+      font-weight: 700;\
+      font-size: 10px;\
+      letter-spacing: .15em;\
+      margin-bottom: 12px;\
+    \}\
+\
+    .contact-card strong \{\
+      display: block;\
+      font-size: 14px;\
+      margin-bottom: 3px;\
+    \}\
+\
+    .contact-card span \{\
+      font-size: 11px;\
+      color: #7d8595;\
+    \}\
+\
+    .contact-form \{\
+      background: #1b222e;\
+      border: 1px solid var(--border);\
+      border-radius: 20px;\
+      padding: 28px;\
+    \}\
+\
+    .form-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(2, 1fr);\
+      gap: 18px;\
+    \}\
+\
+    .field \{\
+      display: flex;\
+      flex-direction: column;\
+      gap: 7px;\
+    \}\
+\
+    .field.full \{\
+      grid-column: 1 / -1;\
+    \}\
+\
+    .field label \{\
+      font-size: 10px;\
+      font-weight: 700;\
+      color: #b6bbc5;\
+      text-transform: uppercase;\
+      letter-spacing: .04em;\
+    \}\
+\
+    .field input,\
+    .field select,\
+    .field textarea \{\
+      width: 100%;\
+      border: 1px solid var(--border-strong);\
+      background: #0d1423;\
+      color: #f5f7fa;\
+      outline: none;\
+      border-radius: 11px;\
+      transition: border-color .2s ease, box-shadow .2s ease;\
+    \}\
+\
+    .field input,\
+    .field select \{\
+      height: 48px;\
+      padding: 0 14px;\
+    \}\
+\
+    .field textarea \{\
+      min-height: 130px;\
+      resize: vertical;\
+      padding: 14px;\
+    \}\
+\
+    .field input:focus,\
+    .field select:focus,\
+    .field textarea:focus \{\
+      border-color: rgba(168,255,42,.55);\
+      box-shadow: 0 0 0 3px rgba(168,255,42,.06);\
+    \}\
+\
+    .field input::placeholder,\
+    .field textarea::placeholder \{\
+      color: #656d7c;\
+    \}\
+\
+    .form-consent \{\
+      margin-top: 18px;\
+      display: flex;\
+      align-items: flex-start;\
+      gap: 9px;\
+      color: #858c9a;\
+      font-size: 10px;\
+      line-height: 1.45;\
+    \}\
+\
+    .form-consent input \{\
+      accent-color: var(--lime);\
+      margin-top: 2px;\
+    \}\
+\
+    .form-submit \{\
+      margin-top: 22px;\
+    \}\
+\
+    .form-status \{\
+      margin-top: 14px;\
+      color: var(--lime);\
+      font-size: 11px;\
+      min-height: 18px;\
+    \}\
+\
+    /* =========================================================\
+       FOOTER\
+       ========================================================= */\
+\
+    .site-footer \{\
+      padding: 72px 0 28px;\
+      border-top: 1px solid var(--border);\
+      background: #080d1b;\
+    \}\
+\
+    .footer-main \{\
+      display: grid;\
+      grid-template-columns: 1.7fr repeat(3, 1fr);\
+      gap: 60px;\
+      padding-bottom: 50px;\
+    \}\
+\
+    .footer-brand p \{\
+      max-width: 330px;\
+      color: #c2c5cd;\
+      font-size: 11px;\
+      line-height: 1.6;\
+      margin-top: 18px;\
+    \}\
+\
+    .socials \{\
+      display: flex;\
+      gap: 9px;\
+      margin-top: 20px;\
+    \}\
+\
+    .social \{\
+      width: 34px;\
+      height: 34px;\
+      border: 1px solid var(--border-strong);\
+      border-radius: 50%;\
+      display: grid;\
+      place-items: center;\
+      color: #c1c6cf;\
+      font-size: 11px;\
+      transition: .2s ease;\
+    \}\
+\
+    .social:hover \{\
+      color: var(--lime);\
+      border-color: rgba(168,255,42,.32);\
+      transform: translateY(-2px);\
+    \}\
+\
+    .footer-col h4 \{\
+      color: #747c8d;\
+      font-size: 11px;\
+      font-weight: 500;\
+      margin-bottom: 17px;\
+      letter-spacing: 0;\
+    \}\
+\
+    .footer-col a \{\
+      display: block;\
+      color: #a9afba;\
+      font-size: 11px;\
+      margin-bottom: 10px;\
+      transition: color .2s ease;\
+    \}\
+\
+    .footer-col a:hover \{\
+      color: var(--lime);\
+    \}\
+\
+    .footer-bottom \{\
+      border-top: 1px solid var(--border);\
+      padding-top: 26px;\
+      display: flex;\
+      justify-content: space-between;\
+      align-items: center;\
+      gap: 20px;\
+      color: #6c7483;\
+      font-size: 9px;\
+    \}\
+\
+    .footer-meta \{\
+      display: flex;\
+      gap: 28px;\
+      flex-wrap: wrap;\
+    \}\
+\
+    /* =========================================================\
+       RESPONSIVE\
+       ========================================================= */\
+\
+    @media (max-width: 1050px) \{\
+      .nav-links \{\
+        gap: 18px;\
+      \}\
+\
+      .home-hero-grid,\
+      .split-showcase,\
+      .faq-layout,\
+      .about-grid \{\
+        grid-template-columns: 1fr;\
+      \}\
+\
+      .hero-art \{\
+        max-width: 580px;\
+        width: 100%;\
+        margin-inline: auto;\
+      \}\
+\
+      .tech-art \{\
+        max-width: 620px;\
+      \}\
+\
+      .steps-inline \{\
+        grid-template-columns: repeat(3, 1fr);\
+      \}\
+\
+      .tech-grid \{\
+        grid-template-columns: repeat(3, 1fr);\
+      \}\
+\
+      .footer-main \{\
+        grid-template-columns: 1.5fr repeat(3, 1fr);\
+        gap: 35px;\
+      \}\
+\
+      .contact-layout \{\
+        grid-template-columns: .8fr 1.2fr;\
+      \}\
+    \}\
+\
+    @media (max-width: 820px) \{\
+      .site-header \{\
+        height: 70px;\
+      \}\
+\
+      .desktop-nav,\
+      .header-cta \{\
+        display: none;\
+      \}\
+\
+      .mobile-menu-btn \{\
+        display: grid;\
+        place-items: center;\
+      \}\
+\
+      .mobile-menu \{\
+        display: block;\
+        position: fixed;\
+        inset: 70px 0 0;\
+        z-index: 999;\
+        background: rgba(8,13,27,.98);\
+        transform: translateX(100%);\
+        transition: transform .28s ease;\
+        padding: 25px 22px 40px;\
+        overflow-y: auto;\
+      \}\
+\
+      .mobile-menu.open \{\
+        transform: translateX(0);\
+      \}\
+\
+      .mobile-menu a \{\
+        display: block;\
+        padding: 15px 2px;\
+        border-bottom: 1px solid var(--border);\
+        font-size: 17px;\
+        color: #d7dae1;\
+      \}\
+\
+      .mobile-service-label \{\
+        color: var(--lime);\
+        font-size: 11px;\
+        margin: 20px 0 6px;\
+        text-transform: uppercase;\
+        font-weight: 700;\
+        letter-spacing: .12em;\
+      \}\
+\
+      .mobile-menu .mobile-sub \{\
+        padding-left: 14px;\
+        color: #8e95a5;\
+        font-size: 14px;\
+      \}\
+\
+      .mobile-menu .btn \{\
+        margin-top: 25px;\
+        width: 100%;\
+      \}\
+\
+      .section \{\
+        padding: 78px 0;\
+      \}\
+\
+      .page-hero \{\
+        min-height: 450px;\
+      \}\
+\
+      .home-hero \{\
+        padding: 78px 0 60px;\
+      \}\
+\
+      .home-hero-grid \{\
+        gap: 35px;\
+      \}\
+\
+      .service-grid,\
+      .overview-service-grid,\
+      .portfolio-grid \{\
+        grid-template-columns: 1fr;\
+      \}\
+\
+      .featured-row \{\
+        grid-template-columns: 1fr;\
+        gap: 25px;\
+      \}\
+\
+      .featured-row:nth-child(even) .project-visual \{\
+        order: initial;\
+      \}\
+\
+      .stats-grid,\
+      .benefit-grid,\
+      .testimonial-grid,\
+      .engagement-grid,\
+      .sync-grid \{\
+        grid-template-columns: repeat(2, 1fr);\
+      \}\
+\
+      .capability-grid \{\
+        grid-template-columns: repeat(2, 1fr);\
+      \}\
+\
+      .tech-grid \{\
+        grid-template-columns: repeat(2, 1fr);\
+      \}\
+\
+      .process-row \{\
+        grid-template-columns: 165px 1fr;\
+      \}\
+\
+      .contact-layout \{\
+        grid-template-columns: 1fr;\
+      \}\
+\
+      .footer-main \{\
+        grid-template-columns: repeat(2, 1fr);\
+      \}\
+    \}\
+\
+    @media (max-width: 580px) \{\
+      .container \{\
+        width: min(100% - 28px, var(--container));\
+      \}\
+\
+      .section \{\
+        padding: 66px 0;\
+      \}\
+\
+      .home-hero \{\
+        min-height: auto;\
+      \}\
+\
+      .hero-title \{\
+        font-size: 44px;\
+      \}\
+\
+      .page-title \{\
+        font-size: 40px;\
+      \}\
+\
+      .section-title \{\
+        font-size: 31px;\
+      \}\
+\
+      .body-lg \{\
+        font-size: 15px;\
+      \}\
+\
+      .hero-actions \{\
+        align-items: stretch;\
+      \}\
+\
+      .hero-actions .btn \{\
+        width: 100%;\
+      \}\
+\
+      .hero-art \{\
+        height: 340px;\
+      \}\
+\
+      .mock-dashboard \{\
+        width: 260px;\
+        height: 190px;\
+      \}\
+\
+      .mock-content \{\
+        height: 130px;\
+      \}\
+\
+      .float-purple \{\
+        left: 0;\
+      \}\
+\
+      .float-lime \{\
+        right: 0;\
+      \}\
+\
+      .stats-grid,\
+      .benefit-grid,\
+      .testimonial-grid,\
+      .engagement-grid,\
+      .sync-grid,\
+      .capability-grid,\
+      .deliverable-grid,\
+      .tech-grid,\
+      .steps-inline \{\
+        grid-template-columns: 1fr;\
+      \}\
+\
+      .service-features \{\
+        grid-template-columns: 1fr;\
+      \}\
+\
+      .project-visual,\
+      .portfolio-thumb \{\
+        min-height: 260px;\
+        height: 260px;\
+      \}\
+\
+      .tech-art \{\
+        transform: scale(.86);\
+        transform-origin: center left;\
+      \}\
+\
+      .process-row \{\
+        grid-template-columns: 1fr;\
+        gap: 14px;\
+      \}\
+\
+      .form-grid \{\
+        grid-template-columns: 1fr;\
+      \}\
+\
+      .field.full \{\
+        grid-column: auto;\
+      \}\
+\
+      .contact-form \{\
+        padding: 20px;\
+      \}\
+\
+      .cta-panel \{\
+        padding: 48px 20px;\
+      \}\
+\
+      .footer-main \{\
+        grid-template-columns: 1fr;\
+        gap: 35px;\
+      \}\
+\
+      .footer-bottom \{\
+        flex-direction: column;\
+        align-items: flex-start;\
+      \}\
+\
+      .footer-meta \{\
+        gap: 12px;\
+      \}\
+    \}\
+  </style>\
+</head>\
+\
+<body>\
+\
+  <!-- =======================================================\
+       HEADER\
+       ======================================================= -->\
+\
+  <header class="site-header">\
+    <div class="container nav-wrap">\
+\
+      <a href="#home" class="brand route-link" aria-label="Pixelorbits Home">\
+        <span class="logo-box">\
+          <span class="logo-pixel">\
+            <span></span>\
+            <span></span>\
+            <span></span>\
+            <span></span>\
+          </span>\
+          <span class="logo-orbit"></span>\
+        </span>\
+\
+        <span class="brand-name">PIXELORBITS</span>\
+      </a>\
+\
+      <nav class="desktop-nav">\
+        <ul class="nav-links">\
+          <li>\
+            <a class="nav-link route-link" data-route-link="home" href="#home">Home</a>\
+          </li>\
+\
+          <li class="nav-dropdown">\
+            <button class="nav-dropdown-btn">\
+              Services\
+              <i data-lucide="chevron-down" width="15"></i>\
+            </button>\
+\
+            <div class="dropdown-menu">\
+              <a href="#services" class="dropdown-link route-link">\
+                <span class="dropdown-icon">\
+                  <i data-lucide="layout-grid" width="14"></i>\
+                </span>\
+                All Services\
+              </a>\
+\
+              <a href="#uiux" class="dropdown-link route-link">\
+                <span class="dropdown-icon">\
+                  <i data-lucide="palette" width="14"></i>\
+                </span>\
+                UI/UX Design\
+              </a>\
+\
+              <a href="#mobile" class="dropdown-link route-link">\
+                <span class="dropdown-icon">\
+                  <i data-lucide="smartphone" width="14"></i>\
+                </span>\
+                Mobile App Development\
+              </a>\
+\
+              <a href="#web" class="dropdown-link route-link">\
+                <span class="dropdown-icon">\
+                  <i data-lucide="globe" width="14"></i>\
+                </span>\
+                Web Development\
+              </a>\
+\
+              <a href="#software" class="dropdown-link route-link">\
+                <span class="dropdown-icon">\
+                  <i data-lucide="cpu" width="14"></i>\
+                </span>\
+                Custom Software\
+              </a>\
+            </div>\
+          </li>\
+\
+          <li>\
+            <a class="nav-link route-link" data-route-link="work" href="#work">Work</a>\
+          </li>\
+\
+          <li>\
+            <a class="nav-link route-link" data-route-link="process" href="#process">Process</a>\
+          </li>\
+\
+          <li>\
+            <a class="nav-link route-link" data-route-link="about" href="#about">About</a>\
+          </li>\
+\
+          <li>\
+            <a class="nav-link route-link" data-route-link="contact" href="#contact">Contact</a>\
+          </li>\
+        </ul>\
+      </nav>\
+\
+      <a href="#contact" class="btn btn-primary btn-sm header-cta route-link">\
+        Start a Project\
+        <i data-lucide="arrow-right" width="15"></i>\
+      </a>\
+\
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">\
+        <i data-lucide="menu" width="20"></i>\
+      </button>\
+    </div>\
+  </header>\
+\
+  <nav class="mobile-menu" id="mobileMenu">\
+    <a href="#home" class="route-link">Home</a>\
+\
+    <div class="mobile-service-label">Services</div>\
+    <a href="#services" class="route-link mobile-sub">All Services</a>\
+    <a href="#uiux" class="route-link mobile-sub">UI/UX Design</a>\
+    <a href="#mobile" class="route-link mobile-sub">Mobile App Development</a>\
+    <a href="#web" class="route-link mobile-sub">Web Development</a>\
+    <a href="#software" class="route-link mobile-sub">Custom Software</a>\
+\
+    <a href="#work" class="route-link">Work</a>\
+    <a href="#process" class="route-link">Process</a>\
+    <a href="#about" class="route-link">About</a>\
+    <a href="#contact" class="route-link">Contact</a>\
+\
+    <a href="#contact" class="btn btn-primary route-link">\
+      Start a Project\
+      <i data-lucide="arrow-right" width="15"></i>\
+    </a>\
+  </nav>\
+\
+\
+  <!-- =======================================================\
+       HOME PAGE\
+       ======================================================= -->\
+\
+  <main class="page active" id="page-home" data-page="home">\
+\
+    <section class="home-hero">\
+      <div class="container">\
+        <div class="home-hero-grid">\
+\
+          <div class="hero-copy">\
+            <div class="eyebrow">Design \'b7 Build \'b7 Scale</div>\
+\
+            <h1 class="hero-title">\
+              We Design and Build\
+              <span class="hero-highlight">Digital Products</span>\
+              That Move Businesses Forward.\
+            </h1>\
+\
+            <p class="body-lg">\
+              From product strategy and UI/UX design to development and launch,\
+              Pixelorbits creates digital experiences that are clear, useful\
+              and ready to grow.\
+            </p>\
+\
+            <div class="hero-actions">\
+              <a href="#contact" class="btn btn-primary route-link">\
+                Start a Project\
+                <i data-lucide="arrow-right" width="15"></i>\
+              </a>\
+\
+              <a href="#work" class="btn btn-secondary route-link">\
+                Explore Our Work\
+                <i data-lucide="arrow-up-right" width="15"></i>\
+              </a>\
+            </div>\
+\
+            <div class="hero-note">\
+              UI/UX \'b7 Mobile Apps \'b7 Websites \'b7 Custom Software\
+            </div>\
+          </div>\
+\
+          <div class="hero-art" aria-hidden="true">\
+            <div class="orbit"></div>\
+            <div class="orbit"></div>\
+            <div class="orbit"></div>\
+\
+            <div class="mock-dashboard">\
+              <div class="mock-topbar">\
+                <div class="mock-dots">\
+                  <span></span><span></span><span></span>\
+                </div>\
+                <div class="mock-chip"></div>\
+              </div>\
+\
+              <div class="mock-content">\
+                <div class="mock-side">\
+                  <div class="mock-line"></div>\
+                  <div class="mock-line short"></div>\
+                  <div class="mock-line"></div>\
+                  <div class="mock-line short"></div>\
+                </div>\
+\
+                <div class="mock-main">\
+                  <div class="mock-line short"></div>\
+\
+                  <div class="mock-chart">\
+                    <span></span>\
+                    <span></span>\
+                    <span></span>\
+                    <span></span>\
+                    <span></span>\
+                    <span></span>\
+                  </div>\
+                </div>\
+              </div>\
+            </div>\
+\
+            <div class="float-card float-purple">\
+              <div class="float-label"></div>\
+              <div class="float-label" style="width:38px"></div>\
+            </div>\
+\
+            <div class="float-card float-lime">\
+              <div class="mini-chart">\
+                <span></span>\
+                <span></span>\
+                <span></span>\
+              </div>\
+            </div>\
+\
+            <div class="float-card float-small">Product UI</div>\
+            <div class="float-badge">Ready to ship</div>\
+          </div>\
+\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="trust-strip">\
+      <div class="container">\
+\
+        <div class="client-logos">\
+          <span>Nova</span>\
+          <span>Zenith</span>\
+          <span>Lumen Labs</span>\
+          <span>Orbit Co.</span>\
+          <span>Vertex</span>\
+          <span>Pulse</span>\
+          <span>Prism</span>\
+          <span>Cadence</span>\
+        </div>\
+\
+        <div class="stats-grid">\
+          <div class="stat-card">\
+            <div class="stat-number">50+</div>\
+            <div class="stat-label">Digital projects delivered</div>\
+          </div>\
+\
+          <div class="stat-card">\
+            <div class="stat-number">20+</div>\
+            <div class="stat-label">Businesses supported</div>\
+          </div>\
+\
+          <div class="stat-card">\
+            <div class="stat-number">5+</div>\
+            <div class="stat-label">Years combined experience</div>\
+          </div>\
+\
+          <div class="stat-card">\
+            <div class="stat-number">10+</div>\
+            <div class="stat-label">Product categories</div>\
+          </div>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section section-alt">\
+      <div class="container">\
+\
+        <div class="section-heading">\
+          <div class="eyebrow">Our Services</div>\
+\
+          <h2 class="section-title">\
+            Everything You Need to Build a Better Digital Product.\
+          </h2>\
+\
+          <p class="body-lg">\
+            Strategy, design and development working together so your product\
+            feels cohesive from the first screen to the final release.\
+          </p>\
+        </div>\
+\
+        <div class="service-grid">\
+\
+          <article class="service-card">\
+            <div class="service-icon">\
+              <i data-lucide="palette" width="20"></i>\
+            </div>\
+\
+            <h3>UI/UX Design</h3>\
+\
+            <p>\
+              Clear, user-focused interfaces designed around usability,\
+              business goals and a consistent visual system.\
+            </p>\
+\
+            <div class="service-features">\
+              <span>\'95 Product discovery</span>\
+              <span>\'95 Wireframes</span>\
+              <span>\'95 Design systems</span>\
+              <span>\'95 Prototypes</span>\
+            </div>\
+\
+            <a href="#uiux" class="learn-link route-link">\
+              Explore UI/UX Design\
+              <i data-lucide="arrow-right" width="13"></i>\
+            </a>\
+          </article>\
+\
+\
+          <article class="service-card">\
+            <div class="service-icon">\
+              <i data-lucide="smartphone" width="20"></i>\
+            </div>\
+\
+            <h3>Mobile App Development</h3>\
+\
+            <p>\
+              Fast, scalable mobile applications for Android and iOS,\
+              built with reliable architecture and clean interfaces.\
+            </p>\
+\
+            <div class="service-features">\
+              <span>\'95 Android apps</span>\
+              <span>\'95 iOS apps</span>\
+              <span>\'95 Cross-platform</span>\
+              <span>\'95 API integration</span>\
+            </div>\
+\
+            <a href="#mobile" class="learn-link route-link">\
+              Explore Mobile Apps\
+              <i data-lucide="arrow-right" width="13"></i>\
+            </a>\
+          </article>\
+\
+\
+          <article class="service-card">\
+            <div class="service-icon">\
+              <i data-lucide="globe" width="20"></i>\
+            </div>\
+\
+            <h3>Web Development</h3>\
+\
+            <p>\
+              Responsive websites and web applications that combine strong\
+              presentation, speed and maintainable technology.\
+            </p>\
+\
+            <div class="service-features">\
+              <span>\'95 Websites</span>\
+              <span>\'95 Web apps</span>\
+              <span>\'95 SaaS platforms</span>\
+              <span>\'95 E-commerce</span>\
+            </div>\
+\
+            <a href="#web" class="learn-link route-link">\
+              Explore Web Development\
+              <i data-lucide="arrow-right" width="13"></i>\
+            </a>\
+          </article>\
+\
+\
+          <article class="service-card">\
+            <div class="service-icon">\
+              <i data-lucide="cpu" width="20"></i>\
+            </div>\
+\
+            <h3>Custom Software</h3>\
+\
+            <p>\
+              Purpose-built systems, dashboards and internal tools designed\
+              around your actual workflows and business requirements.\
+            </p>\
+\
+            <div class="service-features">\
+              <span>\'95 Admin portals</span>\
+              <span>\'95 Dashboards</span>\
+              <span>\'95 Automation</span>\
+              <span>\'95 Integrations</span>\
+            </div>\
+\
+            <a href="#software" class="learn-link route-link">\
+              Explore Custom Software\
+              <i data-lucide="arrow-right" width="13"></i>\
+            </a>\
+          </article>\
+\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+\
+        <div class="section-heading">\
+          <div class="eyebrow">Selected Work</div>\
+\
+          <h2 class="section-title">\
+            Products Designed to Create Real Impact.\
+          </h2>\
+\
+          <p class="body-lg">\
+            Selected digital experiences across mobile apps, platforms,\
+            dashboards and websites.\
+          </p>\
+        </div>\
+\
+\
+        <div class="featured-row">\
+          <div class="project-visual visual-purple">\
+            <div class="phone-set">\
+              <div class="phone"><div class="phone-screen"></div></div>\
+              <div class="phone"><div class="phone-screen"></div></div>\
+              <div class="phone"><div class="phone-screen"></div></div>\
+            </div>\
+          </div>\
+\
+          <div class="project-copy">\
+            <div class="eyebrow">Mobile Apps</div>\
+            <h3>Gamified Rewards App</h3>\
+            <p>\
+              A complete engagement experience with tasks, user profiles,\
+              rewards, wallets and gamified interactions.\
+            </p>\
+\
+            <a href="#work" class="learn-link route-link">\
+              View project\
+              <i data-lucide="arrow-right" width="13"></i>\
+            </a>\
+          </div>\
+        </div>\
+\
+\
+        <div class="featured-row">\
+          <div class="project-visual visual-dark">\
+            <div class="dash-preview">\
+              <div class="dash-bars">\
+                <span></span>\
+                <span></span>\
+                <span></span>\
+                <span></span>\
+                <span></span>\
+                <span></span>\
+                <span></span>\
+              </div>\
+            </div>\
+          </div>\
+\
+          <div class="project-copy">\
+            <div class="eyebrow">SaaS / Dashboards</div>\
+            <h3>SaaS Analytics Dashboard</h3>\
+            <p>\
+              A scalable dashboard designed to transform dense business data\
+              into clear metrics, trends and actionable information.\
+            </p>\
+\
+            <a href="#work" class="learn-link route-link">\
+              View project\
+              <i data-lucide="arrow-right" width="13"></i>\
+            </a>\
+          </div>\
+        </div>\
+\
+\
+        <div class="featured-row">\
+          <div class="project-visual visual-light">\
+            <div class="ecom-ui">\
+              <div class="desktop-mock">\
+                <div class="desktop-head"></div>\
+                <div class="desktop-hero"></div>\
+              </div>\
+\
+              <div class="mobile-mock">\
+                <div></div>\
+              </div>\
+            </div>\
+          </div>\
+\
+          <div class="project-copy">\
+            <div class="eyebrow">Websites / UX Strategy</div>\
+            <h3>E-Commerce Experience</h3>\
+            <p>\
+              Conversion-focused shopping experience with clear navigation,\
+              responsive layouts and simplified checkout.\
+            </p>\
+\
+            <a href="#work" class="learn-link route-link">\
+              View project\
+              <i data-lucide="arrow-right" width="13"></i>\
+            </a>\
+          </div>\
+        </div>\
+\
+      </div>\
+    </section>\
+\
+\
+    <section class="section section-soft">\
+      <div class="container">\
+        <div class="split-showcase">\
+\
+          <div>\
+            <div class="eyebrow">Design + Development</div>\
+\
+            <h2 class="section-title">\
+              We Combine Thoughtful Design With Reliable Development.\
+            </h2>\
+\
+            <p class="body-lg" style="margin-top:20px">\
+              Your product should not only look polished. It should work\
+              smoothly, scale confidently and remain easy to maintain as\
+              your requirements evolve.\
+            </p>\
+\
+            <div class="hero-actions">\
+              <a href="#services" class="btn btn-primary route-link">\
+                Explore Services\
+                <i data-lucide="arrow-right" width="14"></i>\
+              </a>\
+\
+              <a href="#process" class="btn btn-secondary route-link">\
+                Our Process\
+              </a>\
+            </div>\
+          </div>\
+\
+\
+          <div class="tech-art" aria-hidden="true">\
+            <div class="center-orbit"></div>\
+\
+            <div class="code-card">\
+              <div class="code-line"></div>\
+              <div class="code-line"></div>\
+              <div class="code-line"></div>\
+              <div class="code-line"></div>\
+            </div>\
+\
+            <div class="tech-float one">UI System</div>\
+            <div class="tech-float two">API Ready</div>\
+            <div class="tech-float three">99.9% Stable</div>\
+          </div>\
+\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+\
+        <div class="eyebrow">Our Process</div>\
+\
+        <h2 class="section-title">\
+          A Clear Process From Idea to Launch.\
+        </h2>\
+\
+        <p class="body-lg" style="margin-top:16px">\
+          Every stage has a clear purpose, so everyone knows what is being\
+          designed, built and reviewed.\
+        </p>\
+\
+        <div class="steps-inline">\
+          <article class="step-mini">\
+            <div class="num">01</div>\
+            <h4>Discover</h4>\
+            <p>Understand goals, users, challenges and requirements.</p>\
+          </article>\
+\
+          <article class="step-mini">\
+            <div class="num">02</div>\
+            <h4>Plan</h4>\
+            <p>Define scope, priorities, milestones and product direction.</p>\
+          </article>\
+\
+          <article class="step-mini">\
+            <div class="num">03</div>\
+            <h4>Design</h4>\
+            <p>Create UX flows, interfaces and reusable visual systems.</p>\
+          </article>\
+\
+          <article class="step-mini">\
+            <div class="num">04</div>\
+            <h4>Build</h4>\
+            <p>Develop the approved experience in focused iterations.</p>\
+          </article>\
+\
+          <article class="step-mini">\
+            <div class="num">05</div>\
+            <h4>Test</h4>\
+            <p>Validate performance, functionality and edge cases.</p>\
+          </article>\
+\
+          <article class="step-mini">\
+            <div class="num">06</div>\
+            <h4>Launch</h4>\
+            <p>Prepare release, deployment and post-launch support.</p>\
+          </article>\
+        </div>\
+\
+      </div>\
+    </section>\
+\
+\
+    <section class="section section-alt">\
+      <div class="container">\
+\
+        <div class="eyebrow">Technology</div>\
+\
+        <h2 class="section-title">\
+          The Right Technology for Every Product.\
+        </h2>\
+\
+        <p class="body-lg" style="margin-top:16px">\
+          We select technologies based on product needs, scalability,\
+          performance and maintainability.\
+        </p>\
+\
+        <div class="tech-grid">\
+\
+          <article class="tech-group">\
+            <h4>Design</h4>\
+            <div class="pill-wrap">\
+              <span class="tech-pill">Figma</span>\
+              <span class="tech-pill">Design Systems</span>\
+              <span class="tech-pill">Prototyping</span>\
+            </div>\
+          </article>\
+\
+          <article class="tech-group">\
+            <h4>Frontend</h4>\
+            <div class="pill-wrap">\
+              <span class="tech-pill">React</span>\
+              <span class="tech-pill">Next.js</span>\
+              <span class="tech-pill">HTML</span>\
+              <span class="tech-pill">CSS</span>\
+            </div>\
+          </article>\
+\
+          <article class="tech-group">\
+            <h4>Mobile</h4>\
+            <div class="pill-wrap">\
+              <span class="tech-pill">Flutter</span>\
+              <span class="tech-pill">React Native</span>\
+              <span class="tech-pill">Android</span>\
+              <span class="tech-pill">iOS</span>\
+            </div>\
+          </article>\
+\
+          <article class="tech-group">\
+            <h4>Backend</h4>\
+            <div class="pill-wrap">\
+              <span class="tech-pill">Node.js</span>\
+              <span class="tech-pill">APIs</span>\
+              <span class="tech-pill">Databases</span>\
+            </div>\
+          </article>\
+\
+          <article class="tech-group">\
+            <h4>Deployment</h4>\
+            <div class="pill-wrap">\
+              <span class="tech-pill">Cloud</span>\
+              <span class="tech-pill">CI/CD</span>\
+              <span class="tech-pill">Monitoring</span>\
+            </div>\
+          </article>\
+\
+        </div>\
+\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+\
+        <div class="eyebrow">Why Pixelorbits</div>\
+\
+        <h2 class="section-title">\
+          A Product Partner, Not Just a Service Provider.\
+        </h2>\
+\
+        <div class="benefit-grid">\
+\
+          <article class="benefit-card">\
+            <div class="benefit-icon"><i data-lucide="target" width="15"></i></div>\
+            <h4>Goal-Aligned Work</h4>\
+            <p>Design and development decisions are tied to product and business outcomes.</p>\
+          </article>\
+\
+          <article class="benefit-card">\
+            <div class="benefit-icon"><i data-lucide="message-square" width="15"></i></div>\
+            <h4>Clear Communication</h4>\
+            <p>Regular updates, shared previews and transparent progress throughout the project.</p>\
+          </article>\
+\
+          <article class="benefit-card">\
+            <div class="benefit-icon"><i data-lucide="layers-3" width="15"></i></div>\
+            <h4>Scalable Solutions</h4>\
+            <p>Products are structured to support future features, teams and business growth.</p>\
+          </article>\
+\
+          <article class="benefit-card">\
+            <div class="benefit-icon"><i data-lucide="zap" width="15"></i></div>\
+            <h4>Faster Iterations</h4>\
+            <p>Focused feedback rounds and reusable systems reduce unnecessary rework.</p>\
+          </article>\
+\
+          <article class="benefit-card">\
+            <div class="benefit-icon"><i data-lucide="scan-eye" width="15"></i></div>\
+            <h4>User-Focused Design</h4>\
+            <p>Interfaces are designed around clarity, accessibility and real user behaviour.</p>\
+          </article>\
+\
+          <article class="benefit-card">\
+            <div class="benefit-icon"><i data-lucide="life-buoy" width="15"></i></div>\
+            <h4>Post-Launch Support</h4>\
+            <p>We can continue improving, maintaining and expanding your product after release.</p>\
+          </article>\
+\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section section-soft">\
+      <div class="container">\
+\
+        <div class="eyebrow">Client Stories</div>\
+        <h2 class="section-title">What Our Clients Say.</h2>\
+\
+        <div class="testimonial-grid">\
+\
+          <article class="testimonial">\
+            <div class="stars">\uc0\u9733 \u9733 \u9733 \u9733 \u9733 </div>\
+            <blockquote>\
+              \'93The team understood the product quickly and transformed our\
+              initial concept into a much clearer user experience.\'94\
+            </blockquote>\
+\
+            <div class="person">\
+              <span class="avatar"></span>\
+              <div>\
+                <strong>Product Founder</strong>\
+                <span>Consumer App</span>\
+              </div>\
+            </div>\
+          </article>\
+\
+\
+          <article class="testimonial">\
+            <div class="stars">\uc0\u9733 \u9733 \u9733 \u9733 \u9733 </div>\
+            <blockquote>\
+              \'93Communication stayed consistent throughout the project and\
+              each milestone was easy to review and approve.\'94\
+            </blockquote>\
+\
+            <div class="person">\
+              <span class="avatar"></span>\
+              <div>\
+                <strong>Business Owner</strong>\
+                <span>Digital Platform</span>\
+              </div>\
+            </div>\
+          </article>\
+\
+\
+          <article class="testimonial">\
+            <div class="stars">\uc0\u9733 \u9733 \u9733 \u9733 \u9733 </div>\
+            <blockquote>\
+              \'93The redesign made our interface simpler, more professional\
+              and much easier for our users to understand.\'94\
+            </blockquote>\
+\
+            <div class="person">\
+              <span class="avatar"></span>\
+              <div>\
+                <strong>Operations Lead</strong>\
+                <span>SaaS Product</span>\
+              </div>\
+            </div>\
+          </article>\
+\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+\
+        <div class="faq-layout">\
+\
+          <div>\
+            <div class="eyebrow">FAQ</div>\
+\
+            <h2 class="section-title">\
+              Questions Before Starting a Project?\
+            </h2>\
+\
+            <p class="body-lg" style="margin-top:17px">\
+              Share your idea and we can help define the next practical step.\
+            </p>\
+\
+            <a href="#contact" class="btn btn-primary btn-sm route-link" style="margin-top:25px">\
+              Work With Us\
+              <i data-lucide="arrow-right" width="14"></i>\
+            </a>\
+          </div>\
+\
+\
+          <div class="faq-list">\
+            <div class="faq-item">\
+              <button class="faq-question">\
+                What types of projects does Pixelorbits work on?\
+                <span class="faq-icon">+</span>\
+              </button>\
+              <div class="faq-answer">\
+                We work across UI/UX design, mobile applications, websites,\
+                SaaS platforms, dashboards and custom software systems.\
+              </div>\
+            </div>\
+\
+            <div class="faq-item">\
+              <button class="faq-question">\
+                Can you work with an existing product?\
+                <span class="faq-icon">+</span>\
+              </button>\
+              <div class="faq-answer">\
+                Yes. We can redesign, improve, extend or rebuild an existing\
+                product depending on its current state and your goals.\
+              </div>\
+            </div>\
+\
+            <div class="faq-item">\
+              <button class="faq-question">\
+                How long does a project usually take?\
+                <span class="faq-icon">+</span>\
+              </button>\
+              <div class="faq-answer">\
+                Timelines depend on scope and complexity. Smaller design\
+                projects can take a few weeks, while larger products may\
+                require several development phases.\
+              </div>\
+            </div>\
+\
+            <div class="faq-item">\
+              <button class="faq-question">\
+                Do you provide design and development together?\
+                <span class="faq-icon">+</span>\
+              </button>\
+              <div class="faq-answer">\
+                Yes. You can work with us for product design only,\
+                development only, or a complete design-and-development engagement.\
+              </div>\
+            </div>\
+\
+            <div class="faq-item">\
+              <button class="faq-question">\
+                Do you provide support after launch?\
+                <span class="faq-icon">+</span>\
+              </button>\
+              <div class="faq-answer">\
+                Yes. Maintenance, improvements and feature development can\
+                continue after the initial release.\
+              </div>\
+            </div>\
+          </div>\
+\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+        <div class="cta-panel">\
+\
+          <div class="eyebrow" style="justify-content:center">Start Building</div>\
+\
+          <h2>Have a Product Idea? Let\'92s Build It Together.</h2>\
+\
+          <p>\
+            Tell us what you want to build. We\'92ll help you shape the next step.\
+          </p>\
+\
+          <div class="cta-actions">\
+            <a href="#contact" class="btn btn-primary route-link">\
+              Start a Project\
+              <i data-lucide="arrow-right" width="15"></i>\
+            </a>\
+\
+            <a href="#work" class="btn btn-secondary route-link">\
+              View Our Work\
+            </a>\
+          </div>\
+\
+        </div>\
+      </div>\
+    </section>\
+\
+    <div class="footer-slot"></div>\
+  </main>\
+\
+\
+  <!-- =======================================================\
+       SERVICES PAGE\
+       ======================================================= -->\
+\
+  <main class="page" id="page-services" data-page="services">\
+\
+    <section class="hero-grid">\
+      <div class="container page-hero">\
+        <div>\
+          <div class="eyebrow">Services</div>\
+\
+          <h1 class="page-title">\
+            Design and Development Services for Modern Digital Products.\
+          </h1>\
+\
+          <p class="body-lg">\
+            Whether you are launching a new idea or improving an existing\
+            product, Pixelorbits provides the strategy, design and technical\
+            expertise required to move forward.\
+          </p>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+\
+        <div class="overview-service-grid">\
+\
+          <a href="#uiux" class="overview-service route-link">\
+            <div class="overview-icon">\
+              <i data-lucide="palette" width="20"></i>\
+            </div>\
+            <h3>UI/UX Design</h3>\
+            <p>User-focused interface design that balances usability with brand identity.</p>\
+            <span class="learn-link">\
+              Learn more\
+              <i data-lucide="arrow-right" width="13"></i>\
+            </span>\
+          </a>\
+\
+\
+          <a href="#mobile" class="overview-service route-link">\
+            <div class="overview-icon">\
+              <i data-lucide="smartphone" width="20"></i>\
+            </div>\
+            <h3>Mobile App Development</h3>\
+            <p>Cross-platform and native mobile apps built for scale and performance.</p>\
+            <span class="learn-link">\
+              Learn more\
+              <i data-lucide="arrow-right" width="13"></i>\
+            </span>\
+          </a>\
+\
+\
+          <a href="#web" class="overview-service route-link">\
+            <div class="overview-icon">\
+              <i data-lucide="globe-2" width="20"></i>\
+            </div>\
+            <h3>Web Development</h3>\
+            <p>Websites and web apps that combine speed, aesthetics and maintainability.</p>\
+            <span class="learn-link">\
+              Learn more\
+              <i data-lucide="arrow-right" width="13"></i>\
+            </span>\
+          </a>\
+\
+\
+          <a href="#software" class="overview-service route-link">\
+            <div class="overview-icon">\
+              <i data-lucide="cpu" width="20"></i>\
+            </div>\
+            <h3>Custom Software</h3>\
+            <p>Tailored systems, dashboards and internal tools built around your workflow.</p>\
+            <span class="learn-link">\
+              Learn more\
+              <i data-lucide="arrow-right" width="13"></i>\
+            </span>\
+          </a>\
+\
+        </div>\
+\
+      </div>\
+    </section>\
+\
+\
+    <section class="section section-alt">\
+      <div class="container">\
+\
+        <div class="eyebrow">How We Can Work Together</div>\
+\
+        <h2 class="section-title">\
+          Flexible Engagement Models for Every Stage.\
+        </h2>\
+\
+        <div class="engagement-grid">\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Complete product design and development\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            UI/UX design only\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Development from an existing design\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Existing product redesign\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Dedicated design or development support\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Maintenance and feature improvements\
+          </div>\
+        </div>\
+\
+        <div style="text-align:center;margin-top:35px">\
+          <a href="#contact" class="btn btn-primary route-link">\
+            Discuss Your Requirements\
+            <i data-lucide="arrow-right" width="15"></i>\
+          </a>\
+        </div>\
+\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+        <div class="cta-panel">\
+          <h2>Ready to Start Your Project?</h2>\
+          <p>Tell us what you want to build. We\'92ll help you shape the next step.</p>\
+\
+          <div class="cta-actions">\
+            <a href="#contact" class="btn btn-primary route-link">\
+              Start Your Project\
+              <i data-lucide="arrow-right" width="15"></i>\
+            </a>\
+\
+            <a href="#work" class="btn btn-secondary route-link">\
+              See Our Work\
+              <i data-lucide="arrow-up-right" width="15"></i>\
+            </a>\
+          </div>\
+        </div>\
+      </div>\
+    </section>\
+\
+    <div class="footer-slot"></div>\
+  </main>\
+\
+\
+  <!-- =======================================================\
+       UI/UX SERVICE PAGE\
+       ======================================================= -->\
+\
+  <main class="page" id="page-uiux" data-page="uiux">\
+\
+    <section class="hero-grid">\
+      <div class="container page-hero">\
+        <div>\
+          <div class="eyebrow">UI/UX Design</div>\
+\
+          <h1 class="page-title">\
+            UI/UX Design That Makes Complex Products Feel Simple.\
+          </h1>\
+\
+          <p class="body-lg">\
+            We create intuitive digital experiences that balance user needs,\
+            business objectives and visual consistency.\
+          </p>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+        <div class="eyebrow">Capabilities</div>\
+\
+        <h2 class="section-title">What We Do In This Space.</h2>\
+\
+        <div class="capability-grid">\
+          <div class="capability-item">\
+            <span class="capability-icon purple-icon"><i data-lucide="search" width="14"></i></span>\
+            Product discovery\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon purple-icon"><i data-lucide="scan-search" width="14"></i></span>\
+            Competitor analysis\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon purple-icon"><i data-lucide="route" width="14"></i></span>\
+            User flows\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon purple-icon"><i data-lucide="network" width="14"></i></span>\
+            Information architecture\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon purple-icon"><i data-lucide="layout-template" width="14"></i></span>\
+            Wireframes\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon purple-icon"><i data-lucide="smartphone" width="14"></i></span>\
+            Mobile app UI\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon purple-icon"><i data-lucide="monitor" width="14"></i></span>\
+            Website UI\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon purple-icon"><i data-lucide="panel-top" width="14"></i></span>\
+            Dashboard design\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon purple-icon"><i data-lucide="mouse-pointer-click" width="14"></i></span>\
+            Interactive prototypes\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon purple-icon"><i data-lucide="component" width="14"></i></span>\
+            Design systems\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon purple-icon"><i data-lucide="sparkles" width="14"></i></span>\
+            Usability improvements\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon purple-icon"><i data-lucide="refresh-cw" width="14"></i></span>\
+            Existing-product redesign\
+          </div>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section section-alt">\
+      <div class="container">\
+        <div class="eyebrow">Our Approach</div>\
+\
+        <h2 class="section-title">\
+          A Focused Process to Ship With Confidence.\
+        </h2>\
+\
+        <div class="service-process">\
+          <span class="process-pill">Research</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Structure</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Wireframe</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Visual Design</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Prototype</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Handoff</span>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+        <div class="eyebrow">Deliverables</div>\
+\
+        <h2 class="section-title">What You Receive at the End.</h2>\
+\
+        <div class="deliverable-grid">\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Figma design files\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Responsive layouts\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Reusable components\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Design system\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Clickable prototype\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Developer-ready specifications\
+          </div>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section-alt service-cta">\
+      <div class="container">\
+        <h3>Interested in this service?</h3>\
+\
+        <a href="#contact" class="btn btn-primary route-link">\
+          Start a Design Project\
+          <i data-lucide="arrow-right" width="15"></i>\
+        </a>\
+      </div>\
+    </section>\
+\
+    <div class="footer-slot"></div>\
+  </main>\
+\
+\
+  <!-- =======================================================\
+       MOBILE APP DEVELOPMENT PAGE\
+       ======================================================= -->\
+\
+  <main class="page" id="page-mobile" data-page="mobile">\
+\
+    <section class="hero-grid">\
+      <div class="container page-hero">\
+        <div>\
+          <div class="eyebrow">Mobile App Development</div>\
+\
+          <h1 class="page-title">\
+            Mobile Apps Built for Real Users and Real Growth.\
+          </h1>\
+\
+          <p class="body-lg">\
+            We design and develop reliable Android, iOS and cross-platform\
+            applications with scalable architecture and intuitive interfaces.\
+          </p>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section section-alt">\
+      <div class="container">\
+        <div class="eyebrow">Capabilities</div>\
+        <h2 class="section-title">What We Do In This Space.</h2>\
+\
+        <div class="capability-grid">\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="smartphone" width="14"></i></span>\
+            Android applications\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="apple" width="14"></i></span>\
+            iOS applications\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="layers" width="14"></i></span>\
+            Cross-platform apps\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="plug-zap" width="14"></i></span>\
+            API integrations\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="credit-card" width="14"></i></span>\
+            Payment integration\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="bell" width="14"></i></span>\
+            Push notifications\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="database" width="14"></i></span>\
+            Backend integration\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="user-check" width="14"></i></span>\
+            Authentication\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="bar-chart-3" width="14"></i></span>\
+            Analytics\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="shield-check" width="14"></i></span>\
+            App security\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="rocket" width="14"></i></span>\
+            Store deployment\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="wrench" width="14"></i></span>\
+            Maintenance\
+          </div>\
+\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+        <div class="eyebrow">Our Approach</div>\
+\
+        <h2 class="section-title">\
+          A Focused Process to Ship With Confidence.\
+        </h2>\
+\
+        <div class="service-process">\
+          <span class="process-pill">Strategy</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">UX/UI</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Architecture</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Development</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Testing</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Launch</span>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+        <div class="eyebrow">Deliverables</div>\
+        <h2 class="section-title">What You Receive at the End.</h2>\
+\
+        <div class="deliverable-grid">\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Production-ready mobile app\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Responsive mobile interface\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            API integration\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Analytics setup\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Store-ready builds\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Handover documentation\
+          </div>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section-alt service-cta">\
+      <div class="container">\
+        <h3>Interested in this service?</h3>\
+\
+        <a href="#contact" class="btn btn-primary route-link">\
+          Build Your Mobile App\
+          <i data-lucide="arrow-right" width="15"></i>\
+        </a>\
+      </div>\
+    </section>\
+\
+    <div class="footer-slot"></div>\
+  </main>\
+\
+\
+  <!-- =======================================================\
+       WEB DEVELOPMENT PAGE\
+       ======================================================= -->\
+\
+  <main class="page" id="page-web" data-page="web">\
+\
+    <section class="hero-grid">\
+      <div class="container page-hero">\
+        <div>\
+          <div class="eyebrow">Web Development</div>\
+\
+          <h1 class="page-title">\
+            Fast, Flexible and Conversion-Focused Web Experiences.\
+          </h1>\
+\
+          <p class="body-lg">\
+            We build responsive websites and web applications that combine\
+            clear design, reliable performance and maintainable technology.\
+          </p>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section section-alt">\
+      <div class="container">\
+        <div class="eyebrow">Capabilities</div>\
+        <h2 class="section-title">What We Do In This Space.</h2>\
+\
+        <div class="capability-grid">\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="globe" width="14"></i></span>\
+            Company websites\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="mouse-pointer-2" width="14"></i></span>\
+            Landing pages\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="cloud" width="14"></i></span>\
+            SaaS platforms\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="monitor" width="14"></i></span>\
+            Web applications\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="shopping-cart" width="14"></i></span>\
+            E-commerce experiences\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="layout-dashboard" width="14"></i></span>\
+            Admin dashboards\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="code-2" width="14"></i></span>\
+            Frontend development\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="plug" width="14"></i></span>\
+            API integration\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="panels-top-left" width="14"></i></span>\
+            CMS integration\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="gauge" width="14"></i></span>\
+            Performance optimisation\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="responsive" width="14"></i></span>\
+            Responsive development\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="settings" width="14"></i></span>\
+            Website maintenance\
+          </div>\
+\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+        <div class="eyebrow">Our Approach</div>\
+\
+        <h2 class="section-title">\
+          A Focused Process to Ship With Confidence.\
+        </h2>\
+\
+        <div class="service-process">\
+          <span class="process-pill">Strategy</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Design</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Develop</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Optimise</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Launch</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Support</span>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+        <div class="eyebrow">Deliverables</div>\
+        <h2 class="section-title">What You Receive at the End.</h2>\
+\
+        <div class="deliverable-grid">\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Responsive website\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            CMS setup\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            SEO foundation\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Analytics integration\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Performance report\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Handover documentation\
+          </div>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section-alt service-cta">\
+      <div class="container">\
+        <h3>Interested in this service?</h3>\
+\
+        <a href="#contact" class="btn btn-primary route-link">\
+          Build Your Website\
+          <i data-lucide="arrow-right" width="15"></i>\
+        </a>\
+      </div>\
+    </section>\
+\
+    <div class="footer-slot"></div>\
+  </main>\
+\
+\
+  <!-- =======================================================\
+       CUSTOM SOFTWARE PAGE\
+       ======================================================= -->\
+\
+  <main class="page" id="page-software" data-page="software">\
+\
+    <section class="hero-grid">\
+      <div class="container page-hero">\
+        <div>\
+          <div class="eyebrow">Custom Software</div>\
+\
+          <h1 class="page-title">\
+            Custom Software Built Around the Way Your Business Works.\
+          </h1>\
+\
+          <p class="body-lg">\
+            We design and develop software systems that simplify processes,\
+            connect information and solve specific operational challenges.\
+          </p>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+        <div class="eyebrow">Capabilities</div>\
+        <h2 class="section-title">What We Do In This Space.</h2>\
+\
+        <div class="capability-grid">\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="users" width="14"></i></span>\
+            CRM systems\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="layout-dashboard" width="14"></i></span>\
+            Internal dashboards\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="shield-check" width="14"></i></span>\
+            Admin portals\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="workflow" width="14"></i></span>\
+            Workflow automation\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="bar-chart-3" width="14"></i></span>\
+            Reporting systems\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="package-search" width="14"></i></span>\
+            Inventory tools\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="building-2" width="14"></i></span>\
+            Business-management systems\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="user-cog" width="14"></i></span>\
+            User-management platforms\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="braces" width="14"></i></span>\
+            API development\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="waypoints" width="14"></i></span>\
+            Third-party integrations\
+          </div>\
+\
+          <div class="capability-item">\
+            <span class="capability-icon"><i data-lucide="database" width="14"></i></span>\
+            Data dashboards\
+          </div>\
+\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section section-alt">\
+      <div class="container">\
+        <div class="eyebrow">Our Approach</div>\
+\
+        <h2 class="section-title">\
+          A Focused Process to Ship With Confidence.\
+        </h2>\
+\
+        <div class="service-process">\
+          <span class="process-pill">Discovery</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Architecture</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Design</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Development</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Integration</span>\
+          <span class="process-arrow">\uc0\u8594 </span>\
+\
+          <span class="process-pill">Deploy</span>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+        <div class="eyebrow">Deliverables</div>\
+        <h2 class="section-title">What You Receive at the End.</h2>\
+\
+        <div class="deliverable-grid">\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Custom application\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Admin interface\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            API documentation\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            User roles & permissions\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Deployment setup\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Training & handoff\
+          </div>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="service-cta">\
+      <div class="container">\
+        <h3>Interested in this service?</h3>\
+\
+        <a href="#contact" class="btn btn-primary route-link">\
+          Discuss Your Software Requirements\
+          <i data-lucide="arrow-right" width="15"></i>\
+        </a>\
+      </div>\
+    </section>\
+\
+    <div class="footer-slot"></div>\
+  </main>\
+\
+\
+  <!-- =======================================================\
+       WORK PAGE\
+       ======================================================= -->\
+\
+  <main class="page" id="page-work" data-page="work">\
+\
+    <section class="section">\
+      <div class="container">\
+\
+        <div style="max-width:800px;padding-top:35px">\
+          <div class="eyebrow">Work</div>\
+\
+          <h1 class="page-title">\
+            Selected Digital Products and Experiences.\
+          </h1>\
+\
+          <p class="body-lg" style="margin-top:18px">\
+            Explore mobile apps, web platforms, dashboards and interfaces\
+            created by Pixelorbits.\
+          </p>\
+\
+          <div class="work-filters">\
+            <button class="filter-btn active" data-filter="all">All Work</button>\
+            <button class="filter-btn" data-filter="mobile">Mobile Apps</button>\
+            <button class="filter-btn" data-filter="websites">Websites</button>\
+            <button class="filter-btn" data-filter="saas">SaaS</button>\
+            <button class="filter-btn" data-filter="dashboards">Dashboards</button>\
+            <button class="filter-btn" data-filter="uiux">UI/UX</button>\
+            <button class="filter-btn" data-filter="development">Development</button>\
+          </div>\
+        </div>\
+\
+      </div>\
+    </section>\
+\
+\
+    <section class="section" style="padding-top:20px">\
+      <div class="container">\
+\
+        <div class="portfolio-grid">\
+\
+          <article class="portfolio-item" data-category="mobile uiux">\
+            <div class="portfolio-thumb portfolio-purple">\
+              <div class="thumb-tags">\
+                <span class="thumb-tag">Mobile Apps</span>\
+                <span class="thumb-tag">UI/UX</span>\
+              </div>\
+\
+              <div class="phone-set">\
+                <div class="phone"><div class="phone-screen"></div></div>\
+                <div class="phone"><div class="phone-screen"></div></div>\
+                <div class="phone"><div class="phone-screen"></div></div>\
+              </div>\
+            </div>\
+\
+            <div class="portfolio-info">\
+              <div class="portfolio-type">Mobile Apps</div>\
+              <h3>Gamified Rewards App</h3>\
+              <p>\
+                Complete engagement platform with tasks, rewards, wallets,\
+                user profiles and gamified interactions.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="portfolio-item" data-category="saas dashboards">\
+            <div class="portfolio-thumb portfolio-dark">\
+              <div class="thumb-tags">\
+                <span class="thumb-tag">SaaS</span>\
+                <span class="thumb-tag">Dashboards</span>\
+              </div>\
+\
+              <div class="dash-preview">\
+                <div class="dash-bars">\
+                  <span></span><span></span><span></span>\
+                  <span></span><span></span><span></span><span></span>\
+                </div>\
+              </div>\
+            </div>\
+\
+            <div class="portfolio-info">\
+              <div class="portfolio-type">SaaS</div>\
+              <h3>SaaS Analytics Dashboard</h3>\
+              <p>\
+                Scalable business dashboard turning complex data into clear,\
+                actionable information.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="portfolio-item" data-category="websites uiux">\
+            <div class="portfolio-thumb portfolio-pink">\
+              <div class="thumb-tags">\
+                <span class="thumb-tag">Websites</span>\
+                <span class="thumb-tag">UX Strategy</span>\
+              </div>\
+\
+              <div class="ecom-ui">\
+                <div class="desktop-mock">\
+                  <div class="desktop-head"></div>\
+                  <div class="desktop-hero"></div>\
+                </div>\
+                <div class="mobile-mock"><div></div></div>\
+              </div>\
+            </div>\
+\
+            <div class="portfolio-info">\
+              <div class="portfolio-type">Websites</div>\
+              <h3>E-Commerce Experience</h3>\
+              <p>\
+                Conversion-focused shopping experience with clean navigation\
+                and simplified checkout.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="portfolio-item" data-category="mobile uiux">\
+            <div class="portfolio-thumb portfolio-green">\
+              <div class="thumb-tags">\
+                <span class="thumb-tag">UI/UX</span>\
+                <span class="thumb-tag">Mobile Apps</span>\
+              </div>\
+              <div class="abstract-square"></div>\
+            </div>\
+\
+            <div class="portfolio-info">\
+              <div class="portfolio-type">Mobile Apps</div>\
+              <h3>Fintech Onboarding Flow</h3>\
+              <p>\
+                Redesigned onboarding that reduced friction and improved\
+                completion clarity.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="portfolio-item" data-category="dashboards development">\
+            <div class="portfolio-thumb portfolio-magenta">\
+              <div class="thumb-tags">\
+                <span class="thumb-tag">Dashboards</span>\
+                <span class="thumb-tag">Development</span>\
+              </div>\
+              <div class="abstract-square"></div>\
+            </div>\
+\
+            <div class="portfolio-info">\
+              <div class="portfolio-type">Dashboards</div>\
+              <h3>CRM for Service Teams</h3>\
+              <p>\
+                Unified internal tool for managing leads, pipelines and\
+                service delivery.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="portfolio-item" data-category="websites uiux">\
+            <div class="portfolio-thumb portfolio-blue">\
+              <div class="thumb-tags">\
+                <span class="thumb-tag">UI/UX</span>\
+                <span class="thumb-tag">Websites</span>\
+              </div>\
+              <div class="abstract-square"></div>\
+            </div>\
+\
+            <div class="portfolio-info">\
+              <div class="portfolio-type">Websites</div>\
+              <h3>Learning Platform Redesign</h3>\
+              <p>\
+                Editorial-first redesign focused on discovery, clarity and\
+                user retention.\
+              </p>\
+            </div>\
+          </article>\
+\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+        <div class="cta-panel">\
+          <h2>Have a product you\'92re proud of?</h2>\
+          <p>Let\'92s make the next one your favourite.</p>\
+\
+          <a href="#contact" class="btn btn-primary route-link">\
+            Start Your Project\
+            <i data-lucide="arrow-right" width="15"></i>\
+          </a>\
+        </div>\
+      </div>\
+    </section>\
+\
+    <div class="footer-slot"></div>\
+  </main>\
+\
+\
+  <!-- =======================================================\
+       PROCESS PAGE\
+       ======================================================= -->\
+\
+  <main class="page" id="page-process" data-page="process">\
+\
+    <section class="section">\
+      <div class="container" style="padding-top:35px">\
+        <div class="eyebrow">Our Process</div>\
+\
+        <h1 class="page-title">\
+          A Structured Process. Clear Communication. Better Outcomes.\
+        </h1>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section section-alt">\
+      <div class="container">\
+\
+        <div class="process-list">\
+\
+          <article class="process-row">\
+            <div class="process-left">\
+              <div class="process-number">01</div>\
+              <div class="process-icon">\
+                <i data-lucide="search" width="16"></i>\
+              </div>\
+            </div>\
+\
+            <div>\
+              <h3>Discovery and consultation</h3>\
+              <p>\
+                We start with a conversation to understand your goals,\
+                users and constraints.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="process-row">\
+            <div class="process-left">\
+              <div class="process-number">02</div>\
+              <div class="process-icon">\
+                <i data-lucide="file-text" width="16"></i>\
+              </div>\
+            </div>\
+\
+            <div>\
+              <h3>Requirement documentation</h3>\
+              <p>\
+                We capture requirements, priorities and success criteria\
+                in a shared document.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="process-row">\
+            <div class="process-left">\
+              <div class="process-number">03</div>\
+              <div class="process-icon">\
+                <i data-lucide="map" width="16"></i>\
+              </div>\
+            </div>\
+\
+            <div>\
+              <h3>Product planning</h3>\
+              <p>\
+                We shape the roadmap, milestones and technical direction\
+                for the project.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="process-row">\
+            <div class="process-left">\
+              <div class="process-number">04</div>\
+              <div class="process-icon">\
+                <i data-lucide="route" width="16"></i>\
+              </div>\
+            </div>\
+\
+            <div>\
+              <h3>User experience design</h3>\
+              <p>\
+                We define information architecture, flows and interaction models.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="process-row">\
+            <div class="process-left">\
+              <div class="process-number">05</div>\
+              <div class="process-icon">\
+                <i data-lucide="palette" width="16"></i>\
+              </div>\
+            </div>\
+\
+            <div>\
+              <h3>Visual interface design</h3>\
+              <p>\
+                We craft polished screens, states and a reusable design system.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="process-row">\
+            <div class="process-left">\
+              <div class="process-number">06</div>\
+              <div class="process-icon">\
+                <i data-lucide="code-2" width="16"></i>\
+              </div>\
+            </div>\
+\
+            <div>\
+              <h3>Technical architecture</h3>\
+              <p>\
+                We choose the right stack, structure and integrations to support scale.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="process-row">\
+            <div class="process-left">\
+              <div class="process-number">07</div>\
+              <div class="process-icon">\
+                <i data-lucide="rocket" width="16"></i>\
+              </div>\
+            </div>\
+\
+            <div>\
+              <h3>Development</h3>\
+              <p>\
+                We build in focused sprints with regular reviews and shared previews.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="process-row">\
+            <div class="process-left">\
+              <div class="process-number">08</div>\
+              <div class="process-icon">\
+                <i data-lucide="shield-check" width="16"></i>\
+              </div>\
+            </div>\
+\
+            <div>\
+              <h3>Quality assurance</h3>\
+              <p>\
+                We test usability, performance, accessibility and edge cases carefully.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="process-row">\
+            <div class="process-left">\
+              <div class="process-number">09</div>\
+              <div class="process-icon">\
+                <i data-lucide="trending-up" width="16"></i>\
+              </div>\
+            </div>\
+\
+            <div>\
+              <h3>Launch</h3>\
+              <p>\
+                We plan the release, prepare stores or infrastructure and go live confidently.\
+              </p>\
+            </div>\
+          </article>\
+\
+\
+          <article class="process-row">\
+            <div class="process-left">\
+              <div class="process-number">10</div>\
+              <div class="process-icon">\
+                <i data-lucide="users" width="16"></i>\
+              </div>\
+            </div>\
+\
+            <div>\
+              <h3>Maintenance and growth</h3>\
+              <p>\
+                We support the product with improvements, features and monitoring.\
+              </p>\
+            </div>\
+          </article>\
+\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+        <div class="eyebrow">Project Communication</div>\
+\
+        <h2 class="section-title">How We Stay In Sync.</h2>\
+\
+        <div class="sync-grid">\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Regular progress updates\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Shared project roadmap\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Review milestones\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Figma collaboration\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Testing builds\
+          </div>\
+\
+          <div class="check-card">\
+            <div class="check"><i data-lucide="check" width="14"></i></div>\
+            Clear feedback rounds\
+          </div>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section-alt service-cta">\
+      <div class="container">\
+        <h3>Plan your project with us.</h3>\
+\
+        <a href="#contact" class="btn btn-primary route-link">\
+          Plan Your Project\
+          <i data-lucide="arrow-right" width="15"></i>\
+        </a>\
+      </div>\
+    </section>\
+\
+    <div class="footer-slot"></div>\
+  </main>\
+\
+\
+  <!-- =======================================================\
+       ABOUT PAGE\
+       ======================================================= -->\
+\
+  <main class="page" id="page-about" data-page="about">\
+\
+    <section class="hero-grid">\
+      <div class="container page-hero">\
+        <div>\
+          <div class="eyebrow">About Pixelorbits</div>\
+\
+          <h1 class="page-title">\
+            Building Digital Products With Clarity, Craft and Purpose.\
+          </h1>\
+\
+          <p class="body-lg">\
+            Pixelorbits is a design and development studio helping startups\
+            and growing businesses turn ideas into useful, scalable digital products.\
+          </p>\
+        </div>\
+      </div>\
+    </section>\
+\
+\
+    <section class="section section-alt">\
+      <div class="container">\
+\
+        <div class="about-grid">\
+\
+          <div class="about-copy">\
+            <div class="eyebrow">How We Think</div>\
+            <h2 class="section-title" style="margin-bottom:24px">\
+              Good Products Start With Understanding the Problem.\
+            </h2>\
+\
+            <p>\
+              We approach projects as product partners rather than simply\
+              completing a list of screens or technical tasks.\
+            </p>\
+\
+            <p>\
+              That means understanding users, business goals, constraints\
+              and opportunities before deciding what should be designed or built.\
+            </p>\
+\
+            <p>\
+              Our aim is to create digital products that are easier to use,\
+              easier to maintain and ready to evolve as the business grows.\
+            </p>\
+          </div>\
+\
+\
+          <div class="about-panel">\
+            <h3>How We Work</h3>\
+\
+            <div class="value-list">\
+              <div class="value-item">\
+                <div class="check"><i data-lucide="check" width="13"></i></div>\
+                <div>\
+                  <strong>Clear communication</strong>\
+                  <span>Shared progress, defined milestones and transparent decision making.</span>\
+                </div>\
+              </div>\
+\
+              <div class="value-item">\
+                <div class="check"><i data-lucide="check" width="13"></i></div>\
+                <div>\
+                  <strong>Practical design</strong>\
+                  <span>Interfaces are created around real users and real product goals.</span>\
+                </div>\
+              </div>\
+\
+              <div class="value-item">\
+                <div class="check"><i data-lucide="check" width="13"></i></div>\
+                <div>\
+                  <strong>Reliable development</strong>\
+                  <span>Clean, scalable implementations designed for continued growth.</span>\
+                </div>\
+              </div>\
+\
+              <div class="value-item">\
+                <div class="check"><i data-lucide="check" width="13"></i></div>\
+                <div>\
+                  <strong>Long-term thinking</strong>\
+                  <span>We consider maintainability and future features from the beginning.</span>\
+                </div>\
+              </div>\
+            </div>\
+          </div>\
+\
+        </div>\
+\
+      </div>\
+    </section>\
+\
+\
+    <section class="section">\
+      <div class="container">\
+        <div class="cta-panel">\
+          <h2>Looking for a product partner?</h2>\
+          <p>Share your idea, challenge or current product with us.</p>\
+\
+          <a href="#contact" class="btn btn-primary route-link">\
+            Start a Conversation\
+            <i data-lucide="arrow-right" width="15"></i>\
+          </a>\
+        </div>\
+      </div>\
+    </section>\
+\
+    <div class="footer-slot"></div>\
+  </main>\
+\
+\
+  <!-- =======================================================\
+       CONTACT PAGE\
+       ======================================================= -->\
+\
+  <main class="page" id="page-contact" data-page="contact">\
+\
+    <section class="section" style="padding-top:110px">\
+      <div class="container">\
+\
+        <div class="eyebrow">Contact</div>\
+\
+        <h1 class="page-title">\
+          Tell Us What You Want to Build.\
+        </h1>\
+\
+        <p class="body-lg" style="margin-top:18px">\
+          Share your idea, project requirements or current product challenge.\
+          We\'92ll review the details and help you identify the next step.\
+        </p>\
+\
+\
+        <div class="contact-layout">\
+\
+          <div class="contact-cards">\
+\
+            <div class="contact-card">\
+              <label>Email</label>\
+              <strong>hello@pixelorbits.com</strong>\
+              <span>Reply within 1 business day.</span>\
+            </div>\
+\
+            <div class="contact-card">\
+              <label>WhatsApp</label>\
+              <strong>+91 \'97 (add verified number)</strong>\
+              <span>Fastest way to reach us.</span>\
+            </div>\
+\
+            <div class="contact-card">\
+              <label>Location</label>\
+              <strong>India \'b7 Worldwide</strong>\
+              <span>Working across time zones.</span>\
+            </div>\
+\
+            <div class="contact-card">\
+              <label>Business Hours</label>\
+              <strong>Monday to Saturday</strong>\
+              <span>10:00 AM \'96 7:00 PM IST.</span>\
+            </div>\
+\
+          </div>\
+\
+\
+          <form class="contact-form" id="contactForm">\
+\
+            <div class="form-grid">\
+\
+              <div class="field">\
+                <label for="fullName">Full Name</label>\
+                <input\
+                  id="fullName"\
+                  name="fullName"\
+                  type="text"\
+                  placeholder="Your name"\
+                  required\
+                />\
+              </div>\
+\
+              <div class="field">\
+                <label for="workEmail">Work Email</label>\
+                <input\
+                  id="workEmail"\
+                  name="workEmail"\
+                  type="email"\
+                  placeholder="you@company.com"\
+                  required\
+                />\
+              </div>\
+\
+              <div class="field">\
+                <label for="phone">Phone / WhatsApp</label>\
+                <input\
+                  id="phone"\
+                  name="phone"\
+                  type="tel"\
+                  placeholder="+91 ..."\
+                />\
+              </div>\
+\
+              <div class="field">\
+                <label for="company">Company Name</label>\
+                <input\
+                  id="company"\
+                  name="company"\
+                  type="text"\
+                  placeholder="Optional"\
+                />\
+              </div>\
+\
+              <div class="field">\
+                <label for="service">Required Service</label>\
+                <select id="service" name="service" required>\
+                  <option value="">Select service</option>\
+                  <option>UI/UX Design</option>\
+                  <option>Mobile App Development</option>\
+                  <option>Web Development</option>\
+                  <option>Custom Software</option>\
+                  <option>Complete Product Design & Development</option>\
+                </select>\
+              </div>\
+\
+              <div class="field">\
+                <label for="projectType">Project Type</label>\
+                <input\
+                  id="projectType"\
+                  name="projectType"\
+                  type="text"\
+                  placeholder="e.g. Mobile app, SaaS, redesign"\
+                />\
+              </div>\
+\
+              <div class="field">\
+                <label for="budget">Approx. Budget</label>\
+                <select id="budget" name="budget">\
+                  <option value="">Select budget</option>\
+                  <option>Below \uc0\u8377 50,000</option>\
+                  <option>\uc0\u8377 50,000 \'96 \u8377 1,00,000</option>\
+                  <option>\uc0\u8377 1,00,000 \'96 \u8377 3,00,000</option>\
+                  <option>\uc0\u8377 3,00,000 \'96 \u8377 5,00,000</option>\
+                  <option>\uc0\u8377 5,00,000+</option>\
+                  <option>Need guidance</option>\
+                </select>\
+              </div>\
+\
+              <div class="field">\
+                <label for="timeline">Preferred Launch Timeline</label>\
+                <input\
+                  id="timeline"\
+                  name="timeline"\
+                  type="text"\
+                  placeholder="e.g. 3 months"\
+                />\
+              </div>\
+\
+              <div class="field full">\
+                <label for="description">Project Description</label>\
+                <textarea\
+                  id="description"\
+                  name="description"\
+                  placeholder="Tell us about your idea, goals and any references."\
+                  required\
+                ></textarea>\
+              </div>\
+\
+            </div>\
+\
+\
+            <label class="form-consent">\
+              <input type="checkbox" required />\
+              <span>\
+                I agree that Pixelorbits may store my details to respond to this enquiry.\
+              </span>\
+            </label>\
+\
+\
+            <div class="form-submit">\
+              <button class="btn btn-primary" type="submit">\
+                Send Enquiry\
+                <i data-lucide="arrow-right" width="15"></i>\
+              </button>\
+            </div>\
+\
+            <div class="form-status" id="formStatus"></div>\
+\
+          </form>\
+\
+        </div>\
+      </div>\
+    </section>\
+\
+    <div class="footer-slot"></div>\
+  </main>\
+\
+\
+  <!-- =======================================================\
+       FOOTER TEMPLATE\
+       ======================================================= -->\
+\
+  <template id="footerTemplate">\
+    <footer class="site-footer">\
+      <div class="container">\
+\
+        <div class="footer-main">\
+\
+          <div class="footer-brand">\
+            <a href="#home" class="brand route-link">\
+              <span class="logo-box">\
+                <span class="logo-pixel">\
+                  <span></span>\
+                  <span></span>\
+                  <span></span>\
+                  <span></span>\
+                </span>\
+                <span class="logo-orbit"></span>\
+              </span>\
+\
+              <span class="brand-name">PIXELORBITS</span>\
+            </a>\
+\
+            <p>\
+              Pixelorbits designs and develops mobile apps, websites and\
+              custom software for startups and growing businesses.\
+            </p>\
+\
+            <div class="socials">\
+              <a class="social" href="#" aria-label="LinkedIn">in</a>\
+              <a class="social" href="#" aria-label="Instagram">\uc0\u9678 </a>\
+              <a class="social" href="#" aria-label="Behance">Be</a>\
+              <a class="social" href="#" aria-label="Dribbble">Dr</a>\
+            </div>\
+          </div>\
+\
+\
+          <div class="footer-col">\
+            <h4>Services</h4>\
+            <a href="#uiux" class="route-link">UI/UX Design</a>\
+            <a href="#mobile" class="route-link">Mobile App Development</a>\
+            <a href="#web" class="route-link">Web Development</a>\
+            <a href="#software" class="route-link">Custom Software</a>\
+          </div>\
+\
+\
+          <div class="footer-col">\
+            <h4>Company</h4>\
+            <a href="#about" class="route-link">About</a>\
+            <a href="#process" class="route-link">Process</a>\
+            <a href="#work" class="route-link">Work</a>\
+            <a href="#contact" class="route-link">Contact</a>\
+            <a href="#">Careers</a>\
+          </div>\
+\
+\
+          <div class="footer-col">\
+            <h4>Resources</h4>\
+            <a href="#work" class="route-link">Case Studies</a>\
+            <a href="#home" class="route-link">FAQs</a>\
+            <a href="#">Privacy Policy</a>\
+            <a href="#">Terms & Conditions</a>\
+          </div>\
+\
+        </div>\
+\
+\
+        <div class="footer-bottom">\
+          <span>\'a9 2026 Pixelorbits. All rights reserved.</span>\
+\
+          <div class="footer-meta">\
+            <span>hello@pixelorbits.com</span>\
+            <span>India \'b7 Working worldwide</span>\
+          </div>\
+        </div>\
+\
+      </div>\
+    </footer>\
+  </template>\
+\
+\
+  <!-- =======================================================\
+       JAVASCRIPT\
+       ======================================================= -->\
+\
+  <script>\
+    /* =========================================================\
+       INITIALISE LUCIDE ICONS\
+       ========================================================= */\
+\
+    function refreshIcons() \{\
+      if (window.lucide) \{\
+        lucide.createIcons();\
+      \}\
+    \}\
+\
+\
+    /* =========================================================\
+       INJECT FOOTER INTO EVERY PAGE\
+       ========================================================= */\
+\
+    const footerTemplate = document.getElementById("footerTemplate");\
+\
+    document.querySelectorAll(".footer-slot").forEach((slot) => \{\
+      const footer = footerTemplate.content.cloneNode(true);\
+      slot.appendChild(footer);\
+    \});\
+\
+\
+    /* =========================================================\
+       SINGLE-FILE ROUTER\
+       Pages use hash routes:\
+       #home\
+       #services\
+       #uiux\
+       #mobile\
+       #web\
+       #software\
+       #work\
+       #process\
+       #about\
+       #contact\
+       ========================================================= */\
+\
+    const validRoutes = [\
+      "home",\
+      "services",\
+      "uiux",\
+      "mobile",\
+      "web",\
+      "software",\
+      "work",\
+      "process",\
+      "about",\
+      "contact"\
+    ];\
+\
+    function getCurrentRoute() \{\
+      const route = window.location.hash.replace("#", "").trim();\
+      return validRoutes.includes(route) ? route : "home";\
+    \}\
+\
+    function renderRoute(route, shouldScroll = true) \{\
+      document.querySelectorAll(".page").forEach((page) => \{\
+        page.classList.toggle("active", page.dataset.page === route);\
+      \});\
+\
+      document.querySelectorAll("[data-route-link]").forEach((link) => \{\
+        link.classList.toggle(\
+          "active",\
+          link.dataset.routeLink === route\
+        );\
+      \});\
+\
+      document.title = getRouteTitle(route);\
+\
+      closeMobileMenu();\
+\
+      if (shouldScroll) \{\
+        window.scrollTo(\{\
+          top: 0,\
+          behavior: "instant"\
+        \});\
+      \}\
+\
+      refreshIcons();\
+    \}\
+\
+    function getRouteTitle(route) \{\
+      const titles = \{\
+        home: "Pixelorbits \'97 UI/UX, App, Web & Software Development Agency",\
+        services: "Services \'97 Pixelorbits",\
+        uiux: "UI/UX Design \'97 Pixelorbits",\
+        mobile: "Mobile App Development \'97 Pixelorbits",\
+        web: "Web Development \'97 Pixelorbits",\
+        software: "Custom Software Development \'97 Pixelorbits",\
+        work: "Work \'97 Pixelorbits",\
+        process: "Our Process \'97 Pixelorbits",\
+        about: "About \'97 Pixelorbits",\
+        contact: "Contact \'97 Pixelorbits"\
+      \};\
+\
+      return titles[route] || titles.home;\
+    \}\
+\
+    window.addEventListener("hashchange", () => \{\
+      renderRoute(getCurrentRoute());\
+    \});\
+\
+    document.addEventListener("DOMContentLoaded", () => \{\
+      renderRoute(getCurrentRoute(), false);\
+      refreshIcons();\
+    \});\
+\
+\
+    /* =========================================================\
+       MOBILE MENU\
+       ========================================================= */\
+\
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");\
+    const mobileMenu = document.getElementById("mobileMenu");\
+\
+    function closeMobileMenu() \{\
+      mobileMenu.classList.remove("open");\
+      document.body.classList.remove("menu-open");\
+\
+      mobileMenuBtn.innerHTML = '<i data-lucide="menu" width="20"></i>';\
+      refreshIcons();\
+    \}\
+\
+    function openMobileMenu() \{\
+      mobileMenu.classList.add("open");\
+      document.body.classList.add("menu-open");\
+\
+      mobileMenuBtn.innerHTML = '<i data-lucide="x" width="20"></i>';\
+      refreshIcons();\
+    \}\
+\
+    mobileMenuBtn.addEventListener("click", () => \{\
+      if (mobileMenu.classList.contains("open")) \{\
+        closeMobileMenu();\
+      \} else \{\
+        openMobileMenu();\
+      \}\
+    \});\
+\
+\
+    /* =========================================================\
+       FAQ ACCORDION\
+       ========================================================= */\
+\
+    document.querySelectorAll(".faq-question").forEach((button) => \{\
+      button.addEventListener("click", () => \{\
+        const currentItem = button.closest(".faq-item");\
+\
+        document.querySelectorAll(".faq-item").forEach((item) => \{\
+          if (item !== currentItem) \{\
+            item.classList.remove("open");\
+          \}\
+        \});\
+\
+        currentItem.classList.toggle("open");\
+      \});\
+    \});\
+\
+\
+    /* =========================================================\
+       WORK FILTER\
+       ========================================================= */\
+\
+    const filterButtons = document.querySelectorAll(".filter-btn");\
+    const portfolioItems = document.querySelectorAll(".portfolio-item");\
+\
+    filterButtons.forEach((button) => \{\
+      button.addEventListener("click", () => \{\
+        const filter = button.dataset.filter;\
+\
+        filterButtons.forEach((btn) => \{\
+          btn.classList.remove("active");\
+        \});\
+\
+        button.classList.add("active");\
+\
+        portfolioItems.forEach((item) => \{\
+          const categories = item.dataset.category.split(" ");\
+\
+          if (filter === "all" || categories.includes(filter)) \{\
+            item.classList.remove("hidden");\
+          \} else \{\
+            item.classList.add("hidden");\
+          \}\
+        \});\
+      \});\
+    \});\
+\
+\
+    /* =========================================================\
+       CONTACT FORM\
+       Demo frontend behaviour.\
+       Replace this handler with Formspree,\
+       EmailJS, Firebase or your own API endpoint.\
+       ========================================================= */\
+\
+    const contactForm = document.getElementById("contactForm");\
+    const formStatus = document.getElementById("formStatus");\
+\
+    contactForm.addEventListener("submit", (event) => \{\
+      event.preventDefault();\
+\
+      const submitButton = contactForm.querySelector('button[type="submit"]');\
+\
+      submitButton.disabled = true;\
+      submitButton.style.opacity = ".65";\
+\
+      formStatus.textContent = "Sending your enquiry...";\
+\
+      setTimeout(() => \{\
+        formStatus.textContent =\
+          "Thank you. Your enquiry has been received. We\'92ll get back to you shortly.";\
+\
+        contactForm.reset();\
+\
+        submitButton.disabled = false;\
+        submitButton.style.opacity = "1";\
+      \}, 900);\
+    \});\
+\
+\
+    /* =========================================================\
+       SUBTLE MOUSE PARALLAX ON HOME HERO\
+       ========================================================= */\
+\
+    const heroArt = document.querySelector(".hero-art");\
+\
+    if (heroArt && window.matchMedia("(pointer:fine)").matches) \{\
+      heroArt.addEventListener("mousemove", (event) => \{\
+        const rect = heroArt.getBoundingClientRect();\
+\
+        const x = (event.clientX - rect.left) / rect.width - 0.5;\
+        const y = (event.clientY - rect.top) / rect.height - 0.5;\
+\
+        const dashboard = heroArt.querySelector(".mock-dashboard");\
+        const purpleCard = heroArt.querySelector(".float-purple");\
+        const limeCard = heroArt.querySelector(".float-lime");\
+\
+        dashboard.style.transform =\
+          `translate(calc(-45% + $\{x * 8\}px), calc(-45% + $\{y * 8\}px))`;\
+\
+        purpleCard.style.transform =\
+          `translate($\{x * -14\}px, $\{y * -14\}px)`;\
+\
+        limeCard.style.transform =\
+          `translate($\{x * 17\}px, $\{y * 17\}px)`;\
+      \});\
+\
+      heroArt.addEventListener("mouseleave", () => \{\
+        heroArt.querySelector(".mock-dashboard").style.transform =\
+          "translate(-45%, -45%)";\
+\
+        heroArt.querySelector(".float-purple").style.transform = "";\
+        heroArt.querySelector(".float-lime").style.transform = "";\
+      \});\
+    \}\
+\
+\
+    /* =========================================================\
+       ESC KEY CLOSES MOBILE MENU\
+       ========================================================= */\
+\
+    document.addEventListener("keydown", (event) => \{\
+      if (event.key === "Escape") \{\
+        closeMobileMenu();\
+      \}\
+    \});\
+\
+\
+    refreshIcons();\
+  </script>\
+\
+</body>\
+</html>}
