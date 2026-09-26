@@ -1,0 +1,10 @@
+import {ProjectCard} from "../components/project-card";
+import {PixelJourney} from "../components/pixel-journey";
+import {projects} from "../lib/projects";
+export default function Home(){return <main>
+ <PixelJourney/>
+ <section className="intro-band shell reveal"><p className="section-kicker">01 / WHAT WE DO</p><h2>Good digital products feel effortless.<br/><span>Getting there takes thought.</span></h2><p>We connect product thinking, visual design and delivery to make complex ideas feel simple and memorable.</p></section>
+ <section className="services shell" aria-labelledby="services-heading"><div className="section-head reveal"><p className="section-kicker">02 / OUR FOCUS</p><h2 id="services-heading">Designed to work.<br/><em>Built to stand out.</em></h2></div><div className="service-list">{[["01","Application design","Mobile experiences shaped around useful flows, clear choices and expressive interfaces."],["02","Websites","Distinct digital homes that explain your offer and make every interaction count."],["03","SaaS & product systems","Dashboards and tools that turn complicated workflows into confident everyday use."]].map(([n,title,copy])=><div className="service-item reveal" key={n}><span>{n}</span><h3>{title}</h3><p>{copy}</p><span aria-hidden="true">↗</span></div>)}</div></section>
+ <section className="featured shell" aria-labelledby="featured-heading"><div className="section-head section-head-row reveal"><div><p className="section-kicker">03 / SELECTED WORK</p><h2 id="featured-heading">Made with intention.</h2></div><a className="text-link" href="/work">View all projects <span aria-hidden="true">↗</span></a></div><div className="project-grid">{projects.map(p=><ProjectCard project={p} key={p.slug}/>)}</div></section>
+ <section className="outro shell reveal"><p className="section-kicker">YOUR NEXT IDEA, IN MOTION</p><h2>Let&apos;s make something<br/><em>worth opening.</em></h2><a className="button button-light" href="/contact">Talk to Pixel Orbit <span aria-hidden="true">↗</span></a></section>
+ </main>}
