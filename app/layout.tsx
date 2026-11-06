@@ -1,30 +1,25 @@
-import Script from "next/script";
-import type {Metadata} from "next";
-import {SiteFooter,SiteHeader} from "../components/site-chrome";
-import "./globals.css";
-export const metadata:Metadata={title:{default:"Pixel Orbit — Digital Product Design Studio",template:"%s | Pixel Orbit"},description:"Pixel Orbit designs applications, websites and SaaS products with clarity, craft and a distinct visual point of view.",icons:{icon:"/favicon.svg",shortcut:"/favicon.svg"}};
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
+import './globals.css';
+
+export const metadata: Metadata = { metadataBase: new URL('https://pixelorbits.com') };
+export const viewport: Viewport = { themeColor: '#DCE87A', width: 'device-width', initialScale: 1 };
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <SiteHeader />
-        {children}
-        <SiteFooter />
-
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-2CGVDLC9E3"
-          strategy="afterInteractive"
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-2CGVDLC9E3');
-          `}
-        </Script>
+      </head>
+      <body>
+        {children}
+        <Script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" strategy="beforeInteractive" />
       </body>
     </html>
   );

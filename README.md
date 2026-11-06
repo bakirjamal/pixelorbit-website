@@ -1,15 +1,24 @@
-# Pixel Orbit — Vercel-ready source
+# Pixelorbits website (Next.js)
 
-This is the Pixel Orbit portfolio source, prepared as a statically exported Next.js 16 site. The home pixel-scroll animation and project-card drag interaction run in the browser. The Contact page opens email and WhatsApp links; it does not collect or store form submissions.
+## Run locally
+```bash
+npm install
+npm run dev        # http://localhost:3000
+```
 
-## Deploy through GitHub and Vercel
+## Deploy (Vercel, recommended)
+1. Push this folder to a GitHub repo.
+2. Import it on vercel.com → Deploy.
+3. Add the domain `pixelorbits.com` in Vercel → Settings → Domains.
 
-1. Unzip this archive. Create a private GitHub repository, and upload the contents of the `pixel-orbit-vercel` folder (including `package.json`, `app`, `components`, and `public`) to its root. Do not upload `node_modules`, `.next`, `out`, or `dist`.
-2. In Vercel, select **Add New → Project**, connect GitHub, and **Import** the repository.
-3. Vercel should detect **Next.js**. Leave the Root Directory at `./` if you put the files at the repository root. The build command is `pnpm build` (runs `next build`); default settings should work.
-4. Select **Deploy**. Check `/`, `/work`, project pages, and `/contact` on the resulting URL.
-5. To use your domain, open the Vercel project **Settings → Domains**, add the domain, then follow Vercel's displayed DNS instructions at your domain registrar. DNS changes can take time.
+## After it is live (indexing)
+1. Google Search Console → add `pixelorbits.com` → verify.
+2. Submit `https://pixelorbits.com/sitemap.xml`.
+3. URL Inspection → "Request indexing" for `/` and each case study.
+4. Do the same in Bing Webmaster Tools (it also feeds ChatGPT search).
 
-## Local preview
-
-Use Node.js 22 or newer and pnpm 11: `corepack pnpm install --frozen-lockfile`, then `pnpm dev`. To verify a production build, run `pnpm build`.
+## Structure
+- `app/` — routes: `/` and `/[slug]` (fasto, crm, resume, audio, vehicles, whatsapp, fashion), plus `sitemap.ts` and `robots.ts`
+- `content/` — each page's HTML, page CSS, page script, JSON-LD and `meta.json` (titles and descriptions)
+- `public/` — images, scenes and `llms.txt` (for AI search)
+- To edit text: change `content/<page>.html`. To change SEO titles/descriptions: `content/meta.json`.

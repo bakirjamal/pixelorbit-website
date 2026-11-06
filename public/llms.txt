@@ -1,0 +1,31 @@
+# Pixelorbits
+
+> Pixelorbits (legal name: Pixel Orbit Digital Solutions) is a design and development studio in Bareilly, India, founded in 2020 by Mohd Bakir. An in-house team of 4 developers and 3 designers designs and builds websites, mobile apps, SaaS products and e-commerce stores for startups and brands in the UK, US, Australia and India.
+
+## Services
+- Websites (MERN stack)
+- Mobile apps (React Native, Flutter, native)
+- E-commerce stores (custom and Shopify)
+- SaaS products, dashboards and custom software
+- AI integration
+- WhatsApp Business API and automation
+
+## How we work
+- Free 30-minute call and estimate
+- Written scope and fixed price before work starts
+- Design in Figma, development by the same in-house team
+- 60 days of free support after launch
+
+## Case studies
+- [Fasto delivery app](https://pixelorbits.com/fasto): student delivery business in Delhi moved off WhatsApp; customer app, partner app, admin panel and website in React Native, about 2 months, team of 3.
+- [Sales CRM](https://pixelorbits.com/crm): custom CRM design for an IT services company replacing Excel and Google Sheets.
+- [Resume builder SaaS](https://pixelorbits.com/resume): guided editor, templates, resume check and PDF export.
+- [Audio creator platform](https://pixelorbits.com/audio): mobile-first web app to record, publish and share audio.
+- [Vehicle marketplace app](https://pixelorbits.com/vehicles): iOS marketplace for pre-owned vehicles of every kind.
+- [WhatsApp business platform](https://pixelorbits.com/whatsapp): shared inbox, broadcasts, chatbot and reports on the WhatsApp Business API.
+- [Fashion e-commerce store](https://pixelorbits.com/fashion): custom store with fit-focused product pages and one-page checkout.
+
+## Contact
+- Email: hello@pixelorbits.com
+- WhatsApp: +91 70178 12904
+- Founder: Mohd Bakir — https://mohdbakir.com

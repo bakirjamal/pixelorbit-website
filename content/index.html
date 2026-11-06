@@ -1,0 +1,491 @@
+
+
+<!-- SVG sprite: logo "o" and arrows -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="o-mark" viewBox="0 0 100 100">
+      <path class="o-ring" d="M85.6 39.8 A38 38 0 1 1 55.4 12.4"/>
+      <g class="spin-pix-wrap"><rect class="o-pix" x="63" y="8" width="25" height="25" rx="3"/></g>
+    </symbol>
+    <symbol id="arr" viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></symbol>
+    <symbol id="arr-down" viewBox="0 0 16 16"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  </defs>
+</svg>
+
+<!-- Loader -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-top eyebrow"><span>Pixelorbits</span><span>Design &amp; development studio</span></div>
+  <div class="loader-mid">
+    <svg class="loader-mark" viewBox="0 0 100 100">
+      <path class="o-ring" d="M85.6 39.8 A38 38 0 1 1 55.4 12.4"/>
+      <g class="spin-pix"><rect class="o-pix" x="63" y="8" width="25" height="25" rx="3"/></g>
+    </svg>
+  </div>
+  <div class="loader-bottom">
+    <div class="loader-count" id="count">000</div>
+    <div class="loader-bar"><i id="bar"></i></div>
+    <div class="eyebrow">Loading</div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor"><span>View <svg width="14" height="14"><use href="#arr"/></svg></span></div>
+
+<!-- Header -->
+<header class="hdr on-lime" id="hdr">
+  <div class="shell hdr-in">
+    <a href="#top" class="wordmark" aria-label="Pixelorbits home">pixel<span class="o"><svg><use href="#o-mark"/></svg></span>rbits</a>
+    <nav class="nav">
+      <a class="nl" href="#services">Services</a>
+      <a class="nl" href="#work">Our work</a>
+      <a class="nl" href="#process">Process</a>
+      <a class="nl" href="#about">About</a>
+      <a class="btn btn-nav" href="#contact">Let’s talk</a>
+      <button class="burger" id="burger" aria-label="Menu"><i></i><i></i></button>
+    </nav>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <div>
+    <a class="big" href="#services">Services</a>
+    <a class="big" href="#work">Our work</a>
+    <a class="big" href="#process">Process</a>
+    <a class="big" href="#about">About</a>
+    <a class="big" href="#contact">Contact</a>
+  </div>
+  <div class="eyebrow">hello@pixelorbits.com · +91 70178 12904</div>
+</div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="shell">
+    <div class="hero-meta eyebrow fu" style="--d:200ms"><span>Design &amp; development studio / Bareilly, India</span><span>Est. 2020</span></div>
+    <div class="hero-row">
+      <h1 class="hero-title">
+        <span class="ln"><span style="--i:0">Design &amp;</span></span>
+        <span class="ln"><span style="--i:1">Build <span class="serif">studio.</span></span></span>
+      </h1>
+      <div class="hero-art dr" style="--d:600ms">
+        <figure>
+          <svg width="96" height="64" viewBox="0 0 96 64"><rect x="2" y="2" width="92" height="60" rx="2"/><line x1="2" y1="12" x2="94" y2="12"/><circle cx="8" cy="7" r="1.2"/><circle cx="13" cy="7" r="1.2"/><circle cx="18" cy="7" r="1.2"/><line x1="10" y1="22" x2="40" y2="22"/><line x1="10" y1="29" x2="34" y2="29"/><rect x="52" y="20" width="34" height="32"/><polyline points="52,46 62,36 70,42 78,32 86,40"/></svg>
+          <figcaption>WEBSITES</figcaption>
+        </figure>
+        <figure>
+          <svg width="44" height="70" viewBox="0 0 44 70"><rect x="2" y="2" width="40" height="66" rx="7"/><line x1="16" y1="7" x2="28" y2="7"/><rect x="8" y="14" width="28" height="18" rx="2"/><line x1="8" y1="38" x2="30" y2="38"/><line x1="8" y1="44" x2="24" y2="44"/><rect class="fill-pop" x="8" y="52" width="28" height="8" rx="2" fill="#181A17" stroke="none"/></svg>
+          <figcaption>APPS</figcaption>
+        </figure>
+        <figure>
+          <svg width="110" height="64" viewBox="0 0 110 64"><rect x="2" y="2" width="34" height="60"/><line x1="8" y1="12" x2="30" y2="12"/><line x1="8" y1="20" x2="30" y2="20"/><line x1="8" y1="28" x2="26" y2="28"/><line x1="8" y1="36" x2="30" y2="36"/><path d="M42 32h14M51 27l5 5-5 5"/><rect x="62" y="2" width="46" height="60"/><rect x="68" y="10" width="7" height="7"/><line x1="80" y1="13" x2="102" y2="13"/><rect x="68" y="24" width="7" height="7"/><line x1="80" y1="27" x2="102" y2="27"/><rect x="68" y="38" width="7" height="7"/><line x1="80" y1="41" x2="102" y2="41"/><rect class="fill-pop" x="68" y="51" width="34" height="5" fill="#181A17" stroke="none"/></svg>
+          <figcaption>AI &amp; AUTOMATION</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="hero-bottom">
+      <p class="hero-sub fu" style="--d:700ms">We design and build websites, mobile apps, SaaS products and e-commerce stores, all in-house, for startups and brands in the UK, US, Australia and India.</p>
+      <div class="hero-actions fu" style="--d:850ms">
+        <div class="row">
+          <a class="btn" href="#contact">Book a free call <svg class="ui-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+          <a class="btn btn-ghost" href="#work">See our work</a>
+        </div>
+        <div class="hero-note"><em>Free 30-minute call and estimate.</em><br><span class="muted" style="color:var(--olive)">60 days of free support after launch</span></div>
+      </div>
+    </div>
+
+    <a class="feature fu" href="/fasto" data-cursor="view" style="--d:950ms">
+      <div class="feature-vis" style="background:#DCE87A"><img loading="lazy" decoding="async" class="parallax" data-speed="0.05" src="/assets/scenes/fasto-phones.jpg" alt="Fasto app on two phones" style="position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover"></div>
+      <div class="feature-txt">
+        <span class="eyebrow" style="opacity:.6">Featured project</span>
+        <h3>Fasto <span class="serif">delivery app.</span></h3>
+        <p>A student delivery business in Delhi ran on WhatsApp. We designed and built the apps, admin panel and website, and every order moved into the app.</p>
+        <div class="foot"><span>Apps, admin panel &amp; website</span><span class="sq-arrow"><svg><use href="#arr"/></svg></span></div>
+      </div>
+    </a>
+    <div class="feature-cap"><span>Fasto / Delhi / React Native</span><a href="#work" style="display:flex;gap:10px;align-items:center">Explore the work <svg width="13" height="13"><use href="#arr-down"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ANIMATED STRIP -->
+<section class="strip" aria-hidden="true">
+  <div class="shell">
+    <svg viewBox="0 0 1400 300" class="dr" id="strip">
+      <!-- ruler -->
+      <line class="st soft" x1="80" y1="20" x2="1320" y2="20" style="--len:1300"/>
+      <line class="st soft" x1="80" y1="12" x2="80" y2="28"/><line class="st soft" x1="330" y1="12" x2="330" y2="28"/><line class="st soft" x1="580" y1="12" x2="580" y2="28"/><line class="st soft" x1="830" y1="12" x2="830" y2="28"/><line class="st soft" x1="1080" y1="12" x2="1080" y2="28"/><line class="st soft" x1="1320" y1="12" x2="1320" y2="28"/>
+      <text class="st-lbl lime" x="1150" y="0">PIXELORBITS</text>
+      <!-- clouds -->
+      <g class="cloud"><path class="st soft" d="M440 82c0-14 12-22 24-18 4-12 22-14 30-4 12-2 20 8 18 22z" style="--len:200"/></g>
+      <g class="cloud" style="animation-duration:18s"><path class="st soft" d="M760 104c0-10 9-16 18-13 3-9 16-10 22-3 9-1 15 6 13 16z" style="--len:160"/></g>
+      <!-- orbit sun -->
+      <circle class="st" cx="210" cy="80" r="22" style="--len:140"/>
+      <g class="orb-spin" style="transform-origin:210px 80px"><rect class="st-lime" x="240" y="74" width="10" height="10"/></g>
+      <circle class="st soft" cx="210" cy="80" r="40" stroke-dasharray="3 6" style="stroke-dasharray:3 6;stroke-dashoffset:0"/>
+      <!-- 01 browser -->
+      <g>
+        <rect class="st" x="110" y="150" width="190" height="120" rx="3" style="--len:640"/>
+        <line class="st" x1="110" y1="168" x2="300" y2="168"/>
+        <circle class="st-lime blink" cx="122" cy="159" r="3"/><circle class="st soft" cx="132" cy="159" r="3"/>
+        <line class="st soft" x1="128" y1="190" x2="200" y2="190"/><line class="st soft" x1="128" y1="202" x2="180" y2="202"/>
+        <rect class="st" x="214" y="184" width="70" height="66"/>
+        <polyline class="st soft" points="214,240 236,218 252,230 268,212 284,226"/>
+        <rect class="st" x="128" y="230" width="60" height="16" rx="2"/>
+      </g>
+      <!-- 02 phone -->
+      <g class="bob">
+        <rect class="st" x="415" y="140" width="76" height="130" rx="12" style="--len:420"/>
+        <line class="st" x1="440" y1="150" x2="466" y2="150"/>
+        <rect class="st soft" x="425" y="164" width="56" height="34" rx="3"/>
+        <line class="st soft" x1="425" y1="210" x2="470" y2="210"/><line class="st soft" x1="425" y1="220" x2="460" y2="220"/>
+        <rect class="st-lime" x="425" y="240" width="56" height="16" rx="3"/>
+      </g>
+      <!-- 03 store / cart -->
+      <g>
+        <path class="st" d="M630 170h20l18 70h96l14-52H662" style="--len:400"/>
+        <circle class="st" cx="690" cy="258" r="9"/><circle class="st" cx="750" cy="258" r="9"/>
+        <rect class="st-lime bob" x="694" y="150" width="22" height="22" style="animation-delay:.5s"/>
+        <rect class="st bob" x="724" y="138" width="24" height="34" style="animation-delay:1s"/>
+      </g>
+      <!-- 04 dashboard -->
+      <g>
+        <rect class="st" x="880" y="150" width="180" height="120" rx="3" style="--len:600"/>
+        <line class="st" x1="920" y1="150" x2="920" y2="270"/>
+        <line class="st soft" x1="890" y1="166" x2="910" y2="166"/><line class="st soft" x1="890" y1="178" x2="910" y2="178"/><line class="st soft" x1="890" y1="190" x2="910" y2="190"/>
+        <rect class="st-lime" x="934" y="230" width="14" height="28"/><rect class="st" x="956" y="210" width="14" height="48"/><rect class="st-lime" x="978" y="190" width="14" height="68"/><rect class="st" x="1000" y="220" width="14" height="38"/><rect class="st" x="1022" y="200" width="14" height="58"/>
+        <line class="st soft" x1="934" y1="170" x2="1000" y2="170"/>
+      </g>
+      <!-- 05 chat automation -->
+      <g>
+        <path class="st" d="M1120 150h120a8 8 0 0 1 8 8v54a8 8 0 0 1-8 8h-84l-22 18v-18h-14a8 8 0 0 1-8-8v-54a8 8 0 0 1 8-8z" style="--len:500"/>
+        <g class="typing"><circle class="st-lime" cx="1160" cy="185" r="5"/><circle class="st-lime" cx="1180" cy="185" r="5"/><circle class="st-lime" cx="1200" cy="185" r="5"/></g>
+        <rect class="st-lime" x="1190" y="226" width="110" height="42" rx="6"/>
+        <line class="st ink" x1="1204" y1="242" x2="1280" y2="242" style="stroke:#181A17"/><line class="st ink" x1="1204" y1="254" x2="1260" y2="254" style="stroke:#181A17"/>
+      </g>
+      <!-- ground -->
+      <line class="st" x1="60" y1="272" x2="1340" y2="272" style="--len:1300"/>
+      <g class="st soft"><path d="M110 296l14-14M250 296l14-14M390 296l14-14M530 296l14-14M670 296l14-14M810 296l14-14M950 296l14-14M1090 296l14-14M1230 296l14-14"/></g>
+      <!-- traveling pixel -->
+      <g class="travel"><rect class="st-lime" x="0" y="260" width="12" height="12"/><circle class="st-lime ping" cx="6" cy="266" r="12" style="fill:none;stroke:#DCE87A;stroke-width:1.5"/></g>
+      <text class="st-lbl" x="196" y="320">01</text><text class="st-lbl" x="444" y="320">02</text><text class="st-lbl" x="694" y="320">03</text><text class="st-lbl" x="960" y="320">04</text><text class="st-lbl lime" x="1206" y="320">05</text>
+    </svg>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="sec" id="work">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="eyebrow fu">Selected work</span>
+      <h2><span class="ln"><span>Selected</span></span><span class="ln"><span class="serif" style="--i:1">work.</span></span></h2>
+      <p class="side fu" style="--d:200ms">Websites, apps, SaaS and stores. Several projects are under NDA, so we show the work without the client's name.</p>
+    </div>
+
+    <div class="work-grid">
+      
+
+      <a class="card fu" href="/fasto" data-cursor="view" style="--d:120ms">
+        <div class="card-vis" style="background:#DCE87A"><div class="inner parallax" data-speed="0.06"><div class="scale"><img loading="lazy" decoding="async" src="/assets/scenes/fasto-hand.jpg" alt="Fasto delivery app checkout screen on a phone" style="position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover"></div></div><span class="tile"><svg><use href="#arr"/></svg></span></div>
+        <div class="card-meta"><b>01</b><div><h3>Fasto</h3><p>Delivery apps, admin panel &amp; website · Design &amp; React Native</p></div></div>
+      </a>
+
+      <a class="card fu" href="/resume" data-cursor="view">
+        <div class="card-vis" style="background:#DCE87A"><div class="inner parallax" data-speed="0.06"><div class="scale"><img loading="lazy" decoding="async" src="/assets/scenes/res-laptop.jpg" alt="Resume builder editor on a laptop" style="position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover"></div></div><span class="tile"><svg><use href="#arr"/></svg></span></div>
+        <div class="card-meta"><b>02</b><div><h3>Resume builder SaaS <span class="nda">NDA</span></h3><p>Product design &amp; development, in-house</p></div></div>
+      </a>
+
+      <a class="card fu" href="#contact" data-cursor="view" style="--d:120ms">
+        <div class="card-vis" style="background:#181A17"><div class="inner parallax" data-speed="0.08"><div class="scale">
+          <div class="dev-browser" style="width:66%;background:#22251f"><div class="bar" style="background:#2c2f28"><i></i><i></i><i></i></div><div class="pg">
+            <div class="row-flex"><div class="blk" style="background:#DCE87A;height:12px;flex:.3"></div><div></div></div>
+            <div class="row-flex"><div class="blk" style="height:60px;background:#3a3e35"></div><div class="blk" style="height:60px;background:#3a3e35"></div><div class="blk" style="height:60px;background:#3a3e35"></div></div>
+            <div class="blk" style="background:#3a3e35;width:60%"></div><div class="blk" style="background:#3a3e35;width:40%"></div>
+          </div></div>
+          <div class="dev-phone" style="right:12%;bottom:6%;width:20%"><div class="pg"><div class="blk ink t"></div><div class="blk img" style="height:54px"></div><div class="blk lime t"></div><div class="blk"></div></div></div>
+        </div></div><span class="tile"><svg><use href="#arr"/></svg></span></div>
+        <div class="card-meta"><b>03</b><div><h3>E-commerce store <span class="nda">NDA</span></h3><p>Design &amp; development, fully in-house</p></div></div>
+      </a>
+
+      <a class="card fu" href="/audio" data-cursor="view">
+        <div class="card-vis" style="background:#DCE87A"><div class="inner parallax" data-speed="0.06"><div class="scale"><img loading="lazy" decoding="async" src="/assets/scenes/audio-phones.jpg" alt="Audio recording app on two phones" style="position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover"></div></div><span class="tile" style="background:#181A17;color:#DCE87A"><svg><use href="#arr"/></svg></span></div>
+        <div class="card-meta"><b>04</b><div><h3>Audio creator platform <span class="nda">NDA</span></h3><p>Web app, built with Digital Mongers</p></div></div>
+      </a>
+
+      <a class="card fu" href="/crm" data-cursor="view" style="--d:120ms">
+        <div class="card-vis" style="background:#DCE87A"><div class="inner parallax" data-speed="0.06"><div class="scale"><img loading="lazy" decoding="async" src="/assets/scenes/crm-monitor.jpg" alt="Sales CRM lead form on a desktop monitor" style="position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover"></div></div><span class="tile"><svg><use href="#arr"/></svg></span></div>
+        <div class="card-meta"><b>05</b><div><h3>Sales CRM <span class="nda">NDA</span></h3><p>Product design for an IT services company</p></div></div>
+      </a>
+    
+      <a class="card fu" href="/vehicles" data-cursor="view" style="--d:120ms">
+        <div class="card-vis" style="background:#DCE87A"><div class="inner parallax" data-speed="0.06"><div class="scale"><img loading="lazy" decoding="async" src="/assets/scenes/veh-hand.jpg" alt="Vehicle marketplace sell flow on a phone" style="position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover"></div></div><span class="tile"><svg><use href="#arr"/></svg></span></div>
+        <div class="card-meta"><b>06</b><div><h3>Vehicle marketplace <span class="nda">NDA</span></h3><p>iOS app · Design &amp; development</p></div></div>
+      </a>
+      <a class="card fu" href="/whatsapp" data-cursor="view">
+        <div class="card-vis" style="background:#DCE87A"><div class="inner parallax" data-speed="0.06"><div class="scale"><img loading="lazy" decoding="async" src="/assets/scenes/wa-monitor.jpg" alt="WhatsApp team inbox dashboard on a monitor" style="position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover"></div></div><span class="tile"><svg><use href="#arr"/></svg></span></div>
+        <div class="card-meta"><b>07</b><div><h3>WhatsApp business platform <span class="nda">NDA</span></h3><p>SaaS · Design &amp; development</p></div></div>
+      </a>
+
+      <a class="card fu" href="/fashion" data-cursor="view" style="--d:120ms">
+        <div class="card-vis" style="background:#E7E2D5"><div class="inner parallax" data-speed="0.06"><div class="scale"><img loading="lazy" decoding="async" src="/assets/scenes/shop-laptop.jpg" alt="Fashion e-commerce store on a laptop" style="position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover"></div></div><span class="tile"><svg><use href="#arr"/></svg></span></div>
+        <div class="card-meta"><b>08</b><div><h3>Fashion e-commerce store <span class="nda">NDA</span></h3><p>Custom store · Design &amp; development</p></div></div>
+      </a>
+</div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement" style="background:var(--paper)">
+  <div class="shell">
+    <span class="eyebrow fu" style="display:block;margin-bottom:22px">The studio</span>
+    <p class="fu-c"><span class="fu">Websites, apps, stores and SaaS for startups and brands in the UK, US, Australia and India, </span><span class="fu serif" style="--d:150ms"><span class="hl">designed and built in-house in Bareilly.</span></span></p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services" style="padding-top:40px">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="eyebrow fu">What we do</span>
+      <h2><span class="ln"><span>Services.</span></span></h2>
+      <p class="side fu" style="--d:200ms">One in-house team of designers and developers, from the first screen to launch and beyond.</p>
+    </div>
+    <div class="svc">
+      <a class="svc-row fu" href="#contact">
+        <b>01</b><h3>Websites</h3>
+        <svg class="ic" viewBox="0 0 120 86"><rect x="4" y="6" width="112" height="74" rx="6"/><line x1="4" y1="20" x2="116" y2="20"/><circle cx="13" cy="13" r="1.6"/><circle cx="20" cy="13" r="1.6"/><circle cx="27" cy="13" r="1.6"/><rect x="40" y="10" width="60" height="6" rx="3"/><rect x="14" y="28" width="28" height="20" rx="2"/><rect x="46" y="28" width="28" height="20" rx="2"/><rect x="78" y="28" width="28" height="20" rx="2"/><rect x="14" y="54" width="28" height="18" rx="2"/><rect x="46" y="54" width="28" height="18" rx="2"/><rect x="78" y="54" width="28" height="18" rx="2"/></svg>
+        <p>Company sites, landing pages and redesigns, built on the MERN stack with hosting and care after launch.</p>
+        <span class="arr"><svg><use href="#arr"/></svg></span>
+      </a>
+      <a class="svc-row fu" href="#contact">
+        <b>02</b><h3>Mobile apps</h3>
+        <svg class="ic" viewBox="0 0 120 86"><rect x="30" y="4" width="34" height="78" rx="6"/><rect x="58" y="14" width="34" height="68" rx="6"/><line x1="40" y1="10" x2="54" y2="10"/><rect x="64" y="24" width="22" height="16" rx="2" fill="#DCE87A"/><line x1="64" y1="48" x2="84" y2="48"/><line x1="64" y1="56" x2="78" y2="56"/><line x1="36" y1="24" x2="52" y2="24"/></svg>
+        <p>iOS and Android apps in React Native, Flutter or native, from the first flow to the app stores.</p>
+        <span class="arr"><svg><use href="#arr"/></svg></span>
+      </a>
+      <a class="svc-row fu" href="#contact">
+        <b>03</b><h3>E-commerce stores</h3>
+        <svg class="ic" viewBox="0 0 120 86"><path d="M14 18h12l10 40h56l8-30H32"/><circle cx="44" cy="70" r="6"/><circle cx="84" cy="70" r="6"/><rect x="52" y="6" width="16" height="16" fill="#DCE87A"/><rect x="72" y="2" width="14" height="20"/></svg>
+        <p>Custom and Shopify stores for D2C brands, with checkout, payments and the pages that sell.</p>
+        <span class="arr"><svg><use href="#arr"/></svg></span>
+      </a>
+      <a class="svc-row fu" href="#contact">
+        <b>04</b><h3>SaaS &amp; custom software</h3>
+        <svg class="ic" viewBox="0 0 120 86"><rect x="6" y="6" width="108" height="74" rx="4"/><line x1="32" y1="6" x2="32" y2="80"/><line x1="12" y1="18" x2="26" y2="18"/><line x1="12" y1="28" x2="26" y2="28"/><line x1="12" y1="38" x2="26" y2="38"/><rect x="42" y="50" width="10" height="20" fill="#DCE87A"/><rect x="58" y="38" width="10" height="32"/><rect x="74" y="44" width="10" height="26"/><rect x="90" y="28" width="10" height="42" fill="#DCE87A"/><line x1="42" y1="18" x2="90" y2="18"/></svg>
+        <p>Dashboards, admin panels and full SaaS products, designed in Figma and engineered by the same team.</p>
+        <span class="arr"><svg><use href="#arr"/></svg></span>
+      </a>
+      <a class="svc-row fu" href="#contact">
+        <b>05</b><h3>AI integration</h3>
+        <svg class="ic" viewBox="0 0 120 86"><rect x="6" y="10" width="34" height="66"/><line x1="12" y1="22" x2="34" y2="22"/><line x1="12" y1="32" x2="34" y2="32"/><line x1="12" y1="42" x2="30" y2="42"/><line x1="12" y1="52" x2="34" y2="52"/><path d="M46 43h14M55 38l5 5-5 5"/><rect x="66" y="10" width="48" height="66"/><rect x="72" y="18" width="8" height="8"/><line x1="86" y1="22" x2="108" y2="22"/><rect x="72" y="34" width="8" height="8"/><line x1="86" y1="38" x2="108" y2="38"/><rect x="72" y="50" width="8" height="8"/><line x1="86" y1="54" x2="108" y2="54"/><rect x="72" y="64" width="36" height="6" fill="#DCE87A"/></svg>
+        <p>AI added to the products and tools you already use, for replies, requests and repeat work.</p>
+        <span class="arr"><svg><use href="#arr"/></svg></span>
+      </a>
+      <a class="svc-row fu" href="#contact">
+        <b>06</b><h3>WhatsApp API &amp; automation</h3>
+        <svg class="ic" viewBox="0 0 120 86"><path d="M14 8h66a6 6 0 0 1 6 6v34a6 6 0 0 1-6 6H36l-16 14V54h-6a6 6 0 0 1-6-6V14a6 6 0 0 1 6-6z"/><circle cx="32" cy="31" r="3" fill="#181A17"/><circle cx="47" cy="31" r="3" fill="#181A17"/><circle cx="62" cy="31" r="3" fill="#181A17"/><rect x="64" y="56" width="50" height="24" rx="5" fill="#DCE87A"/></svg>
+        <p>WhatsApp Business API, chat flows and automations that answer customers and route leads.</p>
+        <span class="arr"><svg><use href="#arr"/></svg></span>
+      </a>
+    </div>
+    <p class="svc-note fu">We also take on <a href="#contact">MVPs for funded startups</a>, <a href="#contact">redesigns</a> and <a href="#contact">white-label work for partner agencies</a>.</p>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="sec" id="who" style="padding-top:20px">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="eyebrow fu">Who we work with</span>
+      <h2><span class="ln"><span>Who we</span></span><span class="ln"><span class="serif" style="--i:1">work with.</span></span></h2>
+      <p class="side fu" style="--d:200ms">Clients in India, Germany, the USA and across Europe, from first-time founders to growing brands.</p>
+    </div>
+    <div class="who">
+      <a class="who-cell fu" href="#contact">
+        <span class="sq-arrow"><svg><use href="#arr"/></svg></span>
+        <svg class="ic" viewBox="0 0 170 96"><path d="M60 88V40l25-26 25 26v48"/><rect x="74" y="48" width="22" height="22" fill="#DCE87A"/><line x1="30" y1="88" x2="140" y2="88"/><path d="M85 14V4"/><path d="M85 4l10 4-10 4"/></svg>
+        <b>01</b><h3>Funded startups</h3><p>MVPs and v2 products, designed and shipped fast, with a team that stays after launch.</p>
+      </a>
+      <a class="who-cell fu" href="#contact" style="--d:80ms">
+        <span class="sq-arrow"><svg><use href="#arr"/></svg></span>
+        <svg class="ic" viewBox="0 0 170 96"><path d="M40 30h90l-8 58H48z"/><path d="M64 30c0-14 10-22 21-22s21 8 21 22"/><rect x="74" y="50" width="22" height="22" fill="#DCE87A"/><line x1="24" y1="88" x2="146" y2="88"/></svg>
+        <b>02</b><h3>D2C brands</h3><p>Stores and product pages that load fast, look like the brand and convert.</p>
+      </a>
+      <a class="who-cell fu" href="#contact" style="--d:160ms">
+        <span class="sq-arrow"><svg><use href="#arr"/></svg></span>
+        <svg class="ic" viewBox="0 0 170 96"><rect x="36" y="8" width="98" height="70" rx="3"/><line x1="36" y1="22" x2="134" y2="22"/><rect x="46" y="32" width="24" height="36" fill="#DCE87A"/><line x1="80" y1="34" x2="124" y2="34"/><line x1="80" y1="44" x2="116" y2="44"/><line x1="80" y1="54" x2="124" y2="54"/><line x1="24" y1="88" x2="146" y2="88"/></svg>
+        <b>03</b><h3>SaaS founders</h3><p>Product design, dashboards and the marketing site, all from one studio.</p>
+      </a>
+      <a class="who-cell fu" href="#contact">
+        <span class="sq-arrow"><svg><use href="#arr"/></svg></span>
+        <svg class="ic" viewBox="0 0 170 96"><circle cx="85" cy="46" r="36"/><ellipse cx="85" cy="46" rx="16" ry="36"/><line x1="49" y1="46" x2="121" y2="46"/><path d="M55 28h60M55 64h60"/><rect x="113" y="14" width="12" height="12" fill="#DCE87A"/></svg>
+        <b>04</b><h3>UK, US &amp; Australia</h3><p>Remote projects with clear written scope, weekly updates and calls in your time zone.</p>
+      </a>
+      <a class="who-cell fu" href="#contact" style="--d:80ms">
+        <span class="sq-arrow"><svg><use href="#arr"/></svg></span>
+        <svg class="ic" viewBox="0 0 170 96"><path d="M40 88V36h90v52"/><path d="M34 36l10-20h82l10 20z"/><rect x="66" y="10" width="38" height="12" fill="#DCE87A"/><rect x="54" y="50" width="26" height="20"/><rect x="92" y="54" width="20" height="34"/><line x1="24" y1="88" x2="146" y2="88"/></svg>
+        <b>05</b><h3>Indian businesses</h3><p>Websites, apps and WhatsApp automation for growing companies across India.</p>
+      </a>
+      <a class="who-cell fu" href="#contact" style="--d:160ms">
+        <span class="sq-arrow"><svg><use href="#arr"/></svg></span>
+        <svg class="ic" viewBox="0 0 170 96"><circle cx="62" cy="46" r="26"/><circle cx="108" cy="46" r="26"/><rect x="79" y="38" width="12" height="16" fill="#DCE87A"/><line x1="24" y1="88" x2="146" y2="88"/></svg>
+        <b>06</b><h3>Partner agencies</h3><p>Design and development capacity for agencies that need a reliable build team.</p>
+      </a>
+    </div>
+    <div class="link-row fu">
+      <a class="tlink" href="#work">See all projects <svg><use href="#arr"/></svg></a>
+      <a class="tlink" href="#process">How we work <svg><use href="#arr"/></svg></a>
+      <a class="tlink" href="#contact">Get a free estimate <svg><use href="#arr"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec dark" id="process">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="eyebrow fu">Process</span>
+      <h2><span class="ln"><span>How a project</span></span><span class="ln"><span class="serif" style="--i:1">works.</span></span></h2>
+      <p class="side fu" style="--d:200ms">Four steps, with a written scope and price before any work starts. You approve each step before the next begins.</p>
+    </div>
+    <div class="proc-line" id="procline"><div class="bar"></div><div class="fill"></div>
+      <span class="node" style="left:0;transition-delay:.1s"></span><span class="node" style="left:calc(25% + 6px);transition-delay:.7s"></span><span class="node" style="left:calc(50% + 12px);transition-delay:1.3s"></span><span class="node" style="left:calc(75% + 18px);transition-delay:1.9s"></span>
+    </div>
+    <div class="proc">
+      <div class="fu">
+        <svg class="ic dr" viewBox="0 0 150 96" style="--d:200ms"><path d="M4 6h80v44H38L22 64V50H4z"/><circle cx="26" cy="28" r="3"/><circle cx="44" cy="28" r="3"/><circle cx="62" cy="28" r="3"/><rect class="fill-pop" x="62" y="40" width="84" height="40" fill="#DCE87A" stroke="none"/><path d="M76 56h56M76 66h40" style="stroke:#181A17"/></svg>
+        <b>01</b><h3>Free call &amp; estimate</h3><p>A 30-minute call about your goals, users and budget, followed by an estimate.</p>
+      </div>
+      <div class="fu" style="--d:120ms">
+        <svg class="ic dr" viewBox="0 0 150 96" style="--d:500ms"><path d="M30 4h56l16 16v72H30z"/><path d="M86 4v16h16"/><path d="M40 30l4 4 7-8M40 46l4 4 7-8M40 62l4 4 7-8"/><path d="M58 32h32M58 48h32M58 64h24"/><path d="M42 80c6-6 10 6 16 0s10 6 16 0" style="stroke:#DCE87A"/></svg>
+        <b>02</b><h3>Written scope</h3><p>Pages, features, timeline and a fixed price in writing, before any work starts.</p>
+      </div>
+      <div class="fu" style="--d:240ms">
+        <svg class="ic dr" viewBox="0 0 150 96" style="--d:800ms"><rect x="4" y="6" width="142" height="84"/><rect class="fill-pop" x="14" y="16" width="70" height="28" fill="#DCE87A" stroke="none"/><path d="M96 22h40M96 32h30"/><rect x="14" y="56" width="36" height="22"/><rect x="58" y="56" width="36" height="22"/><rect x="102" y="56" width="36" height="22"/></svg>
+        <b>03</b><h3>Design &amp; build</h3><p>Designs in Figma for your review, then development by the same in-house team.</p>
+      </div>
+      <div class="fu" style="--d:360ms">
+        <svg class="ic dr" viewBox="0 0 150 96" style="--d:1100ms"><rect x="10" y="4" width="130" height="80"/><circle class="fill-pop" cx="75" cy="44" r="20" fill="#DCE87A" stroke="none"/><path d="M66 44l7 7 12-14" style="stroke:#181A17;stroke-width:2.4"/><line x1="10" y1="92" x2="140" y2="92" style="stroke:#DCE87A;stroke-width:3"/><circle cx="128" cy="14" r="3" fill="#DCE87A"/></svg>
+        <b>04</b><h3>Launch &amp; support</h3><p>We launch, hand over and keep caring for it, with 60 days of free support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER / PERSONAL BRAND -->
+<section class="founder" id="about">
+  <div class="shell founder-grid">
+    <figure class="photo" id="photo">
+      <div class="frame"><img loading="lazy" decoding="async" src="/assets/mohd-bakir.jpg" alt="Mohd Bakir, founder of Pixelorbits" class="parallax-img" width="900" height="1200"></div>
+      <div class="badge"><i></i>Taking new projects</div>
+      <figcaption><span>Mohd Bakir / Founder &amp; Lead Designer</span><span class="muted">Bareilly, India</span></figcaption>
+    </figure>
+    <div>
+      <span class="eyebrow fu">Founder-led studio</span>
+      <h2><span class="ln"><span>MEET</span></span><span class="ln"><span class="serif" style="--i:1">Mohd.<svg viewBox="0 0 200 20" preserveAspectRatio="none" class="dr" id="swash"><path d="M3 14C50 4 120 2 197 9" fill="none" stroke="#9fb03a" stroke-width="5" stroke-linecap="round" style="--len:220;--d:700ms"/></svg></span></span></h2>
+      <p class="lead fu" style="--d:150ms">I'm Mohd Bakir, a product designer and the founder of Pixelorbits. <em>Book a call, and you talk to me directly.</em></p>
+      <p class="body fu" style="--d:250ms">I started out building WordPress sites, went on to study UI/UX, and spent years designing SaaS platforms, mobile apps and websites in Figma. Today I lead an in-house team of 4 developers and 3 designers, and we design and build everything under one roof.</p>
+      <ul class="journey fu" style="--d:350ms">
+        <li><span>Start</span><div><b>Web design &amp; WordPress</b><small>Designing and building my first websites</small></div></li>
+        <li><span>Learning</span><div><b>UI/UX studies &amp; certifications</b><small>From building pages to designing products</small></div></li>
+        <li><span>2022 – 2023</span><div><b>UI Designer, b3Intelligence</b></div></li>
+        <li><span>2023 – 2026</span><div><b>Product Designer, Dotix</b><small>SaaS platforms, mobile apps and websites</small></div></li>
+        <li><span>Now</span><div><b>Founder &amp; Lead Designer, Pixelorbits</b><small>A studio of 7, founded in 2020</small></div></li>
+      </ul>
+      <div class="sig fu" style="--d:450ms">— Mohd Bakir</div>
+      <div class="links fu" style="--d:520ms">
+        <a class="btn" href="#contact">Book a call with Mohd <svg class="ui-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+        <a class="tlink" href="https://www.behance.net/mohdbakir">Behance <svg><use href="#arr"/></svg></a>
+        <a class="tlink" href="https://mohdbakir.com">mohdbakir.com <svg><use href="#arr"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="sec" style="padding:90px 0">
+  <div class="shell">
+    <div class="band">
+      <div class="fu"><strong data-count="2020">2020</strong><span>Studio founded</span></div>
+      <div class="fu" style="--d:100ms"><strong data-count="7">7</strong><span>Designers and developers in-house</span></div>
+      <div class="fu" style="--d:200ms"><strong data-count="60">60</strong><span>Days of free support after launch</span></div>
+      <div class="fu" style="--d:300ms"><strong data-count="30">30</strong><span>Minute free call and estimate</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ORBIT MAP -->
+<section class="sec dark map" id="map">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="eyebrow fu">Based in Bareilly</span>
+      <h2><span class="ln"><span>One studio,</span></span><span class="ln"><span class="serif" style="--i:1">every timezone.</span></span></h2>
+      <div class="fu" style="--d:200ms"><p class="side">Pixelorbits works from Bareilly, India, with clients across India, Europe and the US by video call, email and WhatsApp.</p><div style="margin-top:22px"><a class="tlink" href="#contact" style="color:var(--paper)">Start a project <svg><use href="#arr"/></svg></a></div></div>
+    </div>
+    <svg viewBox="0 0 1300 560" id="orbitmap"></svg>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="eyebrow fu">FAQ</span>
+      <h2><span class="ln"><span>Good</span></span><span class="ln"><span class="serif" style="--i:1">questions.</span></span></h2>
+      <p class="side fu" style="--d:200ms">Anything else, ask on the free call or send us a message.</p>
+    </div>
+    <div class="faq fu">
+      <details><summary><b>01</b><h3>How much does a project cost?</h3><span class="pm"></span></summary><div class="ans"><p>It depends on the pages, features and platforms. After a free 30-minute call we send a written scope with a fixed price, so you know the cost before any work starts.</p></div></details>
+      <details><summary><b>02</b><h3>How long does it take?</h3><span class="pm"></span></summary><div class="ans"><p>The timeline is written into the scope. Websites usually move faster than apps and SaaS products, and you approve each step before the next one begins.</p></div></details>
+      <details><summary><b>03</b><h3>Do you work with clients outside India?</h3><span class="pm"></span></summary><div class="ans"><p>Yes. We work with clients in the UK, US, Australia and Europe by video call, email and WhatsApp, with regular updates in your time zone.</p></div></details>
+      <details><summary><b>04</b><h3>Which technologies do you use?</h3><span class="pm"></span></summary><div class="ans"><p>MERN for the web, React Native, Flutter or native for mobile, and custom builds or Shopify for e-commerce. Design happens in Figma.</p></div></details>
+      <details><summary><b>05</b><h3>What happens after launch?</h3><span class="pm"></span></summary><div class="ans"><p>Every project includes 60 days of free support after launch. After that we can keep looking after it on a care plan.</p></div></details>
+      <details><summary><b>06</b><h3>Will you sign an NDA?</h3><span class="pm"></span></summary><div class="ans"><p>Yes. Several of our projects are under NDA, which is why some of our work is shown without the client's name.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="invite" id="contact">
+  <div class="shell invite-grid">
+    <div>
+      <span class="eyebrow fu">Contact Pixelorbits</span>
+      <h2><span class="ln"><span>LET'S</span></span><span class="ln"><span class="serif" style="--i:1">talk.</span></span></h2>
+      <p class="lead fu" style="--d:200ms">A website, an app, a store or a SaaS product. Tell us what you are building and we'll come back with a free estimate.</p>
+      <div class="contact-lines fu" style="--d:300ms">
+        <span>Email: <a href="mailto:hello@pixelorbits.com">hello@pixelorbits.com</a></span>
+        <span>WhatsApp: <a href="https://wa.me/917017812904">+91 70178 12904</a></span>
+      </div>
+    </div>
+    <form class="form fu" id="form" style="--d:200ms" novalidate>
+      <h3>Tell us about your project</h3>
+      <div class="f2">
+        <div class="fld"><label for="f-name">Name</label><input id="f-name" placeholder="Your name" required><span class="msg">Please add your name</span></div>
+        <div class="fld"><label for="f-co">Company</label><input id="f-co" placeholder="Company"></div>
+      </div>
+      <div class="fld"><label for="f-email">Email</label><input id="f-email" type="email" placeholder="you@company.com" required><span class="msg">Please add a valid email</span></div>
+      <div class="fld"><label for="f-phone">Phone / WhatsApp</label><input id="f-phone" placeholder="+1 555 000 0000"></div>
+      <div class="fld"><label for="f-budget">Budget range</label><select id="f-budget"><option>Choose a range</option><option>Under $2,000</option><option>$2,000 – $5,000</option><option>$5,000 – $15,000</option><option>$15,000+</option></select></div>
+      <div class="fld"><label for="f-msg">Tell us about your project</label><textarea id="f-msg" placeholder="What are you building?"></textarea></div>
+      <button class="btn" type="submit">Send message <svg class="ui-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="shell">
+    <div class="ft-top">
+      <a href="#top" class="wordmark">pixel<span class="o"><svg><use href="#o-mark"/></svg></span>rbits</a>
+      <div class="info"><span>Design &amp; development studio</span><a href="mailto:hello@pixelorbits.com">hello@pixelorbits.com ↗</a><span>Based in Bareilly, India</span><a href="https://wa.me/917017812904">+91 70178 12904</a></div>
+      <a class="btn" href="#contact">Book a free call <svg class="ui-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+    </div>
+    <div class="ft-links"><a href="#services">Services</a><a href="#work">Our work</a><a href="#who">Who we work with</a><a href="#process">Process</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+    <div class="ft-copy">© 2026 Pixel Orbit Digital Solutions (Pixelorbits). MSME registered.</div>
+  </div>
+  <div class="giant-wrap"><div class="giant" id="giant"></div></div>
+</footer>
+
+<div class="toast" id="toast" role="status"><span class="dot"><svg width="16" height="16"><use href="#arr"/></svg></span><div><b>Preview form</b><p>Connect this form to your email or CRM before launch. Nothing was sent.</p></div></div>
+
+
+

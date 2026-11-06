@@ -1,0 +1,42 @@
+{
+  "index": {
+    "title": "Pixelorbits — Website, App & SaaS Design and Development Studio",
+    "description": "Pixelorbits is a design and development studio in Bareilly, India. We design and build websites, mobile apps, SaaS products and e-commerce stores for startups and brands in the UK, US, Australia and India.",
+    "image": "https://pixelorbits.com/assets/scenes/fasto-phones.jpg"
+  },
+  "fasto": {
+    "title": "Fasto Case Study — Delivery App Design & React Native Development | Pixelorbits",
+    "description": "How Pixelorbits moved a Delhi student delivery business off WhatsApp with a customer app, delivery partner app, admin panel and website, built in React Native in about two months.",
+    "image": "https://pixelorbits.com/assets/scenes/fasto-phones.jpg"
+  },
+  "crm": {
+    "title": "Sales CRM Case Study — Replacing Excel with a Custom CRM | Pixelorbits",
+    "description": "How Pixelorbits designed a custom sales CRM for an IT services company that outgrew Excel and Google Sheets: one six-step lead flow with follow-ups, GST billing and outcomes.",
+    "image": "https://pixelorbits.com/assets/scenes/crm-monitor.jpg"
+  },
+  "resume": {
+    "title": "Resume Builder SaaS Case Study — Product Design & Development | Pixelorbits",
+    "description": "How Pixelorbits designed and built a resume builder SaaS with a guided editor, live preview, screening-friendly templates and PDF export.",
+    "image": "https://pixelorbits.com/assets/scenes/res-laptop.jpg"
+  },
+  "audio": {
+    "title": "Audio Creator Platform Case Study — Web App Design & Development | Pixelorbits",
+    "description": "How Pixelorbits built a mobile-first web app for recording, publishing and sharing audio stories, with creator profiles, an explore feed and share cards.",
+    "image": "https://pixelorbits.com/assets/scenes/audio-phones.jpg"
+  },
+  "vehicles": {
+    "title": "Vehicle Marketplace App Case Study — iOS App Design & Development | Pixelorbits",
+    "description": "How Pixelorbits designed and built a marketplace app for buying and selling pre-owned cars, bikes, boats, buses and heavy equipment, with category-based filters.",
+    "image": "https://pixelorbits.com/assets/scenes/veh-phones.jpg"
+  },
+  "whatsapp": {
+    "title": "WhatsApp Business API Platform Case Study — SaaS Development | Pixelorbits",
+    "description": "How Pixelorbits built a WhatsApp Business API platform with a shared team inbox, broadcasts, a chatbot builder and reports.",
+    "image": "https://pixelorbits.com/assets/scenes/wa-monitor.jpg"
+  },
+  "fashion": {
+    "title": "Fashion E-commerce Store Case Study — Custom Store Design & Development | Pixelorbits",
+    "description": "How Pixelorbits designed and built a custom fashion e-commerce store with editorial design, size and fit filters and a one-page checkout with UPI, cards and COD.",
+    "image": "https://pixelorbits.com/assets/scenes/shop-laptop.jpg"
+  }
+}

@@ -1,0 +1,227 @@
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="o-mark" viewBox="0 0 100 100">
+      <path class="o-ring" d="M85.6 39.8 A38 38 0 1 1 55.4 12.4"/>
+      <rect class="o-pix" x="63" y="8" width="25" height="25" rx="3"/>
+    </symbol>
+    <symbol id="arr" viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></symbol>
+  </defs>
+</svg>
+
+<div class="cursor" id="cursor"><span>View <svg width="14" height="14"><use href="#arr"/></svg></span></div>
+
+<header class="hdr" id="hdr">
+  <div class="shell hdr-in">
+    <a href="/" class="wordmark" aria-label="Pixelorbits home">pixel<span class="o"><svg><use href="#o-mark"/></svg></span>rbits</a>
+    <nav class="nav">
+      <a class="nl" href="/#services">Services</a>
+      <a class="nl" href="/#work">Our work</a>
+      <a class="nl" href="/#process">Process</a>
+      <a class="nl" href="/#about">About</a>
+      <a class="btn btn-nav" href="/#contact">Let’s talk</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="cs-hero">
+  <div class="shell">
+    <a class="cs-back fu" href="/#work"><svg><use href="#arr"/></svg> All work</a>
+    <div class="eyebrow fu" style="margin-bottom:20px">Case study 01 / Mobile apps, admin panel &amp; website</div>
+    <div class="cs-title">
+      <h1><span class="ln"><span>Fasto</span></span><span class="ln"><span class="serif" style="--i:1">From WhatsApp chats to a real delivery app.</span></span></h1>
+      <p class="fu" style="--d:300ms">Fasto delivered groceries and stationery to students in Delhi, and every order came in over WhatsApp. We designed and built the full product in about two months.</p>
+    </div>
+    <div class="cs-meta fu" style="--d:400ms">
+      <div><span>Client</span><b>Fasto, Delhi</b></div>
+      <div><span>Industry</span><b>Grocery &amp; stationery delivery</b></div>
+      <div><span>Users</span><b>Students</b></div>
+      <div><span>Services</span><b>Product design, React Native, admin panel, website</b></div>
+      <div><span>Team &amp; time</span><b>3 people, about 2 months</b></div>
+      <div><span>Live</span><b><a href="https://www.fastoapp.com/">fastoapp.com ↗</a></b></div>
+    </div>
+    <div class="cs-cover reveal scene" id="cover"><img loading="lazy" decoding="async" src="/assets/scenes/fasto-phones.jpg" alt="Fasto app screens" class="px" data-speed="0.08"></div>
+  </div>
+</section>
+
+<!-- 01 PROBLEM -->
+<section class="cs-sec" id="problem">
+  <div class="shell">
+    <div class="cs-row">
+      <span class="num fu">01 — The problem</span>
+      <div>
+        <h2><span class="ln"><span>Running on</span></span><span class="ln"><span class="serif" style="--i:1">WhatsApp.</span></span></h2>
+        <p class="cs-big fu">Fasto had no app. Students placed orders in WhatsApp chats, and the team handled every order by hand, <span class="serif hl">one message at a time.</span></p>
+        <div class="pains">
+          <div class="pain fu">
+            <svg viewBox="0 0 64 48"><path d="M6 4h44a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H22l-10 9v-9H6a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z"/><path d="M18 14l16 12M34 14L18 26"/></svg>
+            <i>01</i><h3>Orders got missed</h3><p>Orders were lost between messages in busy chats.</p>
+          </div>
+          <div class="pain fu" style="--d:120ms">
+            <svg viewBox="0 0 64 48"><rect x="4" y="8" width="48" height="32" rx="3"/><line x1="4" y1="18" x2="52" y2="18"/><circle cx="50" cy="38" r="9" fill="#DCE87A"/><path d="M50 34v5M50 42v.5"/></svg>
+            <i>02</i><h3>Payments were hard to track</h3><p>There was no clear record of who had paid for which order.</p>
+          </div>
+          <div class="pain fu" style="--d:240ms">
+            <svg viewBox="0 0 64 48"><path d="M32 44s-14-13-14-24a14 14 0 0 1 28 0c0 11-14 24-14 24z"/><text x="27" y="26" font-size="14" font-weight="800" fill="#181A17" stroke="none" font-family="Hanken Grotesk">?</text></svg>
+            <i>03</i><h3>Addresses were unclear</h3><p>Delivery partners had trouble finding where to deliver from a typed message.</p>
+          </div>
+        </div>
+        <div class="chat fu">
+          <div class="box">
+            <small>BEFORE · WHATSAPP (ILLUSTRATION)</small>
+            <span class="bubble">Bhaiya 2 maggi, 1 milk, ek register bhej do</span>
+            <span class="bubble me">Address?</span>
+            <span class="bubble miss">Hostel ke paas wala gate…</span>
+            <span class="bubble">Payment kiya tha kal ka?</span>
+          </div>
+          <div class="arrow">→</div>
+          <div class="box dark">
+            <small>AFTER · FASTO APP</small>
+            <div class="flow">
+              <div>Cart &amp; checkout<b>ORDER ID</b></div>
+              <div>UPI, cards, wallets<b>PAID</b></div>
+              <div>Pin on the map<b>EXACT ADDRESS</b></div>
+              <div>Live order tracking<b>ON THE WAY</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 GOAL / WHAT WE BUILT -->
+<section class="cs-sec" style="background:var(--paper2)">
+  <div class="shell">
+    <div class="cs-row">
+      <span class="num fu">02 — The goal</span>
+      <div>
+        <h2><span class="ln"><span>Every order,</span></span><span class="ln"><span class="serif" style="--i:1">one system.</span></span></h2>
+        <p class="cs-big fu" style="margin-bottom:56px">Move every order out of WhatsApp and into one connected product for students, delivery partners and the Fasto team.</p>
+        <div class="built fu">
+          <div><b>01</b><h3>Customer app</h3><p>Browse, order, pay and track, for students.</p></div>
+          <div><b>02</b><h3>Delivery partner app</h3><p>Orders and addresses for the riders.</p></div>
+          <div><b>03</b><h3>Admin panel</h3><p>Orders, products and stock for the Fasto team.</p></div>
+          <div><b>04</b><h3>Website</h3><p>The public home of the brand at fastoapp.com.</p></div>
+        </div>
+        <p class="fu" style="margin-top:24px;font-size:14px;color:var(--muted)">Designed in Figma and built in React Native by a Pixelorbits team of 3, in about two months.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 SOLUTION -->
+<section class="cs-sec" style="padding-bottom:40px">
+  <div class="shell">
+    <div class="cs-row" style="margin-bottom:40px">
+      <span class="num fu">03 — The solution</span>
+      <div><h2><span class="ln"><span>Problem by</span></span><span class="ln"><span class="serif" style="--i:1">problem.</span></span></h2></div>
+    </div>
+
+    <div class="sol">
+      <div class="sol-vis fu" data-cursor="view"><img loading="lazy" decoding="async" src="/assets/fasto/s-home.png" alt="Fasto home screen"><img loading="lazy" decoding="async" src="/assets/fasto/s-checkout.png" alt="Fasto checkout screen"></div>
+      <div class="sol-txt fu" style="--d:150ms">
+        <div class="tag"><em>Problem 01</em><s>Orders got missed</s></div>
+        <h3>A cart that <span class="serif">never forgets.</span></h3>
+        <p>Students add items from a clear home screen and check out in a few taps. Every order gets an order summary and an order ID, so nothing gets lost in a chat.</p>
+        <ul><li>Home with offers, trending items and categories</li><li>Cart and checkout with an order summary</li><li>Coupons applied at checkout</li></ul>
+      </div>
+    </div>
+
+    <div class="sol">
+      <div class="sol-vis lime fu" data-cursor="view"><img loading="lazy" decoding="async" src="/assets/fasto/s-payment.png" alt="Fasto payment options"><img loading="lazy" decoding="async" src="/assets/fasto/s-signin.png" alt="Fasto sign in screen"></div>
+      <div class="sol-txt fu" style="--d:150ms">
+        <div class="tag"><em>Problem 02</em><s>Payments were hard to track</s></div>
+        <h3>Every payment <span class="serif">on record.</span></h3>
+        <p>Payments moved into the app. Students sign in with their phone number and pay with UPI apps, cards, wallets or net banking, and every payment is tied to an order.</p>
+        <ul><li>Phone number sign-in with OTP</li><li>UPI, cards, wallets and net banking</li><li>Fasto wallet with transaction history</li></ul>
+      </div>
+    </div>
+
+    <div class="sol">
+      <div class="sol-vis dark fu" data-cursor="view"><img loading="lazy" decoding="async" src="/assets/fasto/s-address.png" alt="Fasto address on map"><img loading="lazy" decoding="async" src="/assets/fasto/s-tracking.png" alt="Fasto live order tracking"></div>
+      <div class="sol-txt fu" style="--d:150ms">
+        <div class="tag"><em>Problem 03</em><s>Addresses were unclear</s></div>
+        <h3>A pin, <span class="serif">not a paragraph.</span></h3>
+        <p>Students drop a pin on the map and save their addresses, so the delivery partner gets the exact location. The student then follows the order live, with the partner's name and a call button.</p>
+        <ul><li>Address search and pin on the map</li><li>Saved addresses like Home and Office</li><li>Live tracking with arrival countdown</li></ul>
+      </div>
+    </div>
+
+    <div class="sol">
+      <div class="sol-vis fu" data-cursor="view"><img loading="lazy" decoding="async" src="/assets/fasto/s-subscribe.png" alt="Fasto product subscription"><img loading="lazy" decoding="async" src="/assets/fasto/s-calendar.png" alt="Fasto subscription start date"></div>
+      <div class="sol-txt fu" style="--d:150ms">
+        <div class="tag"><em>Extra</em><s>Daily essentials</s></div>
+        <h3>Milk, <span class="serif">on repeat.</span></h3>
+        <p>For things students buy every day, like milk and bread, we added subscriptions. Pick a plan, choose a start date, and pause it when going home for the holidays.</p>
+        <ul><li>Daily plans with a start date</li><li>Subscription status by day</li><li>Vacation mode to pause deliveries</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="shell">
+    <h2><span class="ln"><span>40+ screens,</span></span><span class="ln"><span class="serif" style="--i:1">one system.</span></span></h2>
+    <p class="fu" style="max-width:300px;font-size:14px;opacity:.7">From sign-in to support, every screen was designed in Figma and built in React Native.</p>
+  </div>
+  <div class="track" id="track">
+    <img loading="lazy" decoding="async" src="/assets/fasto/s-signin.png" alt="Fasto delivery app screen 1"><img loading="lazy" decoding="async" src="/assets/fasto/s-home.png" alt="Fasto delivery app screen 2"><img loading="lazy" decoding="async" src="/assets/fasto/s-subscribe.png" alt="Fasto delivery app screen 3"><img loading="lazy" decoding="async" src="/assets/fasto/s-calendar.png" alt="Fasto delivery app screen 4"><img loading="lazy" decoding="async" src="/assets/fasto/s-checkout.png" alt="Fasto delivery app screen 5"><img loading="lazy" decoding="async" src="/assets/fasto/s-payment.png" alt="Fasto delivery app screen 6"><img loading="lazy" decoding="async" src="/assets/fasto/s-address.png" alt="Fasto delivery app screen 7"><img loading="lazy" decoding="async" src="/assets/fasto/s-tracking.png" alt="Fasto delivery app screen 8">
+  </div>
+  <div class="shell" style="margin-top:90px;display:block"><img loading="lazy" decoding="async" class="wide-img fu" src="/assets/fasto/cover-ui.jpg" alt="Overview of the Fasto app UI"></div>
+</section>
+
+<!-- 04 RESULT -->
+<section class="cs-sec" id="result">
+  <div class="shell">
+    <div class="cs-row">
+      <span class="num fu">04 — The result</span>
+      <div>
+        <h2><span class="ln"><span>Off WhatsApp,</span></span><span class="ln"><span class="serif" style="--i:1">for good.</span></span></h2>
+        <p class="cs-big fu">After launch, <span class="serif hl">every order came through the app.</span> Fasto stopped taking orders on WhatsApp.</p>
+        <div class="res fu" style="margin-top:56px">
+          <div><strong>100%</strong><span>of orders placed through the app after launch</span></div>
+          <div><strong>4</strong><span>products delivered: customer app, partner app, admin panel and website</span></div>
+          <div><strong>~2</strong><span>months from first screen to launch, with a team of 3</span></div>
+        </div>
+        <div class="fu" style="margin-top:44px;display:flex;gap:14px;flex-wrap:wrap">
+          <a class="btn" href="https://www.fastoapp.com/">Visit fastoapp.com <svg class="ui-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+          <a class="btn btn-ghost" href="/#contact">Start a similar project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- NEXT -->
+<section style="overflow:hidden"><img loading="lazy" decoding="async" class="wide-img" src="/assets/scenes/fasto-hand.jpg" alt="Fasto app screens"></section>
+<section class="next">
+  <div class="shell">
+    <span class="eyebrow">Next project</span>
+    <a class="big" href="/#work" style="margin-top:18px">
+      <h2>More <span class="serif">work.</span></h2>
+      <span class="sq"><svg><use href="#arr"/></svg></span>
+    </a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="shell">
+    <div class="ft-top">
+      <a href="/" class="wordmark">pixel<span class="o"><svg><use href="#o-mark"/></svg></span>rbits</a>
+      <div class="info"><span>Design &amp; development studio</span><a href="mailto:hello@pixelorbits.com">hello@pixelorbits.com ↗</a><span>Based in Bareilly, India</span><a href="https://wa.me/917017812904">+91 70178 12904</a></div>
+      <a class="btn" href="/#contact">Book a free call <svg class="ui-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+    </div>
+    <div class="ft-copy" style="padding-top:20px">© 2026 Pixel Orbit Digital Solutions (Pixelorbits). Scene photos generated with AI (Higgsfield); screens are the real Fasto designs.</div>
+  </div>
+</footer>
+
+
+
