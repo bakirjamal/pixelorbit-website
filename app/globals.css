@@ -450,8 +450,8 @@ html.menu-open, .menu-open body { overflow: hidden; }
   .photo { width:calc(100% - 18px); }
   .photo .badge { right:0; }
   .cs-row .ln > span { max-width:100%; }
-  .steps { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .next a.big { gap:16px; }
-  .next .sq { width:64px; height:64px; flex-shrink:0; }
-  .next h2 { font-size:clamp(40px,10vw,72px); }
+  main .steps { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  main .next a.big { gap:16px; }
+  main .next .sq { width:64px; height:64px; flex-shrink:0; }
+  main .next h2 { font-size:clamp(40px,10vw,72px); }
 }
