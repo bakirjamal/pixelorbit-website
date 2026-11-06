@@ -165,16 +165,41 @@ document.body.classList.add('is-loading');
     });
   });
 
-  /* ---------- Email enquiry handoff ---------- */
-  $('#form').addEventListener('submit',e=>{
-    e.preventDefault(); let ok=true;
+  /* ---------- Direct enquiry delivery ---------- */
+  const form=$('#form'), status=$('#form-status'), submit=$('button[type="submit"]',form);
+  let submitting=false;
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(submitting) return;
+    let ok=true;
     const n=$('#f-name'), m=$('#f-email');
-    n.parentElement.classList.toggle('err',!n.value.trim()); if(!n.value.trim()) ok=false;
-    const em=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m.value); m.parentElement.classList.toggle('err',!em); if(!em) ok=false;
-    if(!ok){(!n.value.trim()?n:m).focus();return;}
-    const fields=[['Name',n.value.trim()],['Company',$('#f-co').value],['Email',m.value.trim()],['Phone / WhatsApp',$('#f-phone').value],['Budget',$('#f-budget').value],['Project',$('#f-msg').value]];
-    const body=fields.map(([label,value])=>label+': '+value).join('\n\n');
-    location.href='mailto:hello@pixelorbits.com?subject='+encodeURIComponent('Project enquiry from '+n.value.trim())+'&body='+encodeURIComponent(body);
-    const t=$('#toast'); t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),7000);
+    const nameOk=!!n.value.trim(), emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m.value.trim());
+    for(const [input,valid] of [[n,nameOk],[m,emailOk]]){
+      input.parentElement.classList.toggle('err',!valid);
+      input.setAttribute('aria-invalid',String(!valid));
+      if(!valid) ok=false;
+    }
+    if(!ok){status.textContent='Please check your name and email address.';(!nameOk?n:m).focus();return;}
+    if(form.elements.namedItem('_honey').value) return;
+    submitting=true; submit.disabled=true; form.setAttribute('aria-busy','true');
+    status.textContent='Sending your enquiry…';
+    const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),20000);
+    try{
+      const values=Object.fromEntries(new FormData(form));
+      values.name=n.value.trim(); values.email=m.value.trim(); values._replyto=m.value.trim();
+      const response=await fetch('https://formsubmit.co/ajax/hello@pixelorbits.com',{
+        method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(values),signal:controller.signal
+      });
+      const result=await response.json();
+      if(!response.ok || !(result.success===true || result.success==='true')) throw new Error('Submission not accepted');
+      status.textContent='Thank you — your enquiry has been submitted to Pixelorbits. We will reply to the email address you provided.';
+      form.reset();
+      [n,m].forEach(input=>{input.removeAttribute('aria-invalid');input.parentElement.classList.remove('err')});
+    }catch(error){
+      status.textContent='We could not confirm your enquiry was sent. Your details are still here. Please try again, or email hello@pixelorbits.com / use WhatsApp below.';
+    }finally{
+      clearTimeout(timeout);submitting=false;submit.disabled=false;form.removeAttribute('aria-busy');
+    }
   });
 })();
