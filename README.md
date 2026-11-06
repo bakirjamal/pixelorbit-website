@@ -21,4 +21,4 @@ npm run dev        # http://localhost:3000
 - `app/` — routes: `/` and `/[slug]` (fasto, crm, resume, audio, vehicles, whatsapp, fashion), plus `sitemap.ts` and `robots.ts`
 - `content/` — each page's HTML, page CSS, page script, JSON-LD and `meta.json` (titles and descriptions)
 - `public/` — images, scenes and `llms.txt` (for AI search)
-- To edit text: change `content/<page>.html`. To change SEO titles/descriptions: `content/meta.json`.
+- To edit text: change `content/<page>.html`. To change SEO titles/descriptions: `content/meta.json`. 
