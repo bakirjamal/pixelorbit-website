@@ -455,18 +455,23 @@
         <span>WhatsApp: <a href="https://wa.me/917017812904">+91 70178 12904</a></span>
       </div>
     </div>
-    <form class="form fu" id="form" style="--d:200ms" novalidate>
+    <form class="form fu" id="form" action="https://formsubmit.co/hello@pixelorbits.com" method="POST" style="--d:200ms" novalidate>
       <h3>Tell us about your project</h3>
+      <input type="hidden" name="_subject" value="New website enquiry — Pixelorbits">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_url" value="https://www.pixelorbits.com/">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
       <div class="f2">
         <div class="fld"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" placeholder="Your name" required><span class="msg">Please add your name</span></div>
         <div class="fld"><label for="f-co">Company</label><input id="f-co" name="company" autocomplete="organization" placeholder="Company"></div>
       </div>
       <div class="fld"><label for="f-email">Email</label><input id="f-email" name="email" autocomplete="email" type="email" placeholder="you@company.com" required><span class="msg">Please add a valid email</span></div>
       <div class="fld"><label for="f-phone">Phone / WhatsApp</label><input id="f-phone" name="phone" autocomplete="tel" type="tel" placeholder="+1 555 000 0000"></div>
-      <div class="fld"><label for="f-budget">Budget range</label><select id="f-budget"><option>Choose a range</option><option>Under $2,000</option><option>$2,000 – $5,000</option><option>$5,000 – $15,000</option><option>$15,000+</option></select></div>
-      <div class="fld"><label for="f-msg">Tell us about your project</label><textarea id="f-msg" placeholder="What are you building?"></textarea></div>
-      <button class="btn" type="submit">Continue in email <svg class="ui-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
-      <p class="form-note">Opens your email app with your enquiry. Review and send it there, or email <a href="mailto:hello@pixelorbits.com">hello@pixelorbits.com</a>.</p>
+      <div class="fld"><label for="f-budget">Budget range</label><select id="f-budget" name="budget"><option value="">Choose a range</option><option>Under $2,000</option><option>$2,000 – $5,000</option><option>$5,000 – $15,000</option><option>$15,000+</option></select></div>
+      <div class="fld"><label for="f-msg">Tell us about your project</label><textarea id="f-msg" name="message" placeholder="What are you building?"></textarea></div>
+      <button class="btn" type="submit">Send enquiry <svg class="ui-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+      <p id="form-status" class="form-note" role="status" aria-live="polite"></p>
+      <p class="form-note">Your enquiry goes to <a href="mailto:hello@pixelorbits.com">hello@pixelorbits.com</a>. You can also <a href="https://wa.me/917017812904">message us on WhatsApp</a>.</p>
     </form>
   </div>
 </section>
@@ -486,7 +491,7 @@
   <div class="giant-wrap"><div class="giant" id="giant"></div></div>
 </footer>
 
-<div class="toast" id="toast" role="status"><span class="dot"><svg width="16" height="16"><use href="#arr"/></svg></span><div><b>Finish in your email app</b><p>Your enquiry is prepared. Send it from your email app, or email hello@pixelorbits.com directly.</p></div></div>
+<div class="toast" id="toast" role="status"><span class="dot"><svg width="16" height="16"><use href="#arr"/></svg></span><div><b>Enquiry received</b><p>Thank you. We will reply to the email address you provided.</p></div></div>
 
 
 
